@@ -48,7 +48,7 @@
     font-size: 2rem !important;
     color: black !important; /* Adjust arrow color */
     position: absolute;
-    /* right: 35%; */
+    right: 30%;
     top: 40%;
   }
 }
