@@ -17,14 +17,16 @@ $mobile: 786px;
     padding-inline: 10%;
     flex-direction: column;
     height: fit-content;
+    
+      .TopBannerHead {
+        width: auto;
+      }
   }
-
   img {
     @media (max-width: $mobile) {
       transform: scale(0.4);
+      width: 100%;
     }
-  }
-  .TopBannerHead {
   }
   .TopBannerHighlight {
     leading-trim: both;
