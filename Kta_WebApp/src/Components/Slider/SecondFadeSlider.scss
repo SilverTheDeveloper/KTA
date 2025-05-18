@@ -5,7 +5,6 @@ $mobile: 768px;
   position: relative;
   @media (max-width: $mobile) {
     height: fit-content;
-    border: 1px solid green;
   }
 
   img {
