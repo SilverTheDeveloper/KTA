@@ -177,13 +177,16 @@ $mobile: 768px;
       background: #ededed;
       @media (max-width: $mobile) {
         display: flex;
-        height: 40px;
+        height: 38px;
         padding: 0px 15px;
         border-radius: 4.889px;
         border: 0.826px solid #e8e8e8;
         background: #ededed;
+        font-size: 12px;
+
       }
     }
+
     .ContactInputBoxLarge {
       display: flex;
       height: 158px;
