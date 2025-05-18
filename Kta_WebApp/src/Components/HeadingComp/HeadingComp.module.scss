@@ -1,5 +1,4 @@
-
-$mobile:786px;
+$mobile: 786px;
 .HeadingClass {
   text-align: center;
   font-family: Manrope;
@@ -11,6 +10,10 @@ $mobile:786px;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+
   @media screen and (max-width: $mobile) {
     color: #000;
     font-size: 24px;
@@ -23,15 +26,16 @@ $mobile:786px;
     font-style: normal;
     font-weight: 800;
     line-height: 125.025%;
-    background: linear-gradient(170deg, #e31e24 27.67%, #262065 53.76%);
-    -webkit-background-clip: text;
+    background: var(--brand, linear-gradient(101deg, #e31e24 40.47%, #262065 92.53%));
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     @media screen and (max-width: $mobile) {
       font-size: 12px;
       line-height: normal;
       text-transform: uppercase;
+    margin-bottom: 0px;
+
     }
   }
 }

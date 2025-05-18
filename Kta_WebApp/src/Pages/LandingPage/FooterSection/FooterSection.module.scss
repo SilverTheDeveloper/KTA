@@ -218,7 +218,7 @@ $mobile: 768px;
   }
 
   @media (max-width: $mobile) {
-    top: 0%;
+    top: -5%;
     right: auto;
     transform: scale(0.8);
   }
