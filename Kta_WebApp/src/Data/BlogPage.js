@@ -1,6 +1,6 @@
-import handsImg from "@/assets/BlogPage/hands.png";
-import spongeImg from "@/assets/BlogPage/sponge.png";
-import waterTubImg from "@/assets/BlogPage/waterTub.png";
+import handsImg from "/assets/BlogPage/hands.png";
+import spongeImg from "/assets/BlogPage/sponge.png";
+import waterTubImg from "/assets/BlogPage/waterTub.png";
 
 export const blogList = [
   {

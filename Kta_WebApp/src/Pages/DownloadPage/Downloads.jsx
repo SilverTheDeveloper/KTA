@@ -1,8 +1,8 @@
 import TopBanner from '@/Components/TopBanner/TopBanner'
 import React from 'react'
-import DownloadsHeading from "@/assets/DownloadsPage/DownloadsHeading.png"
-import DocumentIcon from "@/assets/DownloadsPage/document-icon.png"
-import DownloadIcon from "@/assets/DownloadsPage/download-Icon.svg"
+import DownloadsHeading from "/assets/DownloadsPage/DownloadsHeading.png"
+import DocumentIcon from "/assets/DownloadsPage/document-icon.png"
+import DownloadIcon from "/assets/DownloadsPage/download-Icon.svg"
 import styles from './Downloads.module.scss'
 function Downloads() {
   return (

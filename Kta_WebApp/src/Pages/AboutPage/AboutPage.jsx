@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./AboutPage.module.scss";
 import CenterSlider from "@/Components/Slider/CenterSlider";
 import { fixingSolutionCardsData } from "@/Data/AboutPage";
-import heroBanner from "@/assets/AboutPage/heroBanner.png";
-import ourStoryPropImg from "@/assets/AboutPage/ourStoryProp.png";
-import missionSvg from "@/assets/AboutPage/missionSVG.svg";
-import visionSvg from "@/assets/AboutPage/visionSVG.svg";
+import heroBanner from "/assets/AboutPage/heroBanner.png";
+import ourStoryPropImg from "/assets/AboutPage/ourStoryProp.png";
+import missionSvg from "/assets/AboutPage/missionSVG.svg";
+import visionSvg from "/assets/AboutPage/visionSVG.svg";
 function AboutPage() {
   return (
     <>
