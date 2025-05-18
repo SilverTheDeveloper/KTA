@@ -60,6 +60,8 @@ input[type="search"]:not(:focus)::placeholder {
 
   color: #E31E24;
 }
+
+
 .navLink  {
   color: black ;
   font-family: Poppins;
@@ -72,7 +74,8 @@ input[type="search"]:not(:focus)::placeholder {
   align-items: center;
   margin-right: 1rem;
   @media (max-width:$mobile){
-    justify-content: left;
+    justify-content: center;
+    margin-right: 0rem;
   }
 }
 
@@ -93,7 +96,7 @@ input[type="search"]:not(:focus)::placeholder {
   margin-right: 1rem;
   @media(max-width:$mobile){
    color: black; 
-   justify-content: left;
+   justify-content: center;
   }
 
   &:hover{
@@ -130,6 +133,12 @@ input[type="search"]:not(:focus)::placeholder {
   font-size: 0.8rem !important;
   width: 100px; /* or any fixed size */
   margin-right: 1rem;
+
+  @media (max-width:$mobile) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
 
 }
 

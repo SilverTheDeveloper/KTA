@@ -13,4 +13,21 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media (max-width: 786px) {
+    display: flex;
+    height: 50px;
+    padding: 16px 20.5px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: end;
+    gap: 5px;
+    align-self: stretch;
+    color: #fff;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }
