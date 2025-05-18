@@ -16,20 +16,14 @@ import LandingPage from "@/Pages/LandingPage/LandingPage";
 const MainRoutes = () => {
 
   return (
-    <>
-      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to={"landingPage"} />}></Route>
-          <Route path="/landingPage" element={<LandingPage />} />
-
+          <Route path="/" element={<LandingPage />} ></Route>
           <Route path="/app" element={<AppLayout />}>
             {appRoutes.map((route, index) => (
               <Route path={route.path} element={route.element} key={index} />
             ))}{" "}
           </Route>
         </Routes>
-      </BrowserRouter>
-    </>
   );
 };
 

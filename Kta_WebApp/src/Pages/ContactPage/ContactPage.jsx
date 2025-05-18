@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './ContactPage.module.scss'
 import TopBanner from '@/Components/TopBanner/TopBanner'
-import ContactTopBanner from "@/Assets/ContactPage/ContactTopBanner.png";
-import Hours from "@/Assets/ContactPage/Hours.svg"
-import Call from "@/Assets/ContactPage/Call.svg"
-import Location from "@/Assets/ContactPage/Location.svg"
-import Mail from "@/Assets/ContactPage/Mail.svg"
+import ContactTopBanner from "@/assets/ContactPage/ContactTopBanner.png";
+import Hours from "@/assets/ContactPage/Hours.svg"
+import Call from "@/assets/ContactPage/Call.svg"
+import Location from "@/assets/ContactPage/Location.svg"
+import Mail from "@/assets/ContactPage/Mail.svg"
 function ContactPage() {
     return (
         <>

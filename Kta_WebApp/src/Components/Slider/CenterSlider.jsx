@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import materialOneImg from "@/Assets/AboutPage/materialOne.jpg";
-import materialTwoImg from "@/Assets/AboutPage/materialTwo.jpg";
-import materialThreeImg from "@/Assets/AboutPage/materialThree.jpg";
+import materialOneImg from "@/assets/AboutPage/materialOne.jpg";
+import materialTwoImg from "@/assets/AboutPage/materialTwo.jpg";
+import materialThreeImg from "@/assets/AboutPage/materialThree.jpg";
 import './CenterSlider.css';
 function CenterSlider() {
   const settings = {

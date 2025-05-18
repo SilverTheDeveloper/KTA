@@ -6,8 +6,13 @@ import Products from "@/Pages/Products/Products";
 import Downloads from "@/Pages/DownloadPage/Downloads";
 import ContactPage from "@/Pages/ContactPage/ContactPage";
 import BlogPage from "@/Pages/BlogPage/BlogPage";
+import LandingPage from "@/Pages/LandingPage/LandingPage";
 
 export const appRoutes = [
+  {
+    path: "landingPage",
+    element: <LandingPage />,
+  },
   {
     path: "about",
     element: <AboutPage />,

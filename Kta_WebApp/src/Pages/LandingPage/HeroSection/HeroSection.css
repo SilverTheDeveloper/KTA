@@ -4,7 +4,7 @@
   }
 
   .heroBannerFirst {
-    background-image: url(/Assets/LandingPage/HeroSection/HeroOne.png);
+    background-image: url(/assets/LandingPage/HeroSection/HeroOne.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 765px;
@@ -41,7 +41,7 @@
   /* // */
 
   .heroBannerSecond {
-    background-image: url(/Assets/LandingPage/HeroSection/HeroTwo.png);
+    background-image: url(/assets/LandingPage/HeroSection/HeroTwo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 765px;
@@ -77,7 +77,7 @@
   /* // */
 
   .heroBannerThird {
-    background-image: url(/Assets/LandingPage/HeroSection/HeroTwo.png);
+    background-image: url(/assets/LandingPage/HeroSection/HeroTwo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 765px;

@@ -4,7 +4,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { BsTelephone } from "react-icons/bs";
 import { MdMailOutline } from "react-icons/md";
 
-import ktaIcon from "@/Assets/LandingPage/KtaIcon.png";
+import ktaIcon from "@/assets/LandingPage/KtaIcon.png";
 import { Container } from "react-bootstrap";
 const FooterSection = () => {
   return (

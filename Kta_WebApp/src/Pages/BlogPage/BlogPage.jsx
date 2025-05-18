@@ -1,6 +1,6 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import React from "react";
-import blogsIcon from "@/Assets/BlogPage/Blogs.svg";
+import blogsIcon from "@/assets/BlogPage/Blogs.svg";
 import styles from "./BlogPage.module.scss";
 import { blogList } from "@/Data/BlogPage";
 import BlogCard from "@/Components/BlogCard/BlogCard";

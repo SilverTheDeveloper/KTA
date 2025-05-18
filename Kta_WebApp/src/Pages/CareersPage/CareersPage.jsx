@@ -1,7 +1,7 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import React from "react";
 import styles from "./CareersPage.module.scss";
-import bannerImg from "@/Assets/CareersPage/CareersHeading.png";
+import bannerImg from "@/assets/CareersPage/CareersHeading.png";
 const CareersPage = () => {
   return (
     <div id={styles.Careers}>

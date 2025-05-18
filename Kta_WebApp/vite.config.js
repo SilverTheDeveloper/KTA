@@ -5,9 +5,10 @@ import path from "node:path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.VITE_BASE_PAATH || "./",
+  base: "/",
   resolve: {
     alias: {
+      // eslint-disable-next-line no-undef
       "@": path.resolve(__dirname, "src"), // Now '@' refers to 'src' folder
     },
   },

@@ -118,7 +118,7 @@ $mobile: 768px;
     position: relative;
     height: 68px;
     width: 68px;
-    background-image: url("/public/assets/LandingPage/FooterPlatformIcon/PlatFacebook.png");
+    background-image: url('/assets/LandingPage/FooterPlatformIcon/PlatFacebook.png');
     background-repeat: no-repeat;
     background-size: contain; /* Ensure the image maintains its aspect ratio */
     transition: transform 0.3s ease-in-out;
@@ -134,7 +134,7 @@ $mobile: 768px;
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url("/public/assets/LandingPage/FooterPlatformIcon/PlatFacebookHover.png");
+      background-image: url('/assets/LandingPage/FooterPlatformIcon/PlatFacebookHover.png');
       background-repeat: no-repeat;
       background-size: contain; /* Match the original size */
       background-position: center;
@@ -153,7 +153,7 @@ $mobile: 768px;
     position: relative;
     height: 68px;
     width: 68px;
-    background-image: url("/public/assets/LandingPage/FooterPlatformIcon/PlatWhatsapp.png");
+    background-image: url('/assets/LandingPage/FooterPlatformIcon/PlatWhatsapp.png');
     background-repeat: no-repeat;
     background-size: contain; /* Ensure the image maintains its aspect ratio */
     transition: transform 0.3s ease-in-out;
@@ -188,7 +188,7 @@ $mobile: 768px;
     position: relative;
     height: 68px;
     width: 68px;
-    background-image: url("/public/assets/LandingPage/FooterPlatformIcon/PlatInstagram.png");
+    background-image: url('/assets/LandingPage/FooterPlatformIcon/PlatInstagram.png');
     background-repeat: no-repeat;
     background-size: contain; /* Ensure the image maintains its aspect ratio */
     transition: transform 0.3s ease-in-out;
@@ -204,7 +204,7 @@ $mobile: 768px;
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url("/public/assets/LandingPage/FooterPlatformIcon/PlatInstagramHover.png");
+      background-image: url('/assets/LandingPage/FooterPlatformIcon/PlatInstagramHover.png');
       background-repeat: no-repeat;
       background-size: contain; /* Match the original size */
       background-position: center;
