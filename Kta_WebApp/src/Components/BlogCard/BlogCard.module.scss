@@ -10,7 +10,7 @@ $mobile: 768px;
   border: 2px solid #e2e2e2;
   background: #fff;
   @media screen and (max-width: $mobile) {
-    width: 170px;
+    width: 156px;
     gap: 16px;
   }
 
@@ -19,7 +19,7 @@ $mobile: 768px;
       width: 330px;
       border-radius: 13px 13px 0px 0px;
       @media screen and (max-width: $mobile) {
-        width: 168px;
+        width: 153px;
         height: 87.653px;
       }
     }
