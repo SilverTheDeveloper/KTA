@@ -1,7 +1,6 @@
 #heroDesk {
-
   display: block;
-  @media (max-width:786px){
+  @media (max-width: 786px) {
     display: none;
   }
   .slick-arrow {
@@ -169,8 +168,21 @@
 
 .heroSectionMob {
   display: none;
-  @media (max-width:786px){
+  @media (max-width: 786px) {
     display: block;
+  }
+
+  .CoverImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .CoverImg img {
+    width: 376px;
+    height: 224px;
+    border-radius: 8px;
   }
   .heroTextBlock {
     display: flex;
@@ -178,25 +190,33 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background-image: url(../../../../public/assets/LandingPage/HeroSection/HeroOne.png);
+    /* background-image: url(../../../../public/assets/LandingPage/HeroSection/HeroOne.png); */
     background-size: cover;
-    height: 400px;
+    height: 285px;
   }
   .heroHeading {
     text-align: center;
+    width: 80%;
+  }
+  .heroHeading p {
     font-family: Manrope;
     font-size: 24px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 125.025%; /* 30.006px */
-    color: white;
-    display: flex;
+    /* color: white; */
     flex-wrap: wrap;
-    width: 80%;
+    margin-bottom: 0;
+  }
 
+  .heroHeading span {
+    background: linear-gradient(128deg, #e31e24 15.67%, #262065 53.76%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .heroDetails {
-    color:white;
+    /* color: white; */
     text-align: center;
     font-family: Poppins;
     font-size: 10px;
@@ -209,4 +229,8 @@
     width: 70%;
   }
 
+  .outline-button {
+    color: black !important;
+    border: 1px solid black !important;
+  }
 }

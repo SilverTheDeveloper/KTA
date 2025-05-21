@@ -75,7 +75,8 @@ $mobile: 786px;
     }
     .productContainerMob {
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
+      flex-wrap: wrap;
       gap: 2rem;
       width: 100%;
       justify-content: center;

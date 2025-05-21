@@ -2,7 +2,6 @@ $mobile: 786px;
 .ProductContainer {
   width: 220px;
   @media (max-width: $mobile) {
-    width: 90%;
     text-align: center;
   }
 
@@ -18,6 +17,10 @@ $mobile: 786px;
       height: 100%;
       object-fit: cover;
       transition: transform 0.2s ease-in-out;
+      @media (max-width: $mobile) {
+        width: auto;
+      }
+
       &:hover {
         transform: scale(1.2);
       }
