@@ -6,7 +6,7 @@ import secondSectionPic from "../../../public/assets/AboutPage/SecondSectionPic.
 import thirdSectionPic from "../../../public/assets/AboutPage/ThirdSectionPic.png";
 import forthSectionPic from "../../../public/assets/AboutPage/ForthSectionPic.png";
 import missionSvg from "../../../public/assets/AboutPage/MissionIcon.svg";
-import visionSvg from "../../../public/assets/AboutPage/visionIcon.svg";
+import visionSvg from "../../../public/assets/AboutPage/VisionIcon.svg";
 
 import missionSvgMob from "../../../public/assets/AboutPage/mobView/MissionIcon.svg";
 import visionSvgMob from "../../../public/assets/AboutPage/mobView/VisionIcon.svg";
