@@ -8,6 +8,10 @@ import forthSectionPic from "../../../public/assets/AboutPage/ForthSectionPic.pn
 import missionSvg from "../../../public/assets/AboutPage/MissionIcon.svg";
 import visionSvg from "../../../public/assets/AboutPage/visionIcon.svg";
 
+import missionSvgMob from "../../../public/assets/AboutPage/mobView/MissionIcon.svg";
+import visionSvgMob from "../../../public/assets/AboutPage/mobView/VisionIcon.svg";
+
+
 import ReliabilityIcon from "../../../public/assets/AboutPage/SmallItems/ReliabilityIcon.svg";
 import IntegrityIcon from "../../../public/assets/AboutPage/SmallItems/IntegrityIcon.svg";
 import ExcellenceIcon from "../../../public/assets/AboutPage/SmallItems/ExcellenceIcon.svg";
@@ -22,7 +26,7 @@ function AboutPage() {
       </div>
 
       <div className={`${styles.Container} ${styles.HalfHalfSection}`}>
-        <div>
+        <div className={styles.sectionDesc}>
           <div className={styles.KTAHeading}>KTA Solutions</div>
           <div className={styles.OurStoryHeading}>India’s New Standard in Tile & Stone Solutions.</div>
           <div className={styles.OurStoryDesc}>
@@ -37,7 +41,7 @@ function AboutPage() {
           </div>
         </div>
         <div className={styles.propDivFirst}>
-          <img src={firstSectionPic} alt="" />
+          {/* <img src={firstSectionPic} alt="" /> */}
         </div>
       </div>
 
@@ -76,9 +80,26 @@ function AboutPage() {
       </div>
 
 
+      <div className={styles.MissionVisionMob}>
+        <div className={styles.MissionMob}>
+          <div className={styles.Heading}><img src={missionSvgMob} alt="" />Mission</div>
+          <div className={styles.Desc}>
+            To provide premium, sustainable, and innovative solutions in ceramics, stone care, and surface protection that enhance durability, aesthetics, and functionality.
+          </div>
+        </div>
+        <div className={styles.VisionMob}>
+          <div className={styles.Heading}><img src={visionSvgMob} alt="" />Vision</div>
+          <div className={styles.Desc}>
+            To be a global leader in advanced material solutions, setting industry benchmarks for quality, sustainability, and customer satisfaction.
+          </div>
+        </div>
+      </div>
+
+
+
       <div className={styles.ValuesSection}>
         <div className={styles.HeadingSection}>
-          <div className={styles.Heading}>Our Core Values</div>
+          <div className={styles.Heading}>Our <span className={styles.spanHeading}>Core</span> Values</div>
           <div className={styles.Desc}>At KTA Solutions, these four principles guide everything we create, build, and stand for</div>
         </div>
         <div className={` ${styles.HalfHalfSection}`}>
