@@ -11,6 +11,7 @@ $mobile: 786px;
   border-radius: 16px;
   background: #191919;
   gap: 50px;
+  overflow: hidden;
   @media (max-width: $mobile) {
     display: flex;
     padding-top: 2%;

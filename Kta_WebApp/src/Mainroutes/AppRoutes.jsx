@@ -1,4 +1,3 @@
-import AboutPage from "@/Pages/AboutPage/AboutPage";
 import CareersPage from "@/Pages/CareersPage/CareersPage";
 import CalculatorPage from "@/Pages/CalculatorPage/CalculatorPage";
 
@@ -7,6 +6,7 @@ import Downloads from "@/Pages/DownloadPage/Downloads";
 import ContactPage from "@/Pages/ContactPage/ContactPage";
 import BlogPage from "@/Pages/BlogPage/BlogPage";
 import LandingPage from "@/Pages/LandingPage/LandingPage";
+import AboutPage from "@/Pages/AboutPage/AboutPage";
 
 export const appRoutes = [
   {

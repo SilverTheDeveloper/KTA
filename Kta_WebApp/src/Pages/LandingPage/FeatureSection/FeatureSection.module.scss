@@ -12,6 +12,7 @@ $mobile: 768px;
   position: relative;
   @media screen and (max-width: $mobile) {
     justify-content: center;
+  margin: 10px 60px;
   }
 
   .LeftSection {
@@ -21,7 +22,9 @@ $mobile: 768px;
     @media screen and (max-width: $mobile) {
       font-size: 10px;
       margin-top: 0;
-      align-items: center;
+      margin-top: 100px;
+      // border: 1px solid black;
+
     }
     .Text {
       margin-top: 16px;
@@ -35,10 +38,9 @@ $mobile: 768px;
       display: flex;
       flex-direction: column;
       @media screen and (max-width: $mobile) {
-        align-items: center;
+        align-items: left;
       }
 
-      gap: 5px;
       .Heading {
         font-family: Manrope;
         font-size: 16px;
@@ -56,6 +58,7 @@ $mobile: 768px;
           font-size: 12px;
           line-height: normal;
           margin-bottom: 0;
+          align-items: left;
         }
       }
       .SubHeading {
@@ -70,7 +73,8 @@ $mobile: 768px;
           font-size: 24px;
           line-height: 30px;
           margin-bottom: 0;
-          text-align: center;
+          align-items: left;
+
         }
       }
     }

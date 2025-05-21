@@ -54,7 +54,7 @@ $mobile: 768px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%;
-
+    width: fit-content;
     @media (max-width: $mobile) {
       color: #222;
       leading-trim: both;

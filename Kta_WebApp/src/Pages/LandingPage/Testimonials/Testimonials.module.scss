@@ -10,12 +10,17 @@
   @media (max-width: 786px) {
     margin-bottom: 50px;
     gap: 50px;
+    margin-top: 0px;
   }
 }
 
 .HeadingSection {
   width: 390px !important;
   align-self: center;
+
+  @media (max-width:786px){
+    width: 50% !important;
+  }
 }
 
 .TestiCardsWrapper {

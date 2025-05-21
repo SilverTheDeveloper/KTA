@@ -5,7 +5,6 @@ $mobile: 768px;
   position: relative;
   @media (max-width: $mobile) {
     height: fit-content;
-    border: 1px solid green;
   }
 
   img {
@@ -14,9 +13,11 @@ $mobile: 768px;
     position: relative;
     width: 100%;
     overflow: hidden;
-    
+
     @media (max-width: $mobile) {
       width: 100%;
+      height: 300px;
+      overflow: hidden;
     }
   }
 }
@@ -114,17 +115,16 @@ $mobile: 768px;
   cursor: pointer;
   color: white;
   transition: color 0.3s ease, border 0.3s ease;
-font-size: 1rem;
+  font-size: 1rem;
 
-@media (max-width: $mobile) {
-  font-size: 0.6rem;
-  background: var(
-    --brand,
-    linear-gradient(100deg, #e31e24 7.47%, #262065 92.53%)
-  );
-  border: none;
-}
-
+  @media (max-width: $mobile) {
+    font-size: 0.6rem;
+    // background: var(
+    //   --brand,
+    //   linear-gradient(100deg, #e31e24 7.47%, #262065 92.53%)
+    // );
+    border: 1px solid white;
+  }
 }
 
 .outline-button::before {
@@ -142,22 +142,18 @@ font-size: 1rem;
   transition: opacity 0.3s ease;
   z-index: -1;
   border-radius: inherit;
-  
 }
 
 .outline-button:hover::before {
   opacity: 1;
-  
 }
 
 .outline-button:hover {
   color: white;
   border-color: transparent;
-  
 }
 
 .slick-dots {
-  
   position: absolute;
   bottom: 272px;
   display: block;
@@ -173,7 +169,6 @@ font-size: 1rem;
 
   @media (max-width: $mobile) {
     display: none;
-
   }
 }
 
@@ -181,8 +176,7 @@ font-size: 1rem;
   font-size: 8px; /* Adjust size if needed */
   color: rgba(255, 255, 255, 0.28); /* Default dot color */
   opacity: 1; /* Less prominent when not active */
-  
-  
+
   @media (max-width: $mobile) {
     display: none;
   }
@@ -191,8 +185,7 @@ font-size: 1rem;
 .slick-dots li.slick-active button:before {
   color: #e31e24; /* Active dot color (e.g., Facebook blue) */
   opacity: 1; /* Fully visible */
-  
-  
+
   @media (max-width: $mobile) {
     display: none;
   }
@@ -201,9 +194,7 @@ font-size: 1rem;
 .slick-dots li {
   margin: 0 0px; /* Reduce this value to control spacing, or use 0 for no gap */
   padding: 0;
-  
 
-  
   @media (max-width: $mobile) {
     display: none;
   }
