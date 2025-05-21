@@ -20,18 +20,32 @@ $mobile: 768px;
   grid-template-columns: 1fr 1fr; /* 50% / 50% split */
   gap: 5rem;
   @media (max-width: $mobile) {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column-reverse;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    // margin-top: 50px;
+    // margin-bottom: 50px;
   }
-  img {
+
+  .propDivFirst {
+    background-image: url(/public/assets/AboutPage/FirstSectionPic.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
     @media (max-width: $mobile) {
-      width: 60%;
+      background-image: url(../../../public//assets//AboutPage/mobView/FirstSectionPic.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 200px;
     }
   }
 
+  .sectionDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
   .KTAHeading {
     leading-trim: both;
     text-edge: cap;
@@ -45,6 +59,23 @@ $mobile: 768px;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $mobile) {
+      text-align: center;
+      leading-trim: both;
+      text-edge: cap;
+      font-family: Manrope;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 125.025%; /* 30.006px */
+      letter-spacing: 4.08px;
+      text-transform: uppercase;
+      background: linear-gradient(94deg, #e31e24 3.43%, #262065 45.67%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
   .OurStoryHeading {
     color: #222;
@@ -56,13 +87,15 @@ $mobile: 768px;
     font-weight: 300;
     line-height: 125.025%; /* 70.014px */
     @media (max-width: $mobile) {
-      color: #000;
+      color: #222;
       text-align: center;
+      leading-trim: both;
+      text-edge: cap;
       font-family: Manrope;
-      font-size: 24px;
+      font-size: 30.144px;
       font-style: normal;
-      font-weight: 800;
-      line-height: 30.65px;
+      font-weight: 300;
+      line-height: 125.025%; /* 37.688px */
     }
   }
 
@@ -76,25 +109,20 @@ $mobile: 768px;
     line-height: normal;
     @media (max-width: $mobile) {
       color: #000;
-      text-align: center;
+      text-align: justify;
       font-family: Poppins;
-      font-size: 10px;
+      font-size: 12px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
     }
   }
-  .propDivFirst {
-    justify-content: right;
-    align-items: center;
-    display: flex;
-  }
 
   //second section
 
-    .OurMissionBlock {
-      width: 100%;
-      display: flex;
+  .OurMissionBlock {
+    width: 100%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -130,13 +158,16 @@ $mobile: 768px;
     justify-content: left;
     align-items: center;
     display: flex;
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
 
-
   //third section
-.OurVisionBlock {
+
+  .OurVisionBlock {
     width: 100%;
-  
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,6 +214,11 @@ $mobile: 768px;
   gap: 4rem;
   padding-bottom: 100px;
 
+  @media (max-width: $mobile) {
+    gap: 1rem;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
   .HeadingSection {
     display: flex;
@@ -206,6 +242,33 @@ $mobile: 768px;
       font-style: normal;
       font-weight: 800;
       line-height: 43.784px;
+      @media (max-width: $mobile) {
+        background: linear-gradient(104deg, #000000 30.28%, #000000 56.6%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        color: #000;
+        text-align: center;
+        font-family: Manrope;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 32px; /* 133.333% */
+      }
+      .spanHeading {
+        @media (max-width: $mobile) {
+          background: linear-gradient(107deg, #e31e24 56.72%, #262065 122.39%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-family: Manrope;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 800;
+          line-height: 32px;
+        }
+      }
     }
 
     .Desc {
@@ -216,6 +279,16 @@ $mobile: 768px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+      @media (max-width: $mobile) {
+        color: #3e3e3e;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-inline: 5%;
+      }
     }
   }
   .gridContainer {
@@ -234,6 +307,24 @@ $mobile: 768px;
       align-items: center;
       gap: 5.945px;
       flex-shrink: 0;
+      img {
+        width: 46.98px;
+        height: 46.98px;
+        aspect-ratio: 46.98/46.98;
+      }
+      @media (max-width: $mobile) {
+        display: flex;
+        width: 162.318px;
+        height: 183.96px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4.289px;
+        border-radius: 14px;
+        border: 0.361px solid #e31e2513;
+        background: #f6f6f6;
+        box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.075);
+      }
 
       .Heading {
         color: #000;
@@ -242,6 +333,16 @@ $mobile: 768px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+
+        @media (max-width: $mobile) {
+          color: #000;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+        }
       }
       .Desc {
         color: #3e3e3e;
@@ -251,16 +352,95 @@ $mobile: 768px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        @media (max-width: $mobile) {
+          color: #3e3e3e;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 90%;
+        }
       }
     }
   }
 }
 
-
-.Mission{
-padding-bottom: 100px;
+.Vision {
+  padding-bottom: 100px;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
-.Vision{
-padding-bottom: 100px;
+.Mission {
+  padding-bottom: 100px;
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
 
+.MissionVisionMob {
+  display: none;
+  @media (max-width: $mobile) {
+    background-color: black;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Heading {
+    color: #fff;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .Desc {
+    color: #fff;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .VisionMob {
+    background-image: url(/public/assets/AboutPage//mobView/VisinoBG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // width: 90%;
+    margin-bottom: 10% !important;
+    margin: 5%;
+    padding: 10%;
+    gap: 1rem;
+    border-radius: 10px;
+  }
+  .MissionMob {
+    background-image: url(/public/assets/AboutPage//mobView/MissionBG.png);
+        background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // width: 90%;
+    margin-top: 10% !important;
+    margin-bottom: 0 !important;
+    margin: 5%;
+    padding: 10%;
+    gap: 1rem;
+    border-radius: 10px;
+    
+  }
 }
