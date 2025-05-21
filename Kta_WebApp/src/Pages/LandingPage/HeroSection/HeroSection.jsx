@@ -65,7 +65,7 @@ function HeroSection() {
 
       <div className="heroSectionMob">
         <div className="CoverImg">
-          <img src="../../../../public/assets/LandingPage/HeroSection/HeroOne.png" />
+          <img src="/assets/LandingPage/HeroSection/HeroOne.png" />
         </div>
         <div className="heroTextBlock">
           <div className="heroHeading">
