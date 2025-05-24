@@ -5,39 +5,45 @@ import firstSliderImg3 from "/assets/LandingPage/FirstSlider/3.png";
 import firstSliderImg4 from "/assets/LandingPage/FirstSlider/4.png";
 export const ProductList = [
   {
-    img: "/assets/LandingPage/ceremic solutions.svg",
-    title: "Ceremic Solutions",
+    img1: "/assets/LandingPage/ProductsLisPics/Tile1.png",
+    img2: "/assets/LandingPage/ProductsLisPics/Tile2.png",
+    title: "Tile Adhesives",
     description:
-      "High-performance ceramic materials designed for strength and longevity.",
+      "Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
   },
   {
-    img: "/assets/LandingPage/stone care.svg",
-    title: "Stone Care & Protection",
+    img1: "/assets/LandingPage/ProductsLisPics/Stone1.png",
+    img2: "/assets/LandingPage/ProductsLisPics/Stone2.png",
+    title: "Stone Adhesives",
     description:
-      "Premium products to enhance, clean, and preserve natural stones.",
+      "High-strength adhesives for natural and engineered stone. Suitable for vertical and horizontal applications.",
   },
   {
-    img: "/assets/LandingPage/surface care.svg",
-    title: "Surface Care",
-    description: "Advanced solutions for maintenance and protection.",
+    img1: "/assets/LandingPage/ProductsLisPics/StoneCare1.png",
+    img2: "/assets/LandingPage/ProductsLisPics/StoneCare2.png",
+    title: "Stone Care",
+    description: "Sealers, enhancers, and cleaners to protect and enhance stone surfaces—indoors and outdoors.",
   },
   {
-    img: "/assets/LandingPage/repair solution.svg",
+    img1: "/assets/LandingPage/ProductsLisPics/Repair1.png",
+    img2: "/assets/LandingPage/ProductsLisPics/Repair2.png",
     title: "Repair Solutions",
     description:
-      "Professional-grade products to restore and strengthen surfaces",
-  },,
+      "Specialized products to restore tiles and stone. Long-lasting results for both interior and exterior areas.",
+  }, ,
   {
-    img: "/assets/LandingPage/stone care.svg",
-    title: "Stone Care & Protection",
+    img1: "/assets/LandingPage/ProductsLisPics/Joint1.png",
+    img2: "/assets/LandingPage/ProductsLisPics/Joint2.png",
+    title: "Tile Joint Fillers",
     description:
-      "Premium products to enhance, clean, and preserve natural stones.",
+      "Smooth, durable fillers for tile joints. Improve aesthetics and durability across all spaces.",
   },
   {
-    img: "/assets/LandingPage/stone care.svg",
-    title: "Stone Care & Protection",
+    img1: "/assets/LandingPage/ProductsLisPics/Application1.png",
+    img2: "/assets/LandingPage/ProductsLisPics/Application2.png",
+    title: "Application Tools",
     description:
-      "Premium products to enhance, clean, and preserve natural stones.",
+      "Professional tools—trowels, spacers, floats, and wedges—for precise, hassle-free installation.",
   }
 ];
 
@@ -115,7 +121,7 @@ export const firstSliderData = [
   firstSliderImg2,
   firstSliderImg3,
   firstSliderImg4
-  
+
 ];
 
 export const secondSliderData = [

@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./AboutPage.module.scss";
 import heroBanner from "../../../public/assets/AboutPage/heroBanner.png";
-import firstSectionPic from "../../../public/assets/AboutPage/FirstSectionPic.png";
-import secondSectionPic from "../../../public/assets/AboutPage/SecondSectionPic.png";
-import thirdSectionPic from "../../../public/assets/AboutPage/ThirdSectionPic.png";
-import forthSectionPic from "../../../public/assets/AboutPage/ForthSectionPic.png";
+
 import missionSvg from "../../../public/assets/AboutPage/MissionIcon.svg";
 import visionSvg from "../../../public/assets/AboutPage/VisionIcon.svg";
 
@@ -49,7 +46,7 @@ function AboutPage() {
       <div className={`${styles.Mission} ${styles.HalfHalfSection}`}>
 
         <div className={styles.propDivSecond}>
-          <img src={secondSectionPic} alt="" />
+
         </div>
         <div className={styles.OurMissionBlock}>
           <div className={styles.OurMissionSmallBlock}>
@@ -75,7 +72,7 @@ function AboutPage() {
           </div>
         </div>
         <div className={styles.propDivThird}>
-          <img src={thirdSectionPic} alt="" />
+
         </div>
       </div>
 
@@ -104,8 +101,7 @@ function AboutPage() {
         </div>
         <div className={` ${styles.HalfHalfSection}`}>
 
-          <div className={styles.propDivSecond}>
-            <img src={forthSectionPic} alt="" />
+          <div className={styles.propDivForth}>
           </div>
           <div class={styles.gridContainer}>
             <div class={styles.gridItem}>

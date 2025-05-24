@@ -1,4 +1,33 @@
 $mobile: 768px;
+/* Extra small devices (portrait phones) */
+@media (max-width: 575.98px) {
+  /* styles */
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* styles */
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* styles */
+}
+
+/* Large devices (desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* styles */
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  /* styles */
+}
+
+/* Extra extra large devices (larger desktops) */
+@media (min-width: 1400px) {
+  /* styles */
+}
 
 //heroBanner
 .Container {
@@ -30,8 +59,9 @@ $mobile: 768px;
 
   .propDivFirst {
     background-image: url(/public/assets/AboutPage/FirstSectionPic.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
 
     @media (max-width: $mobile) {
       background-image: url(../../../public//assets//AboutPage/mobView/FirstSectionPic.png);
@@ -76,6 +106,10 @@ $mobile: 768px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    @media (min-width: 1400px) {
+      font-size: 3rem;
+    }
   }
   .OurStoryHeading {
     color: #222;
@@ -97,6 +131,10 @@ $mobile: 768px;
       font-weight: 300;
       line-height: 125.025%; /* 37.688px */
     }
+
+    @media (min-width: 1400px) {
+      font-size: 4rem;
+    }
   }
 
   .OurStoryDesc {
@@ -116,6 +154,10 @@ $mobile: 768px;
       font-weight: 400;
       line-height: normal;
     }
+
+    @media (min-width: 1400px) {
+      font-size: 1.5rem;
+    }
   }
 
   //second section
@@ -129,6 +171,10 @@ $mobile: 768px;
   }
   .OurMissionSmallBlock {
     width: 50%;
+
+    @media (min-width: 1400px) {
+      width: 70%;
+    }
   }
   .OurMissionHeading {
     color: #000;
@@ -144,6 +190,10 @@ $mobile: 768px;
         transform: scale(0.8);
       }
     }
+
+    @media (min-width: 1400px) {
+      font-size: 3.5rem;
+    }
   }
 
   .OurMissionDesc {
@@ -153,11 +203,24 @@ $mobile: 768px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media (min-width: 1400px) {
+      font-size: 1.5rem;
+    }
   }
   .propDivSecond {
-    justify-content: left;
-    align-items: center;
-    display: flex;
+    // justify-content: left;
+    // align-items: center;
+    // display: flex;
+    // background-size: cover;
+
+    background-image: url(/public/assets/AboutPage/SecondSectionPic.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 500px;
+
     @media (max-width: $mobile) {
       display: none;
     }
@@ -175,6 +238,10 @@ $mobile: 768px;
   }
   .OurVisionSmallBlock {
     width: 50%;
+
+    @media (min-width: 1400px) {
+      width: 70%;
+    }
   }
   .OurVisionHeading {
     color: #000;
@@ -189,6 +256,14 @@ $mobile: 768px;
         margin-bottom: 0px;
         transform: scale(0.8);
       }
+
+      @media (min-width: 1400px) {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      font-size: 3.5rem;
     }
   }
 
@@ -199,12 +274,27 @@ $mobile: 768px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media (min-width: 1400px) {
+      font-size: 1.5rem;
+    }
   }
 
   .propDivThird {
-    justify-content: right;
-    align-items: center;
-    display: flex;
+    // justify-content: right;
+    // align-items: center;
+    // display: flex;
+
+    background-image: url(/public/assets/AboutPage/ThirdSectionPic.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    min-height: 500px;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
 }
 
@@ -218,6 +308,19 @@ $mobile: 768px;
     gap: 1rem;
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  .propDivForth {
+    background-image: url(/public/assets/AboutPage/ForthSectionPic.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    min-height: 500px;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
 
   .HeadingSection {
@@ -242,6 +345,10 @@ $mobile: 768px;
       font-style: normal;
       font-weight: 800;
       line-height: 43.784px;
+
+      @media (min-width: 1400px) {
+        font-size: 4rem;
+      }
       @media (max-width: $mobile) {
         background: linear-gradient(104deg, #000000 30.28%, #000000 56.6%);
         background-clip: text;
@@ -279,6 +386,10 @@ $mobile: 768px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      @media (min-width: 1400px) {
+        font-size: 1.5rem;
+      }
       @media (max-width: $mobile) {
         color: #3e3e3e;
         text-align: center;
@@ -298,7 +409,10 @@ $mobile: 768px;
     gap: 10px;
     max-width: 400px;
     margin: 0 auto;
-
+    @media (min-width: 1400px) {
+      max-width: 500px;
+      gap: 1rem;
+    }
     .gridItem {
       display: flex;
       flex-direction: column;
@@ -307,10 +421,17 @@ $mobile: 768px;
       align-items: center;
       gap: 5.945px;
       flex-shrink: 0;
+
       img {
         width: 46.98px;
         height: 46.98px;
         aspect-ratio: 46.98/46.98;
+
+        @media (min-width: 1400px) {
+          width: 90px;
+          height: 90px;
+          aspect-ratio: 46.98/46.98;
+        }
       }
       @media (max-width: $mobile) {
         display: flex;
@@ -334,6 +455,9 @@ $mobile: 768px;
         font-weight: 600;
         line-height: normal;
 
+        @media (min-width: 1400px) {
+          font-size: 1.5rem;
+        }
         @media (max-width: $mobile) {
           color: #000;
           text-align: center;
@@ -352,6 +476,10 @@ $mobile: 768px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+
+        @media (min-width: 1400px) {
+          font-size: 1rem;
+        }
         @media (max-width: $mobile) {
           color: #3e3e3e;
           text-align: center;
@@ -429,7 +557,7 @@ $mobile: 768px;
   }
   .MissionMob {
     background-image: url(/public/assets/AboutPage//mobView/MissionBG.png);
-        background-size: cover;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -441,6 +569,5 @@ $mobile: 768px;
     padding: 10%;
     gap: 1rem;
     border-radius: 10px;
-    
   }
 }

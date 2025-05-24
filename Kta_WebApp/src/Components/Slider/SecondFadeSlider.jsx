@@ -18,7 +18,7 @@ function SecondFadeSlider() {
     autoplaySpeed: 2000,
   };
   return (
-    <div className="slider-container">
+    <div className="slider-container SecondFadeSlider" >
       <Slider {...settings}>
         {
           secondSliderData.map((data,index)=>(
