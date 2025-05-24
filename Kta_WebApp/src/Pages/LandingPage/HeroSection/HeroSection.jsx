@@ -1,6 +1,7 @@
 import React from 'react'
 import './HeroSection.css'
 import Slider from "react-slick";
+import HeroMob from "../../../../public/assets/LandingPage/HeroSection/HeroMob.png"
 function HeroSection() {
 
     const settings = {
@@ -71,6 +72,11 @@ function HeroSection() {
             </div>
 
             <div className="heroSectionMob" >
+
+                <div className='heroBannerMob'>
+                    <img src={HeroMob} alt="" />
+                </div>
+
                 <div className='heroTextBlock'>
 
                 <div className="heroHeading">

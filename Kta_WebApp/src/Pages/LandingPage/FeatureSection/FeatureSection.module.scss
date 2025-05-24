@@ -5,11 +5,13 @@ $mobile: 768px;
   padding: 40px 50px;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content:space-around;
   // gap: 70px;
   flex-wrap: wrap;
   margin: 80px 60px;
   position: relative;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
   @media screen and (max-width: $mobile) {
     justify-content: center;
   margin: 10px 60px;

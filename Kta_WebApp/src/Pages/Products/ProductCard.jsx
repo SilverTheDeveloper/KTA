@@ -1,13 +1,17 @@
 import React from 'react'
 import styles from './Products.module.scss'
-
-function ProductCard({data}) {
+import rightIcon from '../../../public/assets/ProductsPage/rightIcon.svg'
+function ProductCard({ data }) {
     return (
         <div className={styles.ProductCard}>
-            <img src={data.img} alt="" />
+            <div className={styles.ProductImg}>
+                <img src={data.img} alt="" />
+            </div>
+
             <div>
-                <div className={styles.ProductName}>{data.name} <span className={styles.ProductType}>{data.type}</span></div>
+                <div className={styles.ProductName}>{data.name} </div>
                 <div className={styles.ProductSpec}>{data.spec}</div>
+                <div className={styles.LinkToProduct}>Explore Products <img src={rightIcon} alt="" /></div>
             </div>
         </div>
     )

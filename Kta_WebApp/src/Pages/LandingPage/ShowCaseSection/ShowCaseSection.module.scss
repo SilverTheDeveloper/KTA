@@ -9,6 +9,7 @@ $mobile: 786px;
   margin-bottom: 50px;
   @media (max-width: $mobile) {
     display: none;
+    
   }
   .ShowCaseContainer {
     display: flex;
@@ -74,9 +75,11 @@ $mobile: 786px;
       line-height: normal;
     }
     .productContainerMob {
+
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
       width: 100%;
       justify-content: center;
       align-items: center;

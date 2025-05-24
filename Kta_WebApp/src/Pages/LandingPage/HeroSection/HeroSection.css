@@ -1,7 +1,6 @@
 #heroDesk {
-
   display: block;
-  @media (max-width:786px){
+  @media (max-width: 786px) {
     display: none;
   }
   .slick-arrow {
@@ -12,8 +11,10 @@
     background-image: url(/assets/LandingPage/HeroSection/HeroOne.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: bottom;
     height: 765px;
   }
+
   .heroBannerFirstBlock {
     display: flex;
     flex-direction: column;
@@ -49,6 +50,7 @@
     background-image: url(/assets/LandingPage/HeroSection/HeroTwo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: bottom;
     height: 765px;
   }
   .heroBannerSecondBlock {
@@ -85,6 +87,7 @@
     background-image: url(/assets/LandingPage/HeroSection/HeroTwo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: bottom;
     height: 765px;
   }
   .heroBannerThirdBlock {
@@ -169,7 +172,7 @@
 
 .heroSectionMob {
   display: none;
-  @media (max-width:786px){
+  @media (max-width: 786px) {
     display: block;
   }
   .heroTextBlock {
@@ -178,9 +181,15 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background-image: url(../../../../public/assets/LandingPage/HeroSection/HeroOne.png);
+    /* background-image: url(../../../../public/assets/LandingPage/HeroSection/HeroOne.png); */
     background-size: cover;
-    height: 400px;
+    margin-top:5% ;
+  }
+  .heroBannerMob{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .heroHeading {
     text-align: center;
@@ -188,15 +197,18 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 800;
-    line-height: 125.025%; /* 30.006px */
-    color: white;
+    line-height: 125.025%;
+    color: black;
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-
+    background: linear-gradient(128deg, #e31e24 15.67%, #262065 53.76%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   .heroDetails {
-    color:white;
+    color: black;
     text-align: center;
     font-family: Poppins;
     font-size: 10px;
@@ -208,5 +220,8 @@
     flex-wrap: wrap;
     width: 70%;
   }
-
+  .outline-button {
+    color: black;
+    border-color: black;
+  }
 }

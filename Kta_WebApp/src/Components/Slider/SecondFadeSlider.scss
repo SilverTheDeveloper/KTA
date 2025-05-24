@@ -155,7 +155,7 @@ $mobile: 768px;
 
 .slick-dots {
   position: absolute;
-  bottom: 272px;
+  bottom: 50%;
   display: block;
   // width: 100%;
   padding: 0;
@@ -199,3 +199,5 @@ $mobile: 768px;
     display: none;
   }
 }
+
+

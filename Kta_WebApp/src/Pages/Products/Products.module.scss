@@ -1,16 +1,77 @@
+$mobile: 786px;
+
 #Products {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  
 }
+.FilterOptionMob {
+  display: none ;
 
+  @media (max-width: $mobile) {
+    display: block !important;
+
+  }
+}
+.outlineButton {
+    display: flex;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 99px;
+    border: 1px solid #e2e2e2;
+    transition: background 0.5s ease-in-out;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      transition: background 0.5s ease-in-out;
+      transition: color 0.2s ease-in-out;
+      @media (max-width: $mobile) {
+        background-color: white;
+        color: black;
+      }
+    }
+
+    .optionText {
+      font-size: 0.7rem;
+    }
+  }
+.TypesOfProducts {
+  text-align: left;
+  width: 90%;
+  margin-top: 2rem;
+  .ProductTypeHeading {
+    color: #000;
+    font-family: Poppins;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .ProductTypeDesc {
+    color: #000;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
 .FilterButtons {
   width: 85%;
   display: flex;
   gap: 1rem;
   justify-content: start;
+
+  @media (max-width: $mobile) {
+  display: none;
+}
+
+
   .activeButton {
     display: flex;
     padding: 10px 24px;
@@ -37,76 +98,93 @@
 
 //ProductList
 
-
-.ProductList{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
-.ProductCard {
+.ProductList {
   display: flex;
-  padding: 32px 50px;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e2e2e2;
-  background: #fff;
+  @media (max-width: $mobile) {
+    gap: 0;
+  }
+}
 
-  .ProductName {
-    color: #e31e24;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
+.ProductCard {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9.821px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 10px;
+
+  @media (max-width: $mobile) {
   }
 
-  .ProductType {
+  img {
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: $mobile) {
+    }
+  }
+
+  .ProductImg {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .ProductName {
     color: #000;
     font-family: Poppins;
-    font-size: 10px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
   }
   .ProductSpec {
-    color: #3e3e3e;
-    text-align: center;
+    color: #5d5d5d;
     font-family: Poppins;
-    font-size: 11px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-transform: lowercase;
+  }
+  .LinkToProduct {
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
   }
 }
 
-
 ///FAQ
 
-
-#FAQ{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
- .FAQHead{
+#FAQ {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  .FAQHead {
     color: #222;
-leading-trim: both;
-text-edge: cap;
-font-family: Manrope;
-font-size: 56px;
-font-style: normal;
-font-weight: 600;
-line-height: 125.025%; /* 70.014px */
- }  
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Manrope;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125.025%; /* 70.014px */
+  }
 }
