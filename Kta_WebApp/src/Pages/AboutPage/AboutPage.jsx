@@ -3,7 +3,7 @@ import styles from "./AboutPage.module.scss";
 import heroBanner from "../../../public/assets/AboutPage/heroBanner.png";
 
 import missionSvg from "../../../public/assets/AboutPage/MissionIcon.svg";
-import visionSvg from "../../../public/assets/AboutPage/visionIcon.svg";
+import visionSvg from "../../../public/assets/AboutPage/VisionIcon.svg";
 
 import missionSvgMob from "../../../public/assets/AboutPage/mobView/MissionIcon.svg";
 import visionSvgMob from "../../../public/assets/AboutPage/mobView/VisionIcon.svg";
