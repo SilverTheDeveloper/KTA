@@ -4,10 +4,9 @@ import blogsIcon from "/assets/BlogPage/Blogs.svg";
 import styles from "./BlogPage.module.scss";
 import { blogList } from "@/Data/BlogPage";
 import BlogCard from "@/Components/BlogCard/BlogCard";
-import { Container } from "react-bootstrap";
 const BlogPage = () => {
   return (
-    <Container style={{ maxWidth: "1440px" }}>
+
       <div className={styles.Wrapper}>
         <TopBanner
           head={blogsIcon}
@@ -22,7 +21,7 @@ const BlogPage = () => {
           ))}
         </div>
       </div>
-    </Container>
+
   );
 };
 
