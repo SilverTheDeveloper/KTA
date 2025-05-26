@@ -18,19 +18,47 @@ function Downloads() {
             </div>
 
 
-           
-<div className={styles.DownloadOptionMob}>
 
-            <select className={styles.outlineButton} name="downloadFiles" id={styles.DownloadFiles} >
-                <option className={styles.optionText} value="Brochure&Catalogue" >Brochure & Catalogue</option>
-                <option className={styles.optionText} value="TechnicalDataSheets">Technical Data Sheets</option>
-                <option className={styles.optionText} value="MaterialSafetyDataSheets">Material Safety Data Sheets</option>
-                <option className={styles.optionText} value="MethodStatements">Method Statements</option>
-                <option className={styles.optionText} value="Certifications">Certifications</option>
-            </select>
-</div>
+            <div className={styles.DownloadOptionMob}>
+
+                <select className={styles.outlineButton} name="downloadFiles" id={styles.DownloadFiles} >
+                    <option className={styles.optionText} value="Brochure&Catalogue" >Brochure & Catalogue</option>
+                    <option className={styles.optionText} value="TechnicalDataSheets">Technical Data Sheets</option>
+                    <option className={styles.optionText} value="MaterialSafetyDataSheets">Material Safety Data Sheets</option>
+                    <option className={styles.optionText} value="MethodStatements">Method Statements</option>
+                    <option className={styles.optionText} value="Certifications">Certifications</option>
+                </select>
+            </div>
 
             <div className={styles.DownloadCards}>
+                <div className={styles.DownloadCard}>
+                    <img src={DocumentIcon} alt="" />
+                    <div className={styles.DownloadCardHeading}>
+                        KTA
+                    </div>
+                    <div className={styles.DownloadCardSubHeading}>
+                        Corporate Brochure
+                    </div>
+
+                    <div className={styles.DownloadCardFooter} >
+                        <img src={DownloadIcon} alt="" />
+                        Download
+                    </div>
+                </div>
+                <div className={styles.DownloadCard}>
+                    <img src={DocumentIcon} alt="" />
+                    <div className={styles.DownloadCardHeading}>
+                        KTA
+                    </div>
+                    <div className={styles.DownloadCardSubHeading}>
+                        Corporate Brochure
+                    </div>
+
+                    <div className={styles.DownloadCardFooter} >
+                        <img src={DownloadIcon} alt="" />
+                        Download
+                    </div>
+                </div>
                 <div className={styles.DownloadCard}>
                     <img src={DocumentIcon} alt="" />
                     <div className={styles.DownloadCardHeading}>

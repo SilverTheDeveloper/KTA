@@ -2,11 +2,13 @@ $mobile: 786px;
 .ProductContainer {
   width: 220px;
   @media (max-width: $mobile) {
-    text-align: center;
+    height: 300px;
+    width: 40%;
+    text-align: left;
   }
 
   .ProductImg {
-    height: 265px;
+    // height: 265px;
     border-radius: 24px;
     margin-bottom: 24px;
     overflow: hidden;
@@ -17,13 +19,17 @@ $mobile: 786px;
       height: 100%;
       object-fit: cover;
       transition: transform 0.2s ease-in-out;
-      @media (max-width: $mobile) {
-        width: auto;
-      }
-
       &:hover {
         transform: scale(1.2);
       }
+
+      @media (max-width: $mobile) {
+        height: 150px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      border-radius: 5px;
     }
   }
 

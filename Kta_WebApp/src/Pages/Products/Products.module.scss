@@ -7,39 +7,38 @@ $mobile: 786px;
   gap: 1rem;
 }
 .FilterOptionMob {
-  display: none ;
+  display: none;
 
   @media (max-width: $mobile) {
     display: block !important;
-
   }
 }
 .outlineButton {
-    display: flex;
-    padding: 10px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 99px;
-    border: 1px solid #e2e2e2;
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 99px;
+  border: 1px solid #e2e2e2;
+  transition: background 0.5s ease-in-out;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: black;
+    color: white;
     transition: background 0.5s ease-in-out;
     transition: color 0.2s ease-in-out;
-
-    &:hover {
-      background-color: black;
-      color: white;
-      transition: background 0.5s ease-in-out;
-      transition: color 0.2s ease-in-out;
-      @media (max-width: $mobile) {
-        background-color: white;
-        color: black;
-      }
-    }
-
-    .optionText {
-      font-size: 0.7rem;
+    @media (max-width: $mobile) {
+      background-color: white;
+      color: black;
     }
   }
+
+  .optionText {
+    font-size: 0.7rem;
+  }
+}
 .TypesOfProducts {
   text-align: left;
   width: 90%;
@@ -66,11 +65,12 @@ $mobile: 786px;
   display: flex;
   gap: 1rem;
   justify-content: start;
+  flex-wrap: wrap;
+  flex-shrink: 0;
 
   @media (max-width: $mobile) {
-  display: none;
-}
-
+    display: none;
+  }
 
   .activeButton {
     display: flex;

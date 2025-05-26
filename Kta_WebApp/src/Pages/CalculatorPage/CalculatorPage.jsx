@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import bannerImg from "/assets/CalculatorPage/Calculators.svg";
 import styles from "./CalculatorPage.module.scss";
-import { Container } from "react-bootstrap";
 
 const CalculatorPage = () => {
   const [length, setLength] = useState("");
@@ -55,7 +54,6 @@ const CalculatorPage = () => {
   };
 
   return (
-    <Container style={{ maxWidth: "1440px" }}>
       <div className={styles.Container}>
         <TopBanner
           head={bannerImg}
@@ -196,7 +194,6 @@ const CalculatorPage = () => {
           </ul>
         </div>
       </div>
-    </Container>
   );
 };
 
