@@ -1,9 +1,7 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import React from "react";
-import Slider from "react-slick";
-
 import styles from "./Products.module.scss";
-import { ProductsLis } from "@/Data/ProductsLis";
+import { ProductsList } from "@/Data/ProductsLis";
 import ProductCard from "./ProductCard";
 import Accord from "@/Components/Accordion/Accord";
 import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
@@ -46,8 +44,7 @@ function Products() {
         </div>
       </div>
       <div className={`${styles.ProductList} ${styles.Container}`}>
-        {ProductsLis.map((product) => (
-
+        {ProductsList.map((product) => (
           <ProductCard key={product.id} data={product} />
         ))}
       </div>
