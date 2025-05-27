@@ -12,7 +12,7 @@ router.get("/getall", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
-  const { name, type, category, usage, shortDesc, longDesc } = req.body;
+  const { name, type, category, usage, shortDesc, longDesc, img } = req.body;
 
   const newProduct = new Product({
     name,
@@ -21,6 +21,7 @@ router.post("/add", async (req, res) => {
     usage,
     shortDesc,
     longDesc,
+    img
   });
 
   try {
