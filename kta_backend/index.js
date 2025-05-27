@@ -3,8 +3,14 @@ require('dotenv').config();
 const connectDB = require('./db');
 const productRoutes = require('./routes/productRoutes'); // updated path
 const app = express();
+var cors = require('cors')
+
+
 
 app.use(express.json()); // Add this to parse JSON bodies
+
+app.use(cors());
+
 connectDB();
 
 app.get('/', (req, res) => {
