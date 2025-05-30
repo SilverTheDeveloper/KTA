@@ -1,11 +1,36 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Products.module.scss";
-import { ProductsList } from "@/Data/ProductsLis";
+import axios from "axios";
 import ProductCard from "./ProductCard";
 import Accord from "@/Components/Accordion/Accord";
 import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
+
 function Products() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const PRODUCTS_API_URL = "/api/products/getall";
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/api/product/getall`
+        );
+        console.log(response.data);
+        setProducts(response.data);
+      } catch (err) {
+        console.log(err);
+        setError(err.response?.data?.message || "Failed to fetch products.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <div id={styles.Products}>
@@ -23,30 +48,52 @@ function Products() {
         <div className={styles.latentButton}>Application Tools</div>
       </div>
       <div className={styles.FilterOptionMob}>
-
-        <select className={styles.outlineButton} name="downloadFiles" id={styles.DownloadFiles} >
-          <option className={styles.optionText} value="Brochure&Catalogue" >Tile Adhesive</option>
-          <option className={styles.optionText} value="TechnicalDataSheets">Stone Adhesives</option>
-          <option className={styles.optionText} value="MaterialSafetyDataSheets">Stone Care</option>
-          <option className={styles.optionText} value="MethodStatements">Repair Solutions</option>
-          <option className={styles.optionText} value="Certifications">Tile Joint Fillers</option>
-          <option className={styles.optionText} value="Certifications">Application Tools</option>
+        <select
+          className={styles.outlineButton}
+          name="downloadFiles"
+          id={styles.DownloadFiles}
+        >
+          <option className={styles.optionText} value="TileAdhesive">
+            Tile Adhesive
+          </option>
+          <option className={styles.optionText} value="StoneAdhesives">
+            Stone Adhesives
+          </option>
+          <option className={styles.optionText} value="StoneCare">
+            Stone Care
+          </option>
+          <option className={styles.optionText} value="RepairSolutions">
+            Repair Solutions
+          </option>
+          <option className={styles.optionText} value="TileJointFillers">
+            Tile Joint Fillers
+          </option>
+          <option className={styles.optionText} value="ApplicationTools">
+            Application Tools
+          </option>
         </select>
       </div>
 
-
       <div className={styles.TypesOfProducts}>
-        <div className={styles.ProductTypeHeading}>
-          Tile Adhesives
-        </div>
+        <div className={styles.ProductTypeHeading}>Tile Adhesives</div>
         <div className={styles.ProductTypeDesc}>
-          Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.
+          Secure, fast-bonding adhesives for walls and floors. Easy to use and
+          compatible with multiple surfaces.
         </div>
       </div>
+
       <div className={`${styles.ProductList} ${styles.Container}`}>
-        {ProductsList.map((product) => (
-          <ProductCard key={product.id} data={product} />
-        ))}
+        {loading ? (
+          <div>Loading products...</div>
+        ) : error ? (
+          <div className={styles.Error}>{error}</div>
+        ) : products.length === 0 ? (
+          <div>No products found.</div>
+        ) : (
+          products.map((product) => (
+            <ProductCard key={product.id} data={product} />
+          ))
+        )}
       </div>
 
       <div id={styles.FAQ}>
@@ -56,4 +103,5 @@ function Products() {
     </div>
   );
 }
+
 export default Products;
