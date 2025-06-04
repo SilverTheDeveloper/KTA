@@ -1,17 +1,47 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Products.module.scss";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import Accord from "@/Components/Accordion/Accord";
 import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
+import ProductCategory from "./ProductCategory";
 
 function Products() {
+  const productCategoryList = [
+    {
+      categoryName: "Tile Adhesive",
+      categoryDesc:
+        " Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
+    },
+    {
+      categoryName: "Tile Grout",
+      categoryDesc:
+        "Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
+    },
+    {
+      categoryName: "Tile Tool",
+      categoryDesc:
+        " Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
+    },
+  ];
+  const PRODUCTS_API_URL = "/api/products/getall";
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [currentCategory, setCurrentCategory] = useState("Tile Adhesive");
 
-  const PRODUCTS_API_URL = "/api/products/getall";
+  const categoryRefs = useRef({});
+
+  const scrollToCategory = (categoryName) => {
+    const section = categoryRefs.current[categoryName];
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn("No section found for", categoryName);
+    }
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,63 +68,56 @@ function Products() {
         details="Explore our premium range of tile adhesives designed for superior bonding and durability, suitable for various tile installations."
         head={bannerImg}
       />
-
+      {/* mapping over category list to show buttons on desktop */}
       <div className={styles.FilterButtons}>
-        <div className={styles.activeButton}>Tile Adhesive</div>
-        <div className={styles.latentButton}>Stone Adhesives</div>
-        <div className={styles.latentButton}>Stone Care</div>
-        <div className={styles.latentButton}>Repair Solutions</div>
-        <div className={styles.latentButton}>Tile Joint Fillers</div>
-        <div className={styles.latentButton}>Application Tools</div>
+        {productCategoryList.map((category) => (
+          <div
+            key={category.categoryName}
+            className={`${styles.latentButton} ${
+              currentCategory === category.categoryName
+                ? styles.activeButton
+                : ""
+            }`}
+            onClick={() => {
+              scrollToCategory(category.categoryName);
+              setCurrentCategory(category.categoryName);
+            }}
+          >
+            {category.categoryName}
+          </div>
+        ))}
       </div>
+
+      {/* mapping over category list to show buttons on desktop */}
       <div className={styles.FilterOptionMob}>
         <select
           className={styles.outlineButton}
-          name="downloadFiles"
-          id={styles.DownloadFiles}
+          onChange={(e) => scrollToCategory(e.target.value)}
         >
-          <option className={styles.optionText} value="TileAdhesive">
-            Tile Adhesive
-          </option>
-          <option className={styles.optionText} value="StoneAdhesives">
-            Stone Adhesives
-          </option>
-          <option className={styles.optionText} value="StoneCare">
-            Stone Care
-          </option>
-          <option className={styles.optionText} value="RepairSolutions">
-            Repair Solutions
-          </option>
-          <option className={styles.optionText} value="TileJointFillers">
-            Tile Joint Fillers
-          </option>
-          <option className={styles.optionText} value="ApplicationTools">
-            Application Tools
-          </option>
+          {productCategoryList.map((category) => (
+            <option key={category.categoryName} value={category.categoryName}>
+              {category.categoryName}
+            </option>
+          ))}
         </select>
       </div>
 
-      <div className={styles.TypesOfProducts}>
-        <div className={styles.ProductTypeHeading}>Tile Adhesives</div>
-        <div className={styles.ProductTypeDesc}>
-          Secure, fast-bonding adhesives for walls and floors. Easy to use and
-          compatible with multiple surfaces.
+      {productCategoryList.map((category, index) => (
+        <div
+          key={category.categoryName}
+          ref={(el) => (categoryRefs.current[category.categoryName] = el)}
+          style={{ padding: "0px 50px " }}
+        >
+          <ProductCategory
+            key={index}
+            detail={category}
+            ref={(el) => (categoryRefs.current[category.categoryName] = el)}
+            products={products.filter(
+              (product) => product.category == category.categoryName
+            )}
+          />
         </div>
-      </div>
-
-      <div className={`${styles.ProductList} ${styles.Container}`}>
-        {loading ? (
-          <div>Loading products...</div>
-        ) : error ? (
-          <div className={styles.Error}>{error}</div>
-        ) : products.length === 0 ? (
-          <div>No products found.</div>
-        ) : (
-          products.map((product) => (
-            <ProductCard key={product.id} data={product} />
-          ))
-        )}
-      </div>
+      ))}
 
       <div id={styles.FAQ}>
         <div className={styles.FAQHead}>FAQ’s</div>

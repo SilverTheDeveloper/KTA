@@ -61,26 +61,25 @@ $mobile: 786px;
   }
 }
 .FilterButtons {
-  width: 85%;
+  width: 90%;
   display: flex;
   gap: 1rem;
   justify-content: start;
   flex-wrap: wrap;
   flex-shrink: 0;
-
+  position: sticky;
+  top: 10px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 7px 5px 1px grey;
+  padding: 10px;
   @media (max-width: $mobile) {
     display: none;
   }
 
   .activeButton {
-    display: flex;
-    padding: 10px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 99px;
-    background: #1a1a1a;
-    color: white;
+    background: #1a1a1a !important ;
+    color: white !important;
   }
   .latentButton {
     display: flex;
@@ -93,6 +92,7 @@ $mobile: 786px;
     color: rgb(0, 0, 0);
     border-radius: 99px;
     border: 1px solid #e2e2e2;
+    cursor: pointer;
   }
 }
 
@@ -101,8 +101,8 @@ $mobile: 786px;
 .ProductList {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  gap: 4rem 6rem;
+  // justify-content: center;
   align-items: flex-start;
   padding: 50px;
   @media (max-width: $mobile) {
@@ -180,8 +180,6 @@ $mobile: 786px;
   }
 }
 
-///FAQ
-
 #FAQ {
   width: 90%;
   display: flex;
@@ -190,8 +188,7 @@ $mobile: 786px;
   gap: 1rem;
   .FAQHead {
     color: #222;
-    leading-trim: both;
-    text-edge: cap;
+
     font-family: Manrope;
     font-size: 56px;
     font-style: normal;
