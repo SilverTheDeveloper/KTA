@@ -49,7 +49,6 @@ function Products() {
         const response = await axios.get(
           `http://localhost:8080/api/product/getall`
         );
-        console.log(response.data);
         setProducts(response.data);
       } catch (err) {
         console.log(err);

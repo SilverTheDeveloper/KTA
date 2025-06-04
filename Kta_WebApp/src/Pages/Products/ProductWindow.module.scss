@@ -9,7 +9,7 @@
   background: #fff;
   width: 95%;
   gap: 1rem;
-  
+
   .ProductImgList {
     display: flex;
     flex-direction: column;
@@ -26,7 +26,8 @@
       border-radius: 8.908px;
       border: 0.742px solid #e1e1e1;
       img {
-        height: 75px;
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -40,6 +41,12 @@
     flex: 1 0 0;
     border-radius: 16.397px;
     background: #f3f3f3;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 
   .ProductMain {

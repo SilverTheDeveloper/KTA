@@ -7,6 +7,7 @@ import ContactPage from "@/Pages/ContactPage/ContactPage";
 import BlogPage from "@/Pages/BlogPage/BlogPage";
 import LandingPage from "@/Pages/LandingPage/LandingPage";
 import AboutPage from "@/Pages/AboutPage/AboutPage";
+import ProductWindow from "@/Pages/Products/ProductWindow";
 
 export const appRoutes = [
   {
@@ -20,6 +21,10 @@ export const appRoutes = [
   {
     path: "products",
     element: <Products />,
+  },
+  {
+    path: "product/:id",
+    element: <ProductWindow />,
   },
   {
     path: "careers",
