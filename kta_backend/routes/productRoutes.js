@@ -42,4 +42,13 @@ router.post("/delete/:id", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.send(product);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;
