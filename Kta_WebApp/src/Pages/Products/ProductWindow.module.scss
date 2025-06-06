@@ -1,3 +1,10 @@
+.productWindowDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
 #ProductWindow {
   display: flex;
   padding: 24px;
@@ -112,12 +119,21 @@
       }
     }
     .outline-button {
-      color: black;
-      border: 1px solid black;
-    }
-    .outline-button:hover {
-      color: white;
-      border: 1px solid transparent;
+      display: flex;
+      padding: 10px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 99px;
+      border: 1px solid #e2e2e2;
+        transition: background 0.5s ease-in-out;
+        transition: color 0.3s ease-in-out;
+      &:hover {
+        background: linear-gradient(118deg, #e31e25 34.98%, #262065 65.54%);
+        color: white;
+        transition: background 0.5s ease-in-out;
+        transition: color 0.3s ease-in-out;
+      }
     }
   }
 }

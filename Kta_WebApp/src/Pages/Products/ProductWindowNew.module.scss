@@ -1,0 +1,104 @@
+$mobile: 786px;
+
+.ProductWindow {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .SectionHeading {
+    color: #222;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Manrope;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
+  .ProductSectionList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90%;
+    border: 1px solid black;
+    .outlineButton {
+      display: flex;
+      padding: 10px 24px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 99px;
+      border: 1px solid #e2e2e2;
+      transition: background 0.5s ease-in-out;
+      transition: color 0.2s ease-in-out;
+      width: fit-content;
+      &:hover {
+        background-color: black;
+        color: white;
+        transition: background 0.5s ease-in-out;
+        transition: color 0.2s ease-in-out;
+        @media (max-width: $mobile) {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+  .ProductShowCase {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    justify-content: space-between;
+    .ProductImg {
+      width: 60%;
+      background-image: url(../../../public/assets/ProductsPage/6000_bag.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      border-radius: 9.203px;
+      border: 1px solid black;
+    }
+    .ProductBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .rating {
+      }
+      .ProductMiniDesc {
+        color: #000;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .ProductName {
+        color: #e31e24;
+        font-size: 3rem;
+      }
+      .ProductType {
+        color: #000;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+      .ProductBreifDesc {
+        color: #000;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+
+  .Chara {
+    .Available {
+    }
+  }
+}

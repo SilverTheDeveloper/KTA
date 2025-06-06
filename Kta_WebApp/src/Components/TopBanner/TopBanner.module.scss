@@ -1,17 +1,29 @@
 $mobile: 786px;
 
 #TopBanner {
+  // display: flex;
+  // width: 95%;
+  // height: 393.269px;
+  // padding: 10%;
+  // justify-content: space-between;
+  // align-items: center;
+  // flex-shrink: 0;
+  // border-radius: 16px;
+  // background: #191919;
+  // gap: 50px;
+  // overflow: hidden;
+
   display: flex;
   width: 95%;
   height: 393.269px;
   padding: 10%;
+
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
   border-radius: 16px;
-  background: #191919;
-  gap: 50px;
-  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ededed;
   @media (max-width: $mobile) {
     display: flex;
     padding-top: 5%;
@@ -19,10 +31,10 @@ $mobile: 786px;
     flex-direction: column;
     height: fit-content;
     justify-content: space-evenly;
-    
-      .TopBannerHead {
-        width: auto;
-      }
+
+    .TopBannerHead {
+      width: auto;
+    }
   }
   img {
     @media (max-width: $mobile) {
@@ -45,7 +57,7 @@ $mobile: 786px;
     -webkit-text-fill-color: transparent;
   }
   .TopBannerDetails {
-    color: #fff;
+    color: #000000;
     font-family: Poppins;
     font-size: 1rem;
     font-style: normal;
@@ -69,7 +81,7 @@ $mobile: 786px;
 
     @media (max-width: $mobile) {
       width: 100%;
-      color: #fff;
+      color: #000000;
       text-align: center;
       font-family: Poppins;
       font-size: 10px;
