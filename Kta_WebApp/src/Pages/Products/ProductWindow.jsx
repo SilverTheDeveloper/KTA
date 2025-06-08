@@ -2,26 +2,31 @@ import React, { useEffect, useState } from "react";
 import styles from "./ProductWindow.module.scss";
 import axios from "axios";
 import BreadCrumb from "@/Components/BreadCrumb/BreadCrumb";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
 function ProductWindow() {
-  const breadcrumbItems = [
-    { label: "Home", path: "/" },
-    { label: "Products", path: "/products" },
-    { label: "Product Name", path: "/product/123" },
-  ];
+  //   const breadcrumbItems = [
+  //     { label: "Home", path: "/" },
+  //     { label: "Products", path: "/products" },
+  //     { label: "Product Name", path: "/product/123" },
+  //   ];
 
+  const navigate = useNavigate();
   const { id } = useParams(); // Get the dynamic ID from URL
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
 
+  const handleClose = () => {
+    navigate(-1);
+  };
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchProductDetail = async () => {
       try {
         const response = await axios.get(
           `http://localhost:8080/api/product/${id}`
         );
         setProduct(response.data);
-        console.log(response.data);
       } catch (error) {
         console.log("getting error in fetching product details", error);
       } finally {
@@ -34,8 +39,6 @@ function ProductWindow() {
   return (
     <div className={styles.productWindowDiv}>
       {/* <BreadCrumb items={breadcrumbItems} /> */}
-
-      {/* <p>Products &gt; TILE ADHESIVE &gt; KTA 1000</p> */}
 
       <div id={styles.ProductWindow}>
         <div className={styles.ProductImgList}>
@@ -80,6 +83,9 @@ function ProductWindow() {
           </div>
 
           <div className={styles["outline-button"]}>Connect and Shop -&gt;</div>
+        </div>
+        <div style={{ cursor: "pointer" }}>
+          <IoClose size={30} onClick={handleClose} />
         </div>
       </div>
     </div>
