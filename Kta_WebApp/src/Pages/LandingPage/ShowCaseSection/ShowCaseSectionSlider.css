@@ -8,7 +8,6 @@
   .slick-track {
     display: flex !important;
     justify-content: center !important;
-
   }
 
   /* Center the Cards */
@@ -50,5 +49,17 @@
     position: absolute;
     right: 30%;
     top: 40%;
+  }
+}
+
+.showcaseButton {
+  .outline-button {
+    color: black !important;
+    border: 1px solid black !important;
+    font-size: 1rem;
+    &:hover {
+      border: 1px solid transparent !important;
+      color: white !important;
+    }
   }
 }

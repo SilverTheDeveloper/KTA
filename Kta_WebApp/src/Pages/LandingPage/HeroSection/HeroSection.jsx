@@ -2,6 +2,7 @@ import React from "react";
 import "./HeroSection.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import GradientButton from "@/Components/GradientButton/GradientButton";
 
 
 function HeroSection() {
@@ -94,6 +95,7 @@ function HeroSection() {
           <Link to="/app/products">
             <div className="outline-button">Explore Our Products</div>
           </Link>
+
         </div>
       </div>
     </>

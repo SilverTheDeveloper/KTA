@@ -40,14 +40,7 @@ $mobile: 786px;
       line-height: normal;
     }
 
-    // ShowCaseSection.module.scss
-    .fitButton {
-      // width:fit-content !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-    }
+    
   }
 }
 
@@ -123,5 +116,6 @@ $mobile: 786px;
       justify-content: center;
       width: fit-content;
     }
+    
   }
 }

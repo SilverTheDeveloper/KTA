@@ -51,7 +51,6 @@
     background-size: cover;
     height: 765px;
     background-position-y: bottom;
-
   }
   .heroBannerSecondBlock {
     /* height: 765px; */
@@ -89,7 +88,6 @@
     background-size: cover;
     height: 765px;
     background-position-y: bottom;
-
   }
   .heroBannerThirdBlock {
     /* height: 765px; */
@@ -235,7 +233,12 @@
   }
 
   .outline-button {
-    color: black ;
-    border: 1px solid black !important;
+    color: black;
+    border: 1px solid black;
+    font-size: 1rem;
+
+    &:hover{
+      border: 1px solid transparent !important;
+    }
   }
 }
