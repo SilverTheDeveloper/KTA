@@ -37,7 +37,7 @@ function ProductWindow() {
   }, [id]);
 
   return (
-    <div>
+    <div className={styles.productWindowDiv}>
       {/* <BreadCrumb items={breadcrumbItems} /> */}
 
       <div id={styles.ProductWindow}>
@@ -71,11 +71,7 @@ function ProductWindow() {
 
           <div className={styles.ProductDesc}>
             {product.longDesc}
-            {/* <ul>
-              <li>For fixing ceramic tiles on interior floors and walls</li>
-              <li>Suitable for tile size up to 450 mm</li>
-              <li>Single component - just add water</li>
-            </ul> */}
+          
           </div>
 
           <div className={styles.ProductAvailable}>

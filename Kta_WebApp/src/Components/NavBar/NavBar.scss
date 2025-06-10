@@ -1,4 +1,6 @@
-$mobile:786px;
+
+$mobile: 786px;
+
 input[type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -9,7 +11,6 @@ input[type="search"] {
   border: 0.88px solid #e8e8e8;
   border-radius: 999px;
   transition: all 0.3s ease;
-  padding: 0;
   width: 45px;
   height: 45px;
   padding-left: 0;
@@ -22,12 +23,6 @@ input[type="search"] {
   outline: none;
 }
 
-#demo-2 {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px;
-}
-
 input[type="search"]:hover {
   background-color: #ededed;
 }
@@ -37,7 +32,7 @@ input[type="search"]:focus {
   padding-left: 40px;
   color: #000;
   background-color: #ededed;
-  background-position:0px center;
+  background-position: 0px center;
   cursor: auto;
 }
 
@@ -49,21 +44,18 @@ input[type="search"]::placeholder {
 input[type="search"]:not(:focus)::placeholder {
   color: transparent;
 }
-//for about page
-#navbarScrollingDropdown{
-  font-size: 1rem;
 
+#navbarScrollingDropdown {
+  font-size: 1rem;
   color: black;
 }
-#navbarScrollingDropdown:hover{
+#navbarScrollingDropdown:hover {
   font-size: 1rem;
-
   color: #E31E24;
 }
 
-
-.navLink  {
-  color: black ;
+.navLink {
+  color: black;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -73,18 +65,19 @@ input[type="search"]:not(:focus)::placeholder {
   justify-content: center;
   align-items: center;
   margin-right: 1rem;
-  @media (max-width:$mobile){
+
+  @media (max-width: $mobile) {
     justify-content: center;
     margin-right: 0rem;
   }
+
+  &:hover {
+    color: #E31E24;
+  }
 }
 
-.navLink:hover{
-  color:#E31E24;
-}
-
-.navLinkWhite{
-  color: white; 
+.navLinkWhite {
+  color: white;
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -94,25 +87,24 @@ input[type="search"]:not(:focus)::placeholder {
   justify-content: center;
   align-items: center;
   margin-right: 1rem;
-  @media(max-width:$mobile){
-   color: black; 
-   justify-content: center;
+
+  @media (max-width: $mobile) {
+    color: black;
+    justify-content: center;
   }
 
-  &:hover{
+  &:hover {
     color: #E31E24;
   }
-
 }
 
-#navbarScrollingDropdownWhite{
+#navbarScrollingDropdownWhite {
   color: white;
-  &:hover{
+
+  &:hover {
     color: #E31E24;
   }
 }
-
-//
 
 .contactButton {
   position: relative;
@@ -120,66 +112,57 @@ input[type="search"]:not(:focus)::placeholder {
   padding: 11.945px 23.89px;
   justify-content: center;
   align-items: center;
-  border-radius: 91.52px;
-  background: transparent;
+  border-radius: 432.968px;
+  background: #E31E24;
   overflow: hidden;
   z-index: 0;
   transition: color 0.3s ease;
-  display: flex;
-  border-radius: 432.968px;
   cursor: pointer;
   color: white !important;
-  background: #E31E24;
   font-size: 0.8rem !important;
-  width: 100px; /* or any fixed size */
+  width: 100px;
   margin-right: 1rem;
 
-  @media (max-width:$mobile) {
+  @media (max-width: $mobile) {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
   }
 
-}
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--brand, linear-gradient(100deg, #E31E24 7.47%, #262065 92.53%));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 91.52px;
+  }
 
-.contactButton::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: var(--brand, linear-gradient(100deg, #E31E24 7.47%, #262065 92.53%));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-  border-radius: 91.52px;
-}
+  &:hover::before {
+    opacity: 1;
+  }
 
-.contactButton:hover::before {
-  opacity: 1;
-}
-
-.contactButton:hover {
-  color: white !important;
-}
-
-
-#KTAlogo{
-  @media (max-width:$mobile){
-    transform: scale(0.7);
+  &:hover {
+    color: white !important;
   }
 }
 
-
-//
-
+#KTAlogo {
+  @media (max-width: $mobile) {
+    transform: scale(0.7);
+  }
+}
 
 /* Mobile Navbar Height */
 @media (max-width: 991px) {
   .navbar {
     padding: 0.5rem 1.5rem;
-    min-height: 60px; 
+    min-height: 60px;
   }
 
   .custom-toggler {
@@ -216,7 +199,6 @@ input[type="search"]:not(:focus)::placeholder {
     top: 8px;
   }
 
-  /* Hamburger to Close Icon Transition */
   .navbar-collapse.show + .custom-toggler .navbar-toggler-icon {
     background-color: transparent;
   }
@@ -232,17 +214,118 @@ input[type="search"]:not(:focus)::placeholder {
   }
 }
 
-.aboutPagesStyles{
+.aboutPagesStyles {
   background: transparent;
   position: absolute;
-  width: 100% ;
+  width: 100%;
 
-  @media (max-width:$mobile){
-
+  @media (max-width: $mobile) {
     background: white;
     position: relative;
-    width: 100% ;
-  
+    width: 100%;
+  }
+}
+
+// 👇 New styles for search wrapper and suggestions
+.searchWrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  max-width: 300px;
+}
+
+.searchSuggestions {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+
+  li {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  contain: "X";
+  color: black;
+  background-size: cover;
+  cursor: pointer;
+  position: relative;
+  right: 10px; // shift the icon a little to the left
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+
+.customSearchInput {
+  width: 45px;
+  height: 45px;
+  border-radius: 999px;
+  border: 0.88px solid #e8e8e8;
+  font-size: 14px;
+  background: #ededed url('../../assets/LandingPage/searchIcon.svg') no-repeat center center;
+  background-size: 20px 20px;
+  transition: all 0.3s ease;
+  padding-left: 0;
+  padding-right: 30px;
+  color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    width: 260px;
+    padding-left: 40px;
+    color: black;
+    cursor: text;
+    background-position: 12px center;
   }
 
+  &::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+  }
+
+  &:not(:focus)::placeholder {
+    color: transparent;
+  }
+}
+
+.customClearBtn {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  background: transparent;
+  line-height: 1;
 }

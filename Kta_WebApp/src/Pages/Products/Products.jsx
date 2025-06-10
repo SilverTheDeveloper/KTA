@@ -105,7 +105,7 @@ function Products() {
         <div
           key={category.categoryName}
           ref={(el) => (categoryRefs.current[category.categoryName] = el)}
-          style={{ padding: "0px 50px " }}
+          className={styles.productBigContainer}
         >
           <ProductCategory
             key={index}

@@ -6,7 +6,7 @@ const CareersPage = () => {
   return (
     <div id={styles.Careers}>
       <TopBanner
-        details="Whether you're a contractor, architect, or homeowner, our easy-to-use calculators help you determine the right amount of product for your surface care needs."
+        details="At KTA Solutions, we believe in pushing boundaries and redefining industry standards. If you're passionate about innovation and looking for an exciting career, we’d love to have you on board!"
         head={bannerImg}
       />
 
