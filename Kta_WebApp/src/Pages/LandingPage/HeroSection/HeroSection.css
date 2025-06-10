@@ -12,6 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 765px;
+    background-position-y: bottom;
   }
   .heroBannerFirstBlock {
     display: flex;
@@ -49,6 +50,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 765px;
+    background-position-y: bottom;
+
   }
   .heroBannerSecondBlock {
     /* height: 765px; */
@@ -85,6 +88,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 765px;
+    background-position-y: bottom;
+
   }
   .heroBannerThirdBlock {
     /* height: 765px; */
@@ -230,7 +235,7 @@
   }
 
   .outline-button {
-    color: black !important;
+    color: black ;
     border: 1px solid black !important;
   }
 }
