@@ -7,6 +7,7 @@ import HeadingComp from "@/Components/HeadingComp/HeadingComp";
 import GradientButton from "@/Components/GradientButton/GradientButton";
 import Slider from "react-slick";
 import './ShowCaseSectionSlider.css'
+import { Link } from "react-router-dom";
 
 const ShowCaseSection = () => {
 
@@ -56,13 +57,16 @@ const ShowCaseSection = () => {
         </div>
         <div className={styles.productContainerMob}>
 
-        {ProductList.map((productItem, index) => (
-          <ProductCard data={productItem} />
-        ))}
+          {ProductList.map((productItem, index) => (
+            <ProductCard data={productItem} />
+          ))}
         </div>
-        <div className={styles.fitButton}>
-          <GradientButton text={"View All Products"} />
+        <div className="showcaseButton">
+          <Link to="/app/products">
+            <div className="outline-button">Explore Our Products</div>
+          </Link>
         </div>
+
 
       </div>
     </>

@@ -13,12 +13,19 @@ $mobile: 768px;
     justify-content: start;
     flex-wrap: wrap;
     flex-shrink: 0;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
   .DownloadOptionMob {
     display: none;
 
     @media (max-width: $mobile) {
       display: block !important;
+      position: sticky;
+      top: 5%;
+      z-index: 1000;
     }
   }
   .outlineButton {

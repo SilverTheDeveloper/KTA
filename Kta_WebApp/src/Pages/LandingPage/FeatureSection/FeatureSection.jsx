@@ -3,6 +3,7 @@ import HeadingComp from "@/Components/HeadingComp/HeadingComp";
 import { featureData } from "@/Data/LandingPage";
 import styles from "./FeatureSection.module.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeatureSection = () => {
   return (
@@ -29,8 +30,12 @@ const FeatureSection = () => {
           );
         })}
       </div>
-      <GradientButton text={"About Us"} customStyles={styles.ButtonOnMobile} />
-      <div className={styles.LeftSectionRectangle}></div>
+
+      <Link to="/app/about"
+        style={{ textDecoration: 'none', color: 'inherit' }}>
+        <GradientButton text={"About Us"} customStyles={styles.ButtonOnMobile} />
+      </Link>
+
     </div>
   );
 };

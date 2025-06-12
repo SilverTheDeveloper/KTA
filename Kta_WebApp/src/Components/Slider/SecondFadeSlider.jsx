@@ -4,9 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { secondSliderData } from "@/Data/LandingPage";
 import "./SecondFadeSlider.scss"
+import { Link } from "react-router-dom";
 function SecondFadeSlider() {
   const settings = {
-    fade:true,
+    fade: true,
     dots: false,
     infinite: true,
     speed: 500,
@@ -21,7 +22,7 @@ function SecondFadeSlider() {
     <div className="slider-container SecondFadeSlider" >
       <Slider {...settings}>
         {
-          secondSliderData.map((data,index)=>(
+          secondSliderData.map((data, index) => (
             <div className="sliderImg">
               <img src={data} key={index} />
             </div>
@@ -33,10 +34,13 @@ function SecondFadeSlider() {
         <div className="top-heading">CONNECT</div>
         <div className="heading">Get in Touch</div>
         <p>Looking for expert guidance on ceramic, stone, or surface care? Our team is ready to assist you with tailored solutions.</p>
+        <Link to="/app/contact"
+          style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="outline-button">
+            Contact Us
+          </div>
+        </Link>
 
-        <div className="outline-button">
-           Contact Us
-        </div>
       </div>
     </div>
   );

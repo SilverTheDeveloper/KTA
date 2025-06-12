@@ -1,6 +1,10 @@
 import React from "react";
 import "./HeroSection.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
+import GradientButton from "@/Components/GradientButton/GradientButton";
+
+
 function HeroSection() {
   const settings = {
     dots: false,
@@ -28,7 +32,10 @@ function HeroSection() {
                 aesthetics, and protection. <br />
                 Trusted by professionals worldwide.
               </div>
-              <div className="outline-button">Explore Our Products</div>
+              <Link to="/app/products">
+                <div className="outline-button">Explore Our Products</div>
+              </Link>
+
             </div>
           </div>
           <div className="heroBannerSecond">
@@ -42,7 +49,11 @@ function HeroSection() {
                 <br /> aesthetics, and protection. Trusted by professionals
                 worldwide.
               </div>
-              <div className="outline-button">Explore Our Products</div>
+
+              <Link to="/app/products">
+                <div className="outline-button">Explore Our Products</div>
+              </Link>
+
             </div>
           </div>
 
@@ -57,7 +68,9 @@ function HeroSection() {
                 <br /> aesthetics, and protection. Trusted by professionals
                 worldwide.
               </div>
-              <div className="outline-button">Explore Our Products</div>
+              <Link to="/app/products">
+                <div className="outline-button">Explore Our Products</div>
+              </Link>
             </div>
           </div>
         </Slider>
@@ -79,7 +92,10 @@ function HeroSection() {
             aesthetics, and protection. Trusted by professionals worldwide.
           </div>
 
-          <div className="outline-button">Explore Our Products</div>
+          <Link to="/app/products">
+            <div className="outline-button">Explore Our Products</div>
+          </Link>
+
         </div>
       </div>
     </>

@@ -8,7 +8,6 @@ $mobile: 786px;
   }
 
   .ProductImg {
-    // height: 265px;
     border-radius: 24px;
     margin-bottom: 24px;
     overflow: hidden;
@@ -19,7 +18,7 @@ $mobile: 786px;
       height: 100%;
       object-fit: cover;
       transition: transform 0.2s ease-in-out;
-      
+
       &:hover {
         transform: scale(1.2);
       }
@@ -51,3 +50,4 @@ $mobile: 786px;
     line-height: normal;
   }
 }
+
