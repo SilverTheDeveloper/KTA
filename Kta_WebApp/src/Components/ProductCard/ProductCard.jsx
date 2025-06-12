@@ -11,6 +11,10 @@ const ProductCard = ({ data }) => {
       setCurrentImage((prev) => (prev === 0 ? 1 : 0));
     }, 3000); // Change image every 3 seconds
     return () => clearInterval(interval);
+      setImages((prev) => [prev[1], prev[0]]); // Simple shuffle
+    }, 3000);
+
+    return () => clearInterval(interval); // Clean up on unmount
   }, []);
 
   return (

@@ -142,6 +142,31 @@ $mobile: 768px;
         justify-content: center;
         align-items: center;
       }
+      .LoaderOverlay {
+        display: flex;
+        justify-content: center;
+      }
+      .SuccessBanner {
+        width: 90%;
+        background-color: #d4edda;
+        color: #155724;
+        padding: 12px 20px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        border: 1px solid #c3e6cb;
+        text-align: center;
+        font-weight: bold;
+        animation: fadeInOut 5s ease-in-out forwards;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+      }
     }
     .contactRightSectionHeading {
       color: #222;
@@ -170,7 +195,7 @@ $mobile: 768px;
       display: flex;
       height: 62px;
       width: 100%;
-      padding:0px 25px;
+      padding: 0px 25px;
       border-radius: 8px;
       border: 1.352px solid #e8e8e8;
       background: #ededed;
@@ -182,7 +207,6 @@ $mobile: 768px;
         border: 0.826px solid #e8e8e8;
         background: #ededed;
         font-size: 12px;
-
       }
     }
 
@@ -210,6 +234,7 @@ $mobile: 768px;
 }
 
 .sendButton {
+  border: none;
   position: relative;
   display: inline-flex;
   padding: 11.945px 23.89px;

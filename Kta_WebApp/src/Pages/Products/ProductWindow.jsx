@@ -4,6 +4,7 @@ import axios from "axios";
 import BreadCrumb from "@/Components/BreadCrumb/BreadCrumb";
 import { useNavigate, useParams } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
+import { API } from "@/constants";
 function ProductWindow() {
   //   const breadcrumbItems = [
   //     { label: "Home", path: "/" },
@@ -24,7 +25,7 @@ function ProductWindow() {
     const fetchProductDetail = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/${id}`
+          `${API}/api/product/${id}`
         );
         setProduct(response.data);
       } catch (error) {
