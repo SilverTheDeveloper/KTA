@@ -69,6 +69,35 @@ $mobile: 768px;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
+
+  .SuccessBanner {
+    width: 90%;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px 20px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeInOut 5s ease-in-out forwards;
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+  }
+
+  .LoaderOverlay {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
   .inputDiv {
     display: flex;
     gap: 34px;

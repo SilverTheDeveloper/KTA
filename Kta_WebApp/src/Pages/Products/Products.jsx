@@ -6,6 +6,7 @@ import ProductCard from "./ProductCard";
 import Accord from "@/Components/Accordion/Accord";
 import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
 import ProductCategory from "./ProductCategory";
+import { API } from "@/constants";
 
 function Products() {
   const productCategoryList = [
@@ -47,7 +48,7 @@ function Products() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/getall`
+          `${API}/api/product/getall`
         );
         setProducts(response.data);
       } catch (err) {

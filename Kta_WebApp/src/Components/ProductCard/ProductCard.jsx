@@ -7,7 +7,7 @@ const ProductCard = ({ data }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setImages((prev) => [prev[1], prev[0]]); // Simple shuffle
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval); // Clean up on unmount
   }, []);
