@@ -6,7 +6,7 @@ import Hours from "/assets/ContactPage/Hours.svg";
 import Call from "/assets/ContactPage/Call.svg";
 import Location from "/assets/ContactPage/Location.svg";
 import Mail from "/assets/ContactPage/Mail.svg";
-import { Oval } from "react-loader-spinner"; // or use your custom CSS spinner
+import { Oval } from "react-loader-spinner";
 import { API } from "@/constants";
 
 function ContactPage() {
@@ -33,7 +33,7 @@ function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setIsLoading(true); // Show loader
+    setIsLoading(true);
 
     try {
       const response = await fetch(
@@ -47,9 +47,7 @@ function ContactPage() {
 
       const result = await response.json();
       if (response.ok) {
-        // alert("Email sent successfully!");
         setShowSuccess(true);
-        // Optionally reset form
         setFormData({
           name: "",
           BusinessType: "B2B",
@@ -65,7 +63,7 @@ function ContactPage() {
       alert("Failed to send email");
       console.error(error);
     } finally {
-      setIsLoading(false); // Hide loader
+      setIsLoading(false);
     }
   };
 

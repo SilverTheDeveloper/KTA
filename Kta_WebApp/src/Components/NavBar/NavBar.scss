@@ -234,6 +234,11 @@ input[type="search"]:not(:focus)::placeholder {
   padding: 10px;
 }
 
+.product-search-link{
+  text-decoration: none;
+  color: black;
+}
+
 .searchSuggestions {
   position: absolute;
   top: 110%;

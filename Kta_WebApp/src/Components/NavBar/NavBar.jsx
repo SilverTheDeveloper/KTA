@@ -8,6 +8,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import ktaLogo from "/assets/LandingPage/KtaIcon.png";
 import "./NavBar.scss";
 import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
+import { API } from "@/constants";
 
 function NavBar() {
   const location = useLocation();
@@ -15,28 +17,8 @@ function NavBar() {
   const [expanded, setExpanded] = useState(false);
   const navRef = useRef();
 
-  const products = [
-    "KTA 1000",
-    "KTA 2000",
-    "KTA 3000",
-    "KTA 4000",
-    "KTA 5000",
-    "KTA 6000",
-    "KTA 7000",
-    "KTA 8000",
-    "KTA Polymer Grout",
-    "KTA Epoxy",
-    "KTA Admix Plus",
-    "KTA Glitter",
-    "KTA Tile Spacer",
-    "KTA Levelling Tool",
-    "KTA Notch Trowel",
-    "KTA Grout Spreader",
-    "KTA Tile Vaccum",
-    "KTA Tile Jack",
-    "KTA Tile Plier",
-    "KTA Tile Cleaner (Acidic)",
-  ];
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -48,14 +30,13 @@ function NavBar() {
     if (value.trim() === "") {
       setFilteredProducts([]);
     } else {
-      const filtered = products.filter((item) =>
-        item.toLowerCase().includes(value.toLowerCase())
+      const filtered = products.filter((product) =>
+        product.name.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredProducts(filtered);
     }
   };
 
-  // Collapse navbar on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -67,6 +48,23 @@ function NavBar() {
 
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
+
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(`${API}/api/product/getall`);
+        const simplifiedProducts = response.data.map((product) => ({
+          id: product._id,
+          name: product.name,
+          img: product.img,
+        }));
+        setProducts(simplifiedProducts);
+      } catch (err) {
+        console.log(err);
+        setError(err.response?.data?.message || "Failed to fetch products.");
+      }
+    };
+
+    fetchProducts();
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -105,8 +103,9 @@ function NavBar() {
                 key={path}
                 as={Link}
                 to={path}
-                className={`${isAboutPage ? "navLinkWhite" : "navLink"} ${label === "Contact" ? "contactButton" : ""
-                  }`}
+                className={`${isAboutPage ? "navLinkWhite" : "navLink"} ${
+                  label === "Contact" ? "contactButton" : ""
+                }`}
                 onClick={() => setExpanded(false)}
               >
                 {label}
@@ -114,33 +113,6 @@ function NavBar() {
             ))}
           </Nav>
 
-          {/* Search Bar with Suggestions
-          <div id="demo-2" className="searchWrapper">
-            <input
-              type="search"
-              placeholder="Product Search..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-              onBlur={() => setTimeout(() => setFilteredProducts([]), 200)}
-            />
-            {filteredProducts.length > 0 && (
-              <ul className="searchSuggestions">
-                {filteredProducts.map((item, idx) => (
-                  <li
-                    key={idx}
-                    onClick={() => {
-                      setSearchQuery(item);
-                      setFilteredProducts([]);
-                    }}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div> */}
-
-          {/* Search Bar with Suggestions and Custom Clear Button */}
           <div id="demo-2" className="searchWrapper">
             <input
               type="search"
@@ -154,32 +126,40 @@ function NavBar() {
                   if (!searchQuery) setSearchQuery("");
                 }, 200);
               }}
-
             />
             {searchQuery && (
-              <span className="customClearBtn" onClick={() => setSearchQuery("")}>
+              <span
+                className="customClearBtn"
+                onClick={() => {
+                  setSearchQuery("");
+                  setFilteredProducts([]);
+                }}
+              >
                 ×
               </span>
             )}
             {filteredProducts.length > 0 && (
               <ul className="searchSuggestions">
-                {filteredProducts.map((item, idx) => (
-                  <li
-                    key={idx}
-                    onClick={() => {
-                      setExpanded(!expanded);
-                      setSearchQuery(""); // ← Clears query when nav is toggled
-                      setFilteredProducts([]); // ← Hide suggestions too
-                    }}
-
+                {filteredProducts.map((item) => (
+                  <Link
+                    to={`/app/product/${item.id}`}
+                    className="product-search-link"
                   >
-                    {item}
-                  </li>
+                    <li key={item.id}>
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="searchImg"
+                        width={30}
+                        height={30}
+                      />
+                      <span>{item.name}</span>
+                    </li>
+                  </Link>
                 ))}
               </ul>
             )}
           </div>
-
         </Navbar.Collapse>
       </Container>
     </Navbar>
