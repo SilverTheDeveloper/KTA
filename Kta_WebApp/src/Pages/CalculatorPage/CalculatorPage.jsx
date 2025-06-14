@@ -1,199 +1,177 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import bannerImg from "/assets/CalculatorPage/Calculators.svg";
 import styles from "./CalculatorPage.module.scss";
+import { CiSearch } from "react-icons/ci";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CalculatorPage = () => {
-  const [length, setLength] = useState("");
-  const [height, setHeight] = useState("");
-  const [width, setWidth] = useState("");
+  const [allProducts, setAllProducts] = useState([]);
+  const [category, setCategory] = useState("Tile Adhesive");
+  const [currentProduct, setCurrentProduct] = useState({});
 
-  const [jointSurfaceArea, setJointSurfaceArea] = useState("");
-  const [mortarRequired, setMortarRequired] = useState("");
-  const [blocksRequired, setBlocksRequired] = useState("");
-  const [mortarForHundredSqFt, setMortarForHundredSqFt] = useState("");
+  const [area, setArea] = useState("");
+  const [thickness, setThickness] = useState("6 mm"); // 6 mm as the default
+  const [weight, setWeight] = useState(0);
+  const [error, setError] = useState(null);
 
-  const handleInputChange = (setter) => (e) => {
-    setter(e.target.value);
-  };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/api/product/getall`
+        );
+        setAllProducts(response.data);
+        setCurrentProduct(response.data[0]);
+      } catch (err) {
+        console.log(err);
+        setError(err.response?.data?.message || "Failed to fetch products.");
+      } finally {
+        // setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
 
-  const calculate = () => {
-    // Parse inputs to numbers
-    const l = parseFloat(length);
-    const h = parseFloat(height);
-    const w = parseFloat(width);
-
-    if (isNaN(l) || isNaN(h) || isNaN(w)) {
-      alert("Please enter valid numbers for all dimensions.");
+  const handleSubmit = () => {
+    if (!area) {
+      setWeight(0);
       return;
     }
+    const areaVal = parseFloat(area);
+    let multiplier = 0;
 
-    let divident = 1000 * 1000;
-    const jointArea =
-      2 * ((w * l) / divident + (l * h) / divident + (h * w) / divident);
+    // Convert "6 mm" to 6
+    const mm = parseInt(thickness, 10);
+    if (mm <= 3) multiplier = 0.41;
+    else if (mm === 4) multiplier = 4 / 3;
+    else if (mm === 5) multiplier = 5 / 3;
+    else if (mm === 6) multiplier = 6 / 3;
+    else if (mm === 7) multiplier = 7 / 3;
+    else if (mm === 8) multiplier = 8 / 3;
+    else if (mm === 9) multiplier = 9 / 3;
+    else if (mm === 10) multiplier = 10 / 3;
+    else if (mm === 11) multiplier = 11 / 3;
+    else if (mm === 12) multiplier = 12 / 3;
 
-    const mortarPerBlock = jointSurfaceArea * 0.35 * 0.083;
-    const blocksPer100SqFt = 100 / blocksRequired;
-    const mortarPer100SqFt = blocksPer100SqFt * mortarPerBlock;
-
-    // Set results
-    setJointSurfaceArea(jointArea.toFixed(2));
-    setMortarRequired(mortarPerBlock.toFixed(2));
-    setBlocksRequired(blocksPer100SqFt.toFixed(2));
-    setMortarForHundredSqFt(mortarPer100SqFt.toFixed(2));
-  };
-
-  const reset = () => {
-    setLength("");
-    setHeight("");
-    setWidth("");
-    setJointSurfaceArea("");
-    setMortarRequired("");
-    setBlocksRequired("");
-    setMortarForHundredSqFt("");
+    setWeight((areaVal * multiplier).toFixed(2)); // Keep 2 decimal places
   };
 
   return (
-      <div className={styles.Container}>
-        <TopBanner
-          head={bannerImg}
-          details="Whether you're a contractor, architect, or homeowner, 
+    <div className={styles.Container}>
+      <TopBanner
+        head={bannerImg}
+        details="Whether you're a contractor, architect, or homeowner, 
                   our easy-to-use calculators help you determine the right 
                   amount of product for your surface care needs."
-        />
-        <div className={styles.FilterButtons}>
-          <div className={styles.activeButton}>Calculator 1</div>
-          <div className={styles.latentButton}>Calculator 2</div>
-          <div className={styles.latentButton}>Calculator 3</div>
-          <div className={styles.latentButton}>Calculator 4</div>
-          <div className={styles.latentButton}>Calculator 5</div>
-        </div>
+      />
+      <div className={styles.FilterButtons}>
+        <div className={styles.activeButton}>Calculator 1</div>
+        <div className={styles.latentButton}>Calculator 2</div>
+        <div className={styles.latentButton}>Calculator 3</div>
+        <div className={styles.latentButton}>Calculator 4</div>
+        <div className={styles.latentButton}>Calculator 5</div>
+      </div>
 
-        <div className={styles.LargeText}>
-          KTA
-          <span> Volume </span>
-          Calculator
-        </div>
+      <div className={styles.LargeText}>Adhesive Coverage Calculator</div>
 
-        {/* Input Section */}
-        <div className={styles.InputContainer}>
-          <div className={styles.SizesContainer}>
-            <div className={styles.Size}>
-              <p>Size L (MM)</p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={length}
-                onChange={handleInputChange(setLength)}
-              />
-            </div>
-
-            <div className={styles.Size}>
-              <p>Size H (MM)</p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={height}
-                onChange={handleInputChange(setHeight)}
-              />
-            </div>
-
-            <div className={styles.Size}>
-              <p>Size W (MM)</p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={width}
-                onChange={handleInputChange(setWidth)}
-              />
+      <div className={styles.SplitContainer}>
+        <div className={styles.LeftSection}>
+          <div className={styles.SectionTitle}>Choose Adhesive</div>
+          <div className={styles.Products}>
+            <div className={styles.ProductGrid}>
+              {allProducts
+                .filter((product) => product?.category === category)
+                .map((item, index) => (
+                  <div
+                    onClick={() => setCurrentProduct(item)}
+                    key={index}
+                    className={`${styles.ProductBox} ${
+                      currentProduct?.name == item.name
+                        ? styles.ActiveProduct
+                        : ""
+                    }`}
+                  >
+                    {item.name}
+                  </div>
+                ))}
             </div>
           </div>
+          <div className={styles.InputContainer}>
+            <div className={styles.SectionTitle}>Enter Area</div>
+            <div className={styles.smallText}>Total area of application</div>
 
-          <div className={styles.Buttons}>
-            <button
-              type="submit"
-              className={styles.CalcBtn}
-              onClick={calculate}
-            >
-              Calculate
-            </button>
-            <button className={styles.ResetBtn} onClick={reset}>
-              Reset
+            <div className={styles.InputDropdownBox}>
+              <input
+                type="number"
+                placeholder="0000"
+                onChange={(e) => setArea(e.target.value)}
+              />
+              <div class={styles.Divider}></div>
+              <select>
+                <option>Sq.ft</option>
+                <option>Sq.m</option>
+                <option>Acres</option>
+              </select>
+            </div>
+            <button type="Submit" className={styles.Btn} onClick={handleSubmit}>
+              Submit
             </button>
           </div>
         </div>
-
-        {/* Result Section */}
-        <div className={styles.Result}>
-          <h1>Result</h1>
-          <div className={styles.SizesContainer}>
-            <div className={styles.Size}>
-              <p className={styles.ResultLabel}>
-                Joint Surface Area Of 1 Block
-              </p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={jointSurfaceArea}
-                readOnly
-              />
+        <div className={styles.RightSection}>
+          <div className={styles.SectionTitle}>Required Adhesive</div>
+          <div className={styles.Details}>
+            <div className={styles.ProductImg}>
+              <img src={currentProduct?.img} alt="" />
             </div>
-
-            <div className={styles.Size}>
-              <p className={styles.ResultLabel}>
-                Mortar Required in KG / Block
-              </p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={mortarRequired}
-                readOnly
-              />
+            <div>
+              <div className={styles.ProductWeight}>{weight} Kgs</div>
+              <div className={styles.ProductName}>{currentProduct?.name}</div>
             </div>
-
-            <div className={styles.Size}>
-              <p className={styles.ResultLabel}>
-                Blocks Required for 100 SQ. FT.
-              </p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={blocksRequired}
-                readOnly
-              />
+            <div className={styles.Disclamer}>
+              *Calculated quantity is an estimate, on-site consumption may vary
+              as per site conditions, unevenness of surface, application
+              methodology.
             </div>
-
-            <div className={styles.Size}>
-              <p className={styles.ResultLabel}>
-                Jointing Mortar in KG REQ. for 100 SQ. FT.
-              </p>
-              <input
-                type="number"
-                placeholder="0000"
-                className={styles.SizeInput}
-                value={mortarForHundredSqFt}
-                readOnly
-              />
+            <div className={styles.Buttons}>
+              <Link to={"/app/contact"}>
+                <button className={styles.Btn}>Get in touch</button>
+              </Link>
+              <button className={`${styles.Btn} ${styles.Transparent} `}>
+                <CiSearch /> Find a dealer
+              </button>
+            </div>
+            <div className={styles.ThicknessDetails}>
+              <div>Adhesive Thickness</div>
+              <select
+                name="thickness"
+                id="thickness"
+                className={styles.ThicknessDropdown}
+                value={thickness}
+                onChange={(e) => setThickness(e.target.value)}
+              >
+                <option>3 mm</option>
+                <option>4 mm</option>
+                <option>5 mm</option>
+                <option>6 mm</option>
+                <option>7 mm</option>
+                <option>8 mm</option>
+                <option>9 mm</option>
+                <option>10 mm</option>
+                <option>11 mm</option>
+                <option>12 mm</option>
+              </select>
+              <div className={styles.Text1}>
+                Adhesive quantity is based on 6mm thickness by default. Choose
+                another thickness below if needed.
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* General Info */}
-        <div className={styles.GeneralInfo}>
-          <h1 className={styles.Heading}>General Information</h1>
-          <ul className={styles.BulletPoints}>
-            <li>All results are rounded off in 2 Decimals</li>
-            <li>Considered Mortar thickness is approx 2.5 MM</li>
-            <li>For 40 KG bag size only</li>
-          </ul>
         </div>
       </div>
+    </div>
   );
 };
 
