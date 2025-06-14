@@ -4,11 +4,17 @@ import bannerImg from "/assets/CalculatorPage/Calculators.svg";
 import styles from "./CalculatorPage.module.scss";
 import { CiSearch } from "react-icons/ci";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const CalculatorPage = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [category, setCategory] = useState("Tile Adhesive");
   const [currentProduct, setCurrentProduct] = useState({});
+
+  const [area, setArea] = useState("");
+  const [thickness, setThickness] = useState("6 mm"); // 6 mm as the default
+  const [weight, setWeight] = useState(0);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -17,7 +23,7 @@ const CalculatorPage = () => {
           `http://localhost:8080/api/product/getall`
         );
         setAllProducts(response.data);
-        setCurrentProduct(allProducts[0]);
+        setCurrentProduct(response.data[0]);
       } catch (err) {
         console.log(err);
         setError(err.response?.data?.message || "Failed to fetch products.");
@@ -27,6 +33,30 @@ const CalculatorPage = () => {
     };
     fetchProducts();
   }, []);
+
+  const handleSubmit = () => {
+    if (!area) {
+      setWeight(0);
+      return;
+    }
+    const areaVal = parseFloat(area);
+    let multiplier = 0;
+
+    // Convert "6 mm" to 6
+    const mm = parseInt(thickness, 10);
+    if (mm <= 3) multiplier = 0.41;
+    else if (mm === 4) multiplier = 4 / 3;
+    else if (mm === 5) multiplier = 5 / 3;
+    else if (mm === 6) multiplier = 6 / 3;
+    else if (mm === 7) multiplier = 7 / 3;
+    else if (mm === 8) multiplier = 8 / 3;
+    else if (mm === 9) multiplier = 9 / 3;
+    else if (mm === 10) multiplier = 10 / 3;
+    else if (mm === 11) multiplier = 11 / 3;
+    else if (mm === 12) multiplier = 12 / 3;
+
+    setWeight((areaVal * multiplier).toFixed(2)); // Keep 2 decimal places
+  };
 
   return (
     <div className={styles.Container}>
@@ -52,12 +82,13 @@ const CalculatorPage = () => {
           <div className={styles.Products}>
             <div className={styles.ProductGrid}>
               {allProducts
-                .filter((product) => product.category === category)
+                .filter((product) => product?.category === category)
                 .map((item, index) => (
                   <div
+                    onClick={() => setCurrentProduct(item)}
                     key={index}
                     className={`${styles.ProductBox} ${
-                      currentProduct.name == item.name
+                      currentProduct?.name == item.name
                         ? styles.ActiveProduct
                         : ""
                     }`}
@@ -72,7 +103,11 @@ const CalculatorPage = () => {
             <div className={styles.smallText}>Total area of application</div>
 
             <div className={styles.InputDropdownBox}>
-              <input type="text" placeholder="0000" />
+              <input
+                type="number"
+                placeholder="0000"
+                onChange={(e) => setArea(e.target.value)}
+              />
               <div class={styles.Divider}></div>
               <select>
                 <option>Sq.ft</option>
@@ -80,7 +115,7 @@ const CalculatorPage = () => {
                 <option>Acres</option>
               </select>
             </div>
-            <button type="Submit" className={styles.Btn}>
+            <button type="Submit" className={styles.Btn} onClick={handleSubmit}>
               Submit
             </button>
           </div>
@@ -89,11 +124,11 @@ const CalculatorPage = () => {
           <div className={styles.SectionTitle}>Required Adhesive</div>
           <div className={styles.Details}>
             <div className={styles.ProductImg}>
-              <img src={currentProduct.img} alt="" />
+              <img src={currentProduct?.img} alt="" />
             </div>
             <div>
-              <div className={styles.ProductWeight}>0 Kgs</div>
-              <div className={styles.ProductName}>{currentProduct.name}</div>
+              <div className={styles.ProductWeight}>{weight} Kgs</div>
+              <div className={styles.ProductName}>{currentProduct?.name}</div>
             </div>
             <div className={styles.Disclamer}>
               *Calculated quantity is an estimate, on-site consumption may vary
@@ -101,7 +136,9 @@ const CalculatorPage = () => {
               methodology.
             </div>
             <div className={styles.Buttons}>
-              <button className={styles.Btn}>Get in touch</button>
+              <Link to={"/app/contact"}>
+                <button className={styles.Btn}>Get in touch</button>
+              </Link>
               <button className={`${styles.Btn} ${styles.Transparent} `}>
                 <CiSearch /> Find a dealer
               </button>
@@ -112,6 +149,8 @@ const CalculatorPage = () => {
                 name="thickness"
                 id="thickness"
                 className={styles.ThicknessDropdown}
+                value={thickness}
+                onChange={(e) => setThickness(e.target.value)}
               >
                 <option>3 mm</option>
                 <option>4 mm</option>

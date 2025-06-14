@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ContactPage.module.scss";
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import ContactTopBanner from "/assets/ContactPage/ContactTopBanner.png";
@@ -36,14 +36,11 @@ function ContactPage() {
     setIsLoading(true); // Show loader
 
     try {
-      const response = await fetch(
-        `${API}/api/contact/sendEmail`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${API}/api/contact/sendEmail`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       const result = await response.json();
       if (response.ok) {
@@ -68,6 +65,10 @@ function ContactPage() {
       setIsLoading(false); // Hide loader
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
