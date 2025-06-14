@@ -1,32 +1,12 @@
-// $mobile: 768px;
-
-// .Wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 90px;
-//   align-items: center;
-//   margin-bottom: 95px;
-// }
-
-// .BlogsContainer {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   gap: 2rem;
-//   width: 100%;
-//   @media screen and (max-width: $mobile) {
-//     gap: 1rem;
-//   }
-// }
 
 $mobile: 768px;
 
 .Wrapper {
   display: flex;
   flex-direction: column;
-  gap: 90px;
+  gap: 50px;
   align-items: center;
-  margin-bottom: 5%;
+  margin-bottom: 50px;
 }
 
 .BlogsOverlayWrapper {

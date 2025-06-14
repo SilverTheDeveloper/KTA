@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { API } from "@/constants";
 function ProductWindow() {
   //   const breadcrumbItems = [
   //     { label: "Home", path: "/" },
@@ -26,7 +27,7 @@ function ProductWindow() {
     const fetchProductDetail = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/${id}`
+          `${API}/api/product/${id}`
         );
         setProduct(response.data);
         console.log(response.data);
