@@ -14,8 +14,6 @@ const ProductCard = ({ data }) => {
       setImages((prev) => [prev[1], prev[0]]); // Simple shuffle
     }, 3000);
 
-    return () => clearInterval(interval); // Clean up on unmount
-  }, []);
 
   return (
     <div className={styles.ProductContainer}>

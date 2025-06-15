@@ -1,6 +1,6 @@
 #showDesk {
   .slider-container {
-    width: 80%;
+    width: 85%;
     margin: 0 auto; /* Centers the slider */
     overflow: hidden;
   }
@@ -14,9 +14,11 @@
   .slick-slide {
     display: flex !important;
     justify-content: center !important;
+    
   }
   .slick-slider {
     width: 100%; /* Ensures the slider fills the container */
+
   }
   .slick-prev {
     right: -2rem !important;
