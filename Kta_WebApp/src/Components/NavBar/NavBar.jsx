@@ -137,6 +137,7 @@ function NavBar() {
                 className="customClearBtn"
                 onClick={() => {
                   setShowFilteredProducts(false);
+                  setSearchQuery("");
                 }}
               >
                 ×
