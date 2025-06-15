@@ -15,8 +15,8 @@ const CareersPage = () => {
     message: "",
   });
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [showSuccess, setShowSuccess] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

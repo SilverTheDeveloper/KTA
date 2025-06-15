@@ -7,8 +7,8 @@ import styles from "./Downloads.module.scss";
 function Downloads() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/testPdf.pdf"; // path relative to 'public' folder
-    link.download = "MyFile.pdf"; // this sets the download filename
+    link.href = "/KTASolutions.pdf"; // path relative to 'public' folder
+    link.download = "KTASolutions.pdf"; // this sets the download filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -69,7 +69,7 @@ function Downloads() {
             Download
           </div>
         </div>
-        <div className={styles.DownloadCard}>
+        {/* <div className={styles.DownloadCard}>
           <img src={DocumentIcon} alt="" />
           <div className={styles.DownloadCardHeading}>KTA</div>
           <div className={styles.DownloadCardSubHeading}>
@@ -116,7 +116,7 @@ function Downloads() {
             <img src={DownloadIcon} alt="" />
             Download
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
