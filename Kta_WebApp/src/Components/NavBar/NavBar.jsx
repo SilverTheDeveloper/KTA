@@ -44,6 +44,7 @@ function NavBar() {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setExpanded(false);
+        setShowSearchBox(false)
       }
     };
 
