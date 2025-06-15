@@ -21,14 +21,14 @@ function ProductWindowNew() {
                         AND WALLS</div>
 
                     <div className={styles.ProductName}>
-                        KTA 1000
+                        {product.name}
                     </div>
                     <div className={styles.ProductType}>
-                        TYPE 1 - CIT
+                        {product.type}
                     </div>
 
                     <div className={styles.ProductBreifDesc}>
-                        KTA 1000 is a polymer modified tile adhesive suitable for small format ceramic tiles in internal areas.
+                        {product.longDesc}
                     </div>
                 </div>
             </div>

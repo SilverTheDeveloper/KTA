@@ -23,8 +23,7 @@ function LandingPage() {
       <Testimonials />
       <SecondFadeSlider />
       <FooterSection />
-      <ProductWindowNew/>
-
+      {/* <ProductWindowNew/> */}
     </div>
   );
 }

@@ -9,15 +9,13 @@ const ProductCard = ({ data }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev === 0 ? 1 : 0));
-    }, 3000); // Change image every 3 seconds
+    }, 3000); 
     return () => clearInterval(interval);
-      setImages((prev) => [prev[1], prev[0]]); // Simple shuffle
     }, 3000);
-
 
   return (
     <div className={styles.ProductContainer}>
-      <div className="fade-slideshow">
+      <div className="fade-slideshow">  
         <img
           src={data.img1}
           alt="ProductImg 1"
