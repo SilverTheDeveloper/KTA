@@ -23,13 +23,13 @@ function NavBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showFilteredProducts, setShowFilteredProducts] = useState(false);
+  const [showSearchBox, setShowSearchBox] = useState(false);
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchQuery(value);
 
     if (value.trim() === "") {
-      setFilteredProducts([]);
       setShowFilteredProducts(false);
     } else {
       const filtered = products.filter((product) =>
@@ -123,17 +123,19 @@ function NavBar() {
               placeholder="Product Search..."
               value={searchQuery}
               onChange={handleSearchChange}
-              // onBlur={() => {
-              //   setFilteredProducts([]);
-              //   if (!searchQuery) setSearchQuery("");
-              // }}
+              onFocus={()=>{
+                setShowSearchBox(true);
+              }}
+              style={{
+                backgroundPosition: showSearchBox? "0px center" : "center",
+                width: showSearchBox? "260px" : "45px"
+              }}
             />
             {searchQuery && (
               <span
                 className="customClearBtn"
                 onClick={() => {
-                  setSearchQuery("");
-                  setFilteredProducts([]);
+                  setShowFilteredProducts(false);
                 }}
               >
                 ×
@@ -146,7 +148,9 @@ function NavBar() {
                     to={`/app/product/${item.id}`}
                     className="product-search-link"
                     onClick={() => {
+                      setSearchQuery("");
                       setShowFilteredProducts(false);
+                      setShowSearchBox(false);
                     }}
                   >
                     <li key={item.id}>
