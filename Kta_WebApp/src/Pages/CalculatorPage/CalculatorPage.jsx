@@ -66,13 +66,13 @@ const CalculatorPage = () => {
                   our easy-to-use calculators help you determine the right 
                   amount of product for your surface care needs."
       />
-      <div className={styles.FilterButtons}>
+      {/* <div className={styles.FilterButtons}>
         <div className={styles.activeButton}>Calculator 1</div>
         <div className={styles.latentButton}>Calculator 2</div>
         <div className={styles.latentButton}>Calculator 3</div>
         <div className={styles.latentButton}>Calculator 4</div>
         <div className={styles.latentButton}>Calculator 5</div>
-      </div>
+      </div> */}
 
       <div className={styles.LargeText}>Adhesive Coverage Calculator</div>
 
