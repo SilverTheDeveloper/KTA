@@ -22,6 +22,7 @@ function NavBar() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showFilteredProducts, setShowFilteredProducts] = useState(false);
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
@@ -29,10 +30,12 @@ function NavBar() {
 
     if (value.trim() === "") {
       setFilteredProducts([]);
+      setShowFilteredProducts(false);
     } else {
       const filtered = products.filter((product) =>
         product.name.toLowerCase().includes(value.toLowerCase())
       );
+      setShowFilteredProducts(true);
       setFilteredProducts(filtered);
     }
   };
@@ -120,12 +123,10 @@ function NavBar() {
               placeholder="Product Search..."
               value={searchQuery}
               onChange={handleSearchChange}
-              onBlur={() => {
-                setTimeout(() => {
-                  setFilteredProducts([]);
-                  if (!searchQuery) setSearchQuery("");
-                }, 200);
-              }}
+              // onBlur={() => {
+              //   setFilteredProducts([]);
+              //   if (!searchQuery) setSearchQuery("");
+              // }}
             />
             {searchQuery && (
               <span
@@ -138,12 +139,15 @@ function NavBar() {
                 ×
               </span>
             )}
-            {filteredProducts.length > 0 && (
+            {filteredProducts.length > 0 && showFilteredProducts && (
               <ul className="searchSuggestions">
                 {filteredProducts.map((item) => (
                   <Link
                     to={`/app/product/${item.id}`}
                     className="product-search-link"
+                    onClick={() => {
+                      setShowFilteredProducts(false);
+                    }}
                   >
                     <li key={item.id}>
                       <img

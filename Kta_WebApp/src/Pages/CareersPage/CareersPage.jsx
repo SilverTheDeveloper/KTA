@@ -17,7 +17,8 @@ const CareersPage = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-
+  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -28,6 +29,7 @@ const CareersPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setShowError(false);
 
     setIsLoading(true); // Show loader
 
@@ -50,11 +52,13 @@ const CareersPage = () => {
           message: "",
         });
       } else {
-        alert(`Error: ${result.message}`);
+        throw new Error(result);
       }
     } catch (error) {
-      alert("Failed to send email");
-      console.error(error);
+      //alert(error.message);
+      setShowSuccess(false);
+      setError(error.message);
+      setShowError(true);
     } finally {
       setIsLoading(false); // Hide loader
     }
@@ -101,6 +105,7 @@ const CareersPage = () => {
             ✅ You've applied successfully!
           </div>
         )}
+        {showError && <div className={styles.ErrorBanner}>❌{error}</div>}
         {isLoading ? (
           <div className={styles.LoaderOverlay}>
             <Oval
@@ -129,6 +134,7 @@ const CareersPage = () => {
                 className={styles.inputTag}
                 placeholder="City"
                 type="text"
+                onChange={handleChange}
               />
             </div>
             <div className={styles.inputDiv}>
@@ -153,7 +159,7 @@ const CareersPage = () => {
               <input
                 className={styles.inputTag}
                 placeholder="Mobile number*"
-                type="phone"
+                type="number"
                 name="mobileNo"
                 value={formData.mobileNo}
                 onChange={handleChange}
