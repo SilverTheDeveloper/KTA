@@ -22,6 +22,6 @@ app.use('/api/product', productRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/career', careerRoutes);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log(`Listening on port ${process.env.PORT}`);
 });
