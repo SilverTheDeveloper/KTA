@@ -163,6 +163,99 @@ $mobile: 786px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%;
+    .DownloadCard {
+      display: flex;
+      width: 210px;
+      padding-top: 32px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 13.6px;
+      border-radius: 8px;
+      border: 0.85px solid #e2e2e2;
+      background: #fff;
+
+      @media (max-width: $mobile) {
+        display: flex;
+        width: 42%;
+        padding-top: 20.148px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8.563px;
+        flex-shrink: 0;
+        border-radius: 5.037px;
+        border: 0.535px solid #e2e2e2;
+        background: #fff;
+
+        img {
+          transform: scale(0.7);
+        }
+      }
+
+      .DownloadCardHeading {
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        @media (max-width: $mobile) {
+          color: #000;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+      .DownloadCardSubHeading {
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        @media (max-width: $mobile) {
+          color: #000;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+      .DownloadCardFooter {
+        cursor: pointer;
+        display: flex;
+        height: 52px;
+        padding: 20px 24.65px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        align-self: stretch;
+        border-radius: 0px 0px 6.8px 6.8px;
+        background: #e31e24;
+
+        @media (max-width: $mobile) {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
   }
   .ProductSectionList {
     display: flex;
