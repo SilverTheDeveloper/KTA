@@ -7,6 +7,9 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { API } from "@/constants";
+import DocumentIcon from "/assets/DownloadsPage/document-icon.png";
+import DownloadIcon from "/assets/DownloadsPage/download-Icon.svg";
+
 function ProductWindow() {
   //   const breadcrumbItems = [
   //     { label: "Home", path: "/" },
@@ -14,21 +17,37 @@ function ProductWindow() {
   //     { label: "Product Name", path: "/product/123" },
   //   ];
 
+  const sections = [
+    { label: "Description", id: "description" },
+    { label: "Characteristics", id: "characteristics" },
+    { label: "Documents and Downloads", id: "documents" },
+    { label: "Usage Guide", id: "usage" },
+  ];
+
   const navigate = useNavigate();
   const { id } = useParams(); // Get the dynamic ID from URL
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
+  const [iconSize, setIconSize] = useState(24);
 
   const handleClose = () => {
     navigate(-1);
   };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/KTASolutions.pdf"; // path relative to 'public' folder
+    link.download = "KTASolutions.pdf"; // this sets the download filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     const fetchProductDetail = async () => {
       try {
-        const response = await axios.get(
-          `${API}/api/product/${id}`
-        );
+        const response = await axios.get(`${API}/api/product/${id}`);
         setProduct(response.data);
         console.log(response.data);
       } catch (error) {
@@ -40,104 +59,49 @@ function ProductWindow() {
     fetchProductDetail();
   }, [id]);
 
+  useEffect(() => {
+    function handleResize() {
+      setIconSize(window.innerWidth < 768 ? 16 : 24);
+    }
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    // <div className={styles.productWindowDiv}>
-    //   {/* <BreadCrumb items={breadcrumbItems} /> */}
-
-    //   <div id={styles.ProductWindow}>
-    //     <div className={styles.ProductImgList}>
-    //       <div>
-    //         <img src={product.img} alt="" />
-    //       </div>
-    //       <div>
-    //         <img src={product.img} alt="" />
-    //       </div>
-    //       <div>
-    //         <img src={product.img} alt="" />
-    //       </div>
-    //       <div>
-    //         <img src={product.img} alt="" />
-    //       </div>
-    //       <div>
-    //         <img src={product.img} alt="" />
-    //       </div>
-    //     </div>
-
-    //     <div className={styles.ProductMainImg}>
-    //       <img src={product.img} alt="" />
-    //     </div>
-
-    //     <div className={styles.ProductMain}>
-    //       <div className={styles.ProductSpec}>INTERIOR FLOORS AND WALLS</div>
-
-    //       <div className={styles.ProductName}>{product.name}</div>
-    //       <div className={styles.ProductType}>{product.type}</div>
-
-    //       <div className={styles.ProductDesc}>
-    //         {product.longDesc}
-
-    //       </div>
-
-    //       <div className={styles.ProductAvailable}>
-    //         Available in
-    //         <div>
-    //           <div></div>
-    //           <div></div>
-    //         </div>
-    //       </div>
-
-    //       <div className={styles["outline-button"]}>Connect and Shop -&gt;</div>
-    //     </div>
-    //     <div style={{ cursor: "pointer" }}>
-    //       <IoClose size={30} onClick={handleClose} />
-    //     </div>
-    //   </div>
-    // </div>
-
     <div className={styles.ProductWindow}>
-      <div className={styles.ProductSectionList}>
-        <div
-          className={styles.outlineButton}
-          onClick={() =>
+      <div className={styles.ProductSectionListMobile}>
+        <select
+          onChange={(e) => {
+            const sectionId = e.target.value;
             document
-              .getElementById("description")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
+              .getElementById(sectionId)
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
-          Description
-        </div>
-        <div
-          className={styles.outlineButton}
-          onClick={() =>
-            document
-              .getElementById("characteristics")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Characteristics
-        </div>
-        <div
-          className={styles.outlineButton}
-          onClick={() =>
-            document
-              .getElementById("documents")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Documents and Downloads
-        </div>
-        <div
-          className={styles.outlineButton}
-          onClick={() =>
-            document
-              .getElementById("usage")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Usage Guide
-        </div>
+          {sections.map((section) => (
+            <option key={section.id} value={section.id}>
+              {section.label}
+            </option>
+          ))}
+        </select>
       </div>
-
+      <div className={styles.ProductSectionList}>
+        {sections.map((section) => (
+          <div
+            key={section.id}
+            className={styles.outlineButton}
+            onClick={() =>
+              document
+                .getElementById(section.id)
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            {section.label}
+          </div>
+        ))}
+      </div>{" "}
       <div className={styles.ProductShowCase} id="description">
         <div className={styles.ProductImg}>
           <img src={product.img} alt="" />
@@ -150,11 +114,11 @@ function ProductWindow() {
               const filled = i + 1 <= Math.floor(4.5);
               const half = i + 1 === Math.ceil(4.5) && !Number.isInteger(4.5);
               return filled ? (
-                <FaStar key={i} color="gold" size={24} />
+                <FaStar key={i} color="gold" size={iconSize} />
               ) : half ? (
-                <FaStarHalfAlt key={i} color="gold" size={24} />
+                <FaStarHalfAlt key={i} color="gold" size={iconSize} />
               ) : (
-                <FaRegStar key={i} color="gold" size={24} />
+                <FaRegStar key={i} color="gold" size={iconSize} />
               );
             })}
           </div>
@@ -167,7 +131,6 @@ function ProductWindow() {
           <div className={styles.ProductBreifDesc}>{product.longDesc}</div>
         </div>
       </div>
-
       <div className={styles.Chara}>
         <hr />
         <div className={styles.SectionHeading} id="characteristics">
@@ -185,16 +148,26 @@ function ProductWindow() {
           <div></div>
         </div>
       </div>
-
       <div className={styles.Download}>
         <hr />
 
         <div className={styles.SectionHeading} id="documents">
           Documents and Downloads
+          <div className={styles.DownloadCard}>
+            <img src={DocumentIcon} alt="" />
+            <div className={styles.DownloadCardHeading}>KTA</div>
+            <div className={styles.DownloadCardSubHeading}>
+              Corporate Brochure
+            </div>
+
+            <div onClick={handleDownload} className={styles.DownloadCardFooter}>
+              <img src={DownloadIcon} alt="" />
+              Download
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
-
       <div className={styles.UserGuide}>
         <hr />
         <div className={styles.SectionHeading} id="usage">
