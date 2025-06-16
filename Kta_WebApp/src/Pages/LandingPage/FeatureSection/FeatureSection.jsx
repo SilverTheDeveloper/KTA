@@ -14,10 +14,15 @@ const FeatureSection = () => {
           <p className={styles.SubHeading}>Why KTA Solutions?</p>
         </div>
         <p className={styles.Text}>Here's why :) </p>
-        <GradientButton
-          text={"About Us"}
-          customStyles={styles.ButtonOnDesktop}
-        />
+        <Link
+          to={"/app/about"}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <GradientButton
+            text={"About Us"}
+            customStyles={styles.ButtonOnDesktop}
+          />
+        </Link>
       </div>
       <div className={styles.RightSection}>
         {featureData.map((feature, index) => {
@@ -31,11 +36,15 @@ const FeatureSection = () => {
         })}
       </div>
 
-      <Link to="/app/about"
-        style={{ textDecoration: 'none', color: 'inherit' }}>
-        <GradientButton text={"About Us"} customStyles={styles.ButtonOnMobile} />
+      <Link
+        to="/app/about"
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
+        <GradientButton
+          text={"About Us"}
+          customStyles={styles.ButtonOnMobile}
+        />
       </Link>
-
     </div>
   );
 };

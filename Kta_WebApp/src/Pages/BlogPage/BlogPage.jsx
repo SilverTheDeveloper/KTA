@@ -29,15 +29,18 @@
 
 // export default BlogPage;
 
-
 import TopBanner from "@/Components/TopBanner/TopBanner";
-import React from "react";
+import React, { useEffect } from "react";
 import blogsIcon from "/assets/BlogPage/Blogs.svg";
 import styles from "./BlogPage.module.scss";
 import { blogList } from "@/Data/BlogPage";
 import BlogCard from "@/Components/BlogCard/BlogCard";
 
 const BlogPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.Wrapper}>
       <TopBanner

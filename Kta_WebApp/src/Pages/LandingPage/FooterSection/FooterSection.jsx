@@ -5,37 +5,33 @@ import { BsTelephone } from "react-icons/bs";
 import { MdMailOutline } from "react-icons/md";
 
 import ktaIcon from "/assets/LandingPage/KtaIcon.png";
+import { Link } from "react-router-dom";
 const FooterSection = () => {
+  const linkStyle = {
+    textDecoration: "none",
+    color: "inherit",
+  };
   return (
     <div className={styles.FooterSection}>
       <div className={styles.RightTopSection}>
-
         <a
           href="https://www.facebook.com/people/KTA-Solutions/61556809331930/#"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: "none" }}
         >
-          <div className={styles.facebookIcon}>
-          </div>
+          <div className={styles.facebookIcon}></div>
         </a>
         <a
           href="https://www.instagram.com/kta.solutions/"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: "none" }}
         >
-          <div className={styles.instagramIcon} >
-          </div>
+          <div className={styles.instagramIcon}></div>
         </a>
 
-
-
-        <div className={styles.whatsappIcon}>
-        </div>
-
-
-
+        <div className={styles.whatsappIcon}></div>
       </div>
       <div className={styles.LeftSection}>
         <div className={styles.Logo}>
@@ -51,16 +47,24 @@ const FooterSection = () => {
         <div className={styles.List}>
           <span className={styles.Title}>Useful links</span>
           <span>
-            <a>About Us</a>
+            <Link to={"/app/about"} style={linkStyle}>
+              About Us
+            </Link>
           </span>
           <span>
-            <a>Product</a>
+            <Link to={"/app/products"} style={linkStyle}>
+              Product
+            </Link>
           </span>
           <span>
-            <a>Blogs</a>
+            <Link to={"/app/blogs"} style={linkStyle}>
+              Blogs
+            </Link>
           </span>
           <span>
-            <a>Careers</a>
+            <Link to={"/app/careers"} style={linkStyle}>
+              Careers
+            </Link>
           </span>
         </div>
         <div className={styles.List}>
@@ -75,7 +79,9 @@ const FooterSection = () => {
             <a>Shipping & Returns</a>
           </span>
           <span>
-            <a>Contact</a>
+            <Link to={"/app/contact"} style={linkStyle}>
+              Contact
+            </Link>
           </span>
         </div>
         <div className={styles.ContactUs}>
@@ -91,8 +97,8 @@ const FooterSection = () => {
           <span>
             <IoLocationOutline size={"20px"} />
             <p>
-              Mangliawas - Nasirabad Road Mangliawas, Ajmer - 305203
-              Rajasthan, India.
+              Mangliawas - Nasirabad Road Mangliawas, Ajmer - 305203 Rajasthan,
+              India.
             </p>
           </span>
         </div>
