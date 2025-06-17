@@ -37,7 +37,7 @@ function ProductWindowNew() {
             <div className={styles.Chara}>
                 <hr />
                 <div className={styles.SectionHeading}>Characteristics</div>
-                
+
                 <ul>
                     <li>For fixing ceramic tiles on interior floors and walls</li>
                     <li>Suitable for tile size up to 450 mm</li>
@@ -62,7 +62,7 @@ function ProductWindowNew() {
             <div className={styles.UserGuide}>
                 <hr />
                 <div className={styles.SectionHeading}>Usage Guide</div>
-                
+
                 <div className={styles.container}>
                     <p className={styles.paragraph}>
                         <span className={styles.title}>KTA 1000</span> is a tile adhesive certified as C1 T (as per EN 12004) and Type II (according to IS 15477:2019)

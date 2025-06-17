@@ -131,6 +131,7 @@ function NavBar() {
               style={{
                 backgroundPosition: showSearchBox ? "0px center" : "center",
                 width: showSearchBox ? "260px" : "45px",
+                
               }}
             />
             {searchQuery && (
