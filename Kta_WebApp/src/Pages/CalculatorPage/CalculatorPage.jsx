@@ -107,6 +107,7 @@ const CalculatorPage = () => {
                 type="number"
                 placeholder="0000"
                 onChange={(e) => setArea(e.target.value)}
+                value={area}
               />
               <div class={styles.Divider}></div>
               <select>
@@ -139,8 +140,14 @@ const CalculatorPage = () => {
               <Link to={"/app/contact"}>
                 <button className={styles.Btn}>Get in touch</button>
               </Link>
-              <button className={`${styles.Btn} ${styles.Transparent} `}>
-                <CiSearch /> Find a dealer
+              <button
+                className={`${styles.Btn} ${styles.Transparent} `}
+                onClick={() => {
+                  setArea((prev) => (prev = 0));
+                  setWeight(0);
+                }}
+              >
+                Reset
               </button>
             </div>
             <div className={styles.ThicknessDetails}>

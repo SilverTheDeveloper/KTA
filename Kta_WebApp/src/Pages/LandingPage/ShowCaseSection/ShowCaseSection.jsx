@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ProductList } from "@/Data/LandingPage";
 import ProductCard from "@/Components/ProductCard/ProductCard";
@@ -6,21 +5,17 @@ import styles from "./ShowCaseSection.module.scss";
 import HeadingComp from "@/Components/HeadingComp/HeadingComp";
 import GradientButton from "@/Components/GradientButton/GradientButton";
 import Slider from "react-slick";
-import './ShowCaseSectionSlider.css'
+import "./ShowCaseSectionSlider.css";
 import { Link } from "react-router-dom";
 
 const ShowCaseSection = () => {
-
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
-
   };
-
-
 
   return (
     <>
@@ -32,21 +27,22 @@ const ShowCaseSection = () => {
           </div>
         </div>
 
-
         <div className="slider-container">
           <Slider {...settings}>
             {ProductList.map((productItem, index) => (
               <ProductCard data={productItem} />
             ))}
-
           </Slider>
         </div>
         <div className={styles.fitButton}>
-          <GradientButton text={"View All Products"} />
+          <Link
+            to={"app/products"}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <GradientButton text={"View All Products"} />
+          </Link>
         </div>
-
       </div>
-
 
       <div id="showMob" className={`${styles.showMob} ${styles.showMobile}`}>
         <div className={styles.Headings}>
@@ -56,22 +52,18 @@ const ShowCaseSection = () => {
           </div>
         </div>
         <div className={styles.productContainerMob}>
-
           {ProductList.map((productItem, index) => (
-            <ProductCard data={productItem} />
+            <ProductCard data={productItem} key={index} />
           ))}
         </div>
         <div className="showcaseButton">
           <Link to="/app/products">
-            <div className="outline-button">Explore Our Products</div>
+            <div className="outline-button">View All Products</div>
           </Link>
         </div>
-
-
       </div>
     </>
   );
 };
 
 export default ShowCaseSection;
-

@@ -44,7 +44,7 @@ function NavBar() {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setExpanded(false);
-        setShowSearchBox(false)
+        setShowSearchBox(false);
       }
     };
 
@@ -95,6 +95,7 @@ function NavBar() {
         <Navbar.Collapse id="navbarScroll" className="mobile-navbar">
           <Nav className="ms-auto my-2 my-lg-0" navbarScroll>
             {[
+              { path: "/", label: "Home" },
               { path: "/app/about", label: "About" },
               { path: "/app/products", label: "Product" },
               { path: "/app/downloads", label: "Download" },
@@ -124,12 +125,12 @@ function NavBar() {
               placeholder="Product Search..."
               value={searchQuery}
               onChange={handleSearchChange}
-              onFocus={()=>{
+              onFocus={() => {
                 setShowSearchBox(true);
               }}
               style={{
-                backgroundPosition: showSearchBox? "0px center" : "center",
-                width: showSearchBox? "260px" : "45px"
+                backgroundPosition: showSearchBox ? "0px center" : "center",
+                width: showSearchBox ? "260px" : "45px",
               }}
             />
             {searchQuery && (
