@@ -6,29 +6,41 @@ import { testimonialData } from "@/Data/LandingPage";
 
 const Testimonials = () => {
   const testiCardsRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(true);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  
+useEffect(() => {
+  const checkScrollButtons = () => {
+    if (testiCardsRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = testiCardsRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1); // -1 for rounding issues
+    }
+  };
 
-  useEffect(() => {
-    const checkScrollButtons = () => {
-      if (testiCardsRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = testiCardsRef.current;
-        setCanScrollLeft(scrollLeft > 0);
-        setCanScrollRight(scrollLeft + clientWidth < scrollWidth);
-      }
-    };
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 786);
+    checkScrollButtons();
+  };
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 786);
-      checkScrollButtons();
-    };
+  const scrollContainer = testiCardsRef.current;
 
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Run on mount
+  window.addEventListener("resize", handleResize);
+  if (scrollContainer) {
+    scrollContainer.addEventListener("scroll", checkScrollButtons);
+  }
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  handleResize(); // Initial check
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+    if (scrollContainer) {
+      scrollContainer.removeEventListener("scroll", checkScrollButtons);
+    }
+  };
+}, []);
+
 
   return (
     <div className={styles.Testimonials}>

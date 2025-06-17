@@ -5,6 +5,7 @@ import styles from "./CalculatorPage.module.scss";
 import { CiSearch } from "react-icons/ci";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { API } from "@/constants";
 
 const CalculatorPage = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -20,7 +21,7 @@ const CalculatorPage = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/product/getall`
+          `${API}/api/product/getall`
         );
         setAllProducts(response.data);
         setCurrentProduct(response.data[0]);
