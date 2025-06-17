@@ -13,11 +13,15 @@ $mobile: 768px;
     position: relative;
     width: 100%;
     overflow: hidden;
+    
 
     @media (max-width: $mobile) {
       width: 100%;
       height: 300px;
       overflow: hidden;
+      transform: scaleX(1.5);
+      transform-origin: right;
+    
     }
   }
 }

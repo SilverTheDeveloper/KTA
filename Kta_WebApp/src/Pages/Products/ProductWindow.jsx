@@ -9,13 +9,10 @@ import { IoClose } from "react-icons/io5";
 import { API } from "@/constants";
 import DocumentIcon from "/assets/DownloadsPage/document-icon.png";
 import DownloadIcon from "/assets/DownloadsPage/download-Icon.svg";
+import TopBanner from "@/Components/TopBanner/TopBanner";
+import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
 
 function ProductWindow() {
-  //   const breadcrumbItems = [
-  //     { label: "Home", path: "/" },
-  //     { label: "Products", path: "/products" },
-  //     { label: "Product Name", path: "/product/123" },
-  //   ];
 
   const sections = [
     { label: "Description", id: "description" },
@@ -70,162 +67,176 @@ function ProductWindow() {
   }, []);
 
   return (
-    <div className={styles.ProductWindow}>
-      <div className={styles.ProductSectionListMobile}>
-        <select
-          onChange={(e) => {
-            const sectionId = e.target.value;
-            document
-              .getElementById(sectionId)
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          {sections.map((section) => (
-            <option key={section.id} value={section.id}>
-              {section.label}
-            </option>
-          ))}
-        </select>
+
+    <>
+      <div className={styles.BannerCenter}>
+
+        <TopBanner
+          details="Explore our premium range of tile adhesives designed for superior bonding and durability, suitable for various tile installations."
+          head={bannerImg}
+        />
       </div>
-      <div className={styles.ProductSectionList}>
-        {sections.map((section) => (
-          <div
-            key={section.id}
-            className={styles.outlineButton}
-            onClick={() =>
+      <div className={styles.ProductWindow}>
+
+        <div className={styles.ProductSectionListMobile}>
+          <select
+            onChange={(e) => {
+              const sectionId = e.target.value;
               document
-                .getElementById(section.id)
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+                .getElementById(sectionId)
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
-            {section.label}
+            {sections.map((section) => (
+              <option key={section.id} value={section.id}>
+                {section.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={styles.ProductSectionList}>
+          {sections.map((section) => (
+            <div
+              key={section.id}
+              className={styles.outlineButton}
+              onClick={() =>
+                document
+                  .getElementById(section.id)
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              {section.label}
+            </div>
+          ))}
+        </div>{" "}
+        <div className={styles.ProductShowCase} id="description">
+          <div className={styles.ProductImg}>
+            <img src={product.img} alt="" />
           </div>
-        ))}
-      </div>{" "}
-      <div className={styles.ProductShowCase} id="description">
-        <div className={styles.ProductImg}>
-          <img src={product.img} alt="" />
-        </div>
-        <div className={styles.ProductBlock}>
-          <div className={styles.rating}>
-            {/* TODO : need to update rating with product.rating */}
-            <span className={styles.ratingText}>{4.5}</span>{" "}
-            {[...Array(5)].map((_, i) => {
-              const filled = i + 1 <= Math.floor(4.5);
-              const half = i + 1 === Math.ceil(4.5) && !Number.isInteger(4.5);
-              return filled ? (
-                <FaStar key={i} color="gold" size={iconSize} />
-              ) : half ? (
-                <FaStarHalfAlt key={i} color="gold" size={iconSize} />
-              ) : (
-                <FaRegStar key={i} color="gold" size={iconSize} />
-              );
-            })}
-          </div>
-
-          <div className={styles.ProductMiniDesc}>{product.shortDesc}</div>
-
-          <div className={styles.ProductName}>{product.name}</div>
-          <div className={styles.ProductType}>{product.type}</div>
-
-          <div className={styles.ProductBreifDesc}>{product.longDesc}</div>
-        </div>
-      </div>
-      <div className={styles.Chara}>
-        <hr />
-        <div className={styles.SectionHeading} id="characteristics">
-          Characteristics
-        </div>
-
-        <ul>
-          <li>For fixing ceramic tiles on interior floors and walls</li>
-          <li>Suitable for tile size up to 450 mm</li>
-          <li>Single component - just add water</li>
-        </ul>
-
-        <div className={styles.Available}>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-      <div className={styles.Download}>
-        <hr />
-
-        <div className={styles.SectionHeading} id="documents">
-          Documents and Downloads
-          <div className={styles.DownloadCard}>
-            <img src={DocumentIcon} alt="" />
-            <div className={styles.DownloadCardHeading}>KTA</div>
-            <div className={styles.DownloadCardSubHeading}>
-              Corporate Brochure
+          <div className={styles.ProductBlock}>
+            <div className={styles.rating}>
+              {/* TODO : need to update rating with product.rating */}
+              <span className={styles.ratingText}>{4.5}</span>{" "}
+              {[...Array(5)].map((_, i) => {
+                const filled = i + 1 <= Math.floor(4.5);
+                const half = i + 1 === Math.ceil(4.5) && !Number.isInteger(4.5);
+                return filled ? (
+                  <FaStar key={i} color="gold" size={iconSize} />
+                ) : half ? (
+                  <FaStarHalfAlt key={i} color="gold" size={iconSize} />
+                ) : (
+                  <FaRegStar key={i} color="gold" size={iconSize} />
+                );
+              })}
             </div>
 
-            <div onClick={handleDownload} className={styles.DownloadCardFooter}>
-              <img src={DownloadIcon} alt="" />
-              Download
-            </div>
+            <div className={styles.ProductMiniDesc}>{product.shortDesc}</div>
+
+            <div className={styles.ProductName}>{product.name}</div>
+            <div className={styles.ProductType}>{product.type}</div>
+
+            <div className={styles.ProductBreifDesc}>{product.longDesc}</div>
           </div>
         </div>
-        <div></div>
-      </div>
-      <div className={styles.UserGuide}>
-        <hr />
-        <div className={styles.SectionHeading} id="usage">
-          Usage Guide
-        </div>
+        <div className={styles.Chara}>
+          <hr />
+          <div className={styles.SectionHeading} id="characteristics">
+            Characteristics
+          </div>
 
-        <div className={styles.container}>
-          <p className={styles.paragraph}>
-            <span className={styles.title}>KTA 1000</span> is a tile adhesive
-            certified as C1 T (as per EN 12004) and Type II (according to IS
-            15477:2019) designed for tiles (≤3% porosity).
-          </p>
-
-          <div className={styles.sectionTitle}>Indoors:</div>
-          <ul className={styles.list}>
-            <li className={styles.listItem}>
-              On horizontal and vertical surfaces
-            </li>
-            <li className={styles.listItem}>
-              On cement and cement-lime plaster, cement screeds, cement ground
-              coats and concrete
-            </li>
+          <ul>
+            <li>For fixing ceramic tiles on interior floors and walls</li>
+            <li>Suitable for tile size up to 450 mm</li>
+            <li>Single component - just add water</li>
           </ul>
 
-          <div className={styles.sectionTitle}>SUBSTRATE PREPARATION</div>
-          <p className={styles.paragraph}>
-            Adhesive can be applied on even and compact substrates, free of any
-            substances that reduce adherence (grease, bitumen, oil, paint, dust
-            etc.). Concrete should be at least 1 month old. Cement screeds and
-            plasters should be fully cured. Substrates should be mechanically
-            roughened and cleaned from dust. Substrates must not be wet. Any
-            existing dirt, loose layers and paint coating shall be mechanically
-            removed. Absorbent substrates shall be dampened and remove excess
-            water before application.
-          </p>
-
-          <div className={styles.sectionTitle}>APPLICATION</div>
-          <p className={styles.paragraph}>
-            Pour VURA KTA 1000 into a container with the precisely measured
-            amount of clean water and stir with a drill and mixer until a
-            homogeneous mass without lumps is obtained. Leave for 5 min. and
-            then stir again. Apply the mortar with a suitable notched trowel.
-            Use the proper sized notch trowel to ensure full bedding in the
-            tile. Do not soak tiles in the water. The back buttering method
-            shall be used for larger tiles (i.e. additionally a thin layer of
-            the mortar should be spread on the tile’s back side, contact area ≥
-            90%). Place the tiles only during the open time of the adhesive.
-            Fresh excess mortar can be removed with water, hardened material can
-            only be removed mechanically. Grouting on the wall can be done after
-            8 hrs and after 24 hrs in porous tiles using VURA grouts. Floors are
-            set to light traffic after approx. 24 hrs. Expansion joints, joints
-            at the corners of walls and floor and around sanitary equipment
-            shall be filled with sealants or shall be treated with appropriate
-            treatment.
-          </p>
+          <div className={styles.Available}>
+            <div>
+              Available in
+            </div>
+            <div className={styles.AvaiColor}></div>
+            <div className={styles.AvaiColor}></div>
+          </div>
         </div>
-      </div>
-    </div>
+        <div className={styles.Download}>
+          <hr />
+
+          <d  iv className={styles.SectionHeading} id="documents">
+            Documents and Downloads
+            <div className={styles.DownloadCard}>
+              <img src={DocumentIcon} alt="" />
+              <div className={styles.DownloadCardHeading}>KTA</div>
+              <div className={styles.DownloadCardSubHeading}>
+                Corporate Brochure
+              </div>
+
+              <div onClick={handleDownload} className={styles.DownloadCardFooter}>
+                <img src={DownloadIcon} alt="" />
+                Download
+              </div>
+            </div>
+          </d>
+
+        </div>
+        <div className={styles.UserGuide}>
+          <hr />
+          <div className={styles.SectionHeading} id="usage">
+            Usage Guide
+          </div>
+
+          <div className={styles.container}>
+            <p className={styles.paragraph}>
+              <span className={styles.title}>KTA 1000</span> is a tile adhesive
+              certified as C1 T (as per EN 12004) and Type II (according to IS
+              15477:2019) designed for tiles (≤3% porosity).
+            </p>
+
+            <div className={styles.sectionTitle}>Indoors:</div>
+            <ul className={styles.list}>
+              <li className={styles.listItem}>
+                On horizontal and vertical surfaces
+              </li>
+              <li className={styles.listItem}>
+                On cement and cement-lime plaster, cement screeds, cement ground
+                coats and concrete
+              </li>
+            </ul>
+
+            <div className={styles.sectionTitle}>SUBSTRATE PREPARATION</div>
+            <p className={styles.paragraph}>
+              Adhesive can be applied on even and compact substrates, free of any
+              substances that reduce adherence (grease, bitumen, oil, paint, dust
+              etc.). Concrete should be at least 1 month old. Cement screeds and
+              plasters should be fully cured. Substrates should be mechanically
+              roughened and cleaned from dust. Substrates must not be wet. Any
+              existing dirt, loose layers and paint coating shall be mechanically
+              removed. Absorbent substrates shall be dampened and remove excess
+              water before application.
+            </p>
+
+            <div className={styles.sectionTitle}>APPLICATION</div>
+            <p className={styles.paragraph}>
+              Pour VURA KTA 1000 into a container with the precisely measured
+              amount of clean water and stir with a drill and mixer until a
+              homogeneous mass without lumps is obtained. Leave for 5 min. and
+              then stir again. Apply the mortar with a suitable notched trowel.
+              Use the proper sized notch trowel to ensure full bedding in the
+              tile. Do not soak tiles in the water. The back buttering method
+              shall be used for larger tiles (i.e. additionally a thin layer of
+              the mortar should be spread on the tile’s back side, contact area ≥
+              90%). Place the tiles only during the open time of the adhesive.
+              Fresh excess mortar can be removed with water, hardened material can
+              only be removed mechanically. Grouting on the wall can be done after
+              8 hrs and after 24 hrs in porous tiles using VURA grouts. Floors are
+              set to light traffic after approx. 24 hrs. Expansion joints, joints
+              at the corners of walls and floor and around sanitary equipment
+              shall be filled with sealants or shall be treated with appropriate
+              treatment.
+            </p>
+          </div>
+        </div>
+      </div >
+    </>
   );
 }
 
