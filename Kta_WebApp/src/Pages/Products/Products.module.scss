@@ -87,6 +87,7 @@ $mobile: 786px;
   border-radius: 20px;
   box-shadow: 0px 7px 5px 1px grey;
   padding: 10px;
+  z-index: 999;
   @media (max-width: $mobile) {
     display: none;
   }
@@ -130,10 +131,9 @@ $mobile: 786px;
 
 .ProductCard {
   display: flex;
-  width: 280px;
+  width: 25%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 9.821px;
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 10px;

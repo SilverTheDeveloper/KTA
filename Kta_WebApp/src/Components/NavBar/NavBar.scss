@@ -303,7 +303,7 @@ input[type="search"]::-webkit-search-cancel-button {
   outline: none;
 
   &:focus {
-    width: 260px;
+    width: 100%;
     padding-left: 40px;
     color: black;
     cursor: text;
