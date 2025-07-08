@@ -4,51 +4,67 @@ function Accord() {
   return (
     <Accordion>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>What makes KTA 1000 different from other surface treatments?</Accordion.Header>
+        <Accordion.Header>what makes kta tile adhesives different from other brands?
+        </Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          kta adhesives are engineered to meet isi, en, and ansi standards. our products are polymer-enhanced for superior bonding, easy application, and long-term durability — even in extreme conditions.
+
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>What makes KTA 1000 different from other surface treatments?</Accordion.Header>
+        <Accordion.Header>Which tile adhesive should i use for large format or natural stone tiles?
+        </Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          For large format tiles or stone installations, we recommend using our c2tes1 or r2t grade adhesives, designed for high-performance bonding with no slip and extended open time.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="2">
-        <Accordion.Header>What makes KTA 1000 different from other surface treatments?</Accordion.Header>
+        <Accordion.Header>Are your products suitable for exterior use?
+        </Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Yes. our c2te and c2tes1 formulations are specifically designed to handle exterior conditions, including moisture, temperature variations, and heavy load-bearing areas.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="3">
-        <Accordion.Header>What makes KTA 1000 different from other surface treatments?</Accordion.Header>
+        <Accordion.Header>Can i use kta adhesives for vertical tile installations?
+        </Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Absolutely. our anti-sag formulations are perfect for wall applications, ensuring tiles stay in place without slippage during setting.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="4">
+        <Accordion.Header>Do you offer technical support or on-site guidance?
+
+        </Accordion.Header>
+        <Accordion.Body>
+          Yes, we provide full technical support including product training, mixing instructions, site demos, and troubleshooting to ensure flawless application.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="5">
+        <Accordion.Header>Where can i buy kta products?
+
+        </Accordion.Header>
+        <Accordion.Body>
+          You can purchase kta products through our authorized distributors and dealers. contact us for your nearest supplier or bulk order inquiries.
+
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="6">
+        <Accordion.Header>Where can i buy kta products?
+
+        </Accordion.Header>
+        <Accordion.Body>
+          You can purchase kta products through our authorized distributors and dealers. contact us for your nearest supplier or bulk order inquiries.
+
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="7">
+        <Accordion.Header>Do you offer private label or contract manufacturing?
+
+        </Accordion.Header>
+        <Accordion.Body>
+          Yes, we work with several brands under private label/oem agreements. reach out to our team for collaboration opportunities.
+
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
