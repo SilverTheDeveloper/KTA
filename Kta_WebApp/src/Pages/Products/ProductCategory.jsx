@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./products.module.scss";
+import styles from "./Products.module.scss";
 import ProductCard from "./ProductCard";
 
 const ProductCategory = ({ detail, products }) => {
