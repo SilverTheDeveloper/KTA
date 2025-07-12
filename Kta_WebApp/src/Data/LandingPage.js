@@ -22,7 +22,8 @@ export const ProductList = [
     img1: "/assets/LandingPage/ProductsLisPics/StoneCare1.png",
     img2: "/assets/LandingPage/ProductsLisPics/StoneCare2.png",
     title: "Stone Care",
-    description: "Sealers, enhancers, and cleaners to protect and enhance stone surfaces—indoors and outdoors.",
+    description:
+      "Sealers, enhancers, and cleaners to protect and enhance stone surfaces—indoors and outdoors.",
   },
   {
     img1: "/assets/LandingPage/ProductsLisPics/Repair1.png",
@@ -30,7 +31,8 @@ export const ProductList = [
     title: "Repair Solutions",
     description:
       "Specialized products to restore tiles and stone. Long-lasting results for both interior and exterior areas.",
-  }, ,
+  },
+  ,
   {
     img1: "/assets/LandingPage/ProductsLisPics/Joint1.png",
     img2: "/assets/LandingPage/ProductsLisPics/Joint2.png",
@@ -44,7 +46,7 @@ export const ProductList = [
     title: "Application Tools",
     description:
       "Professional tools—trowels, spacers, floats, and wedges—for precise, hassle-free installation.",
-  }
+  },
 ];
 
 export const testimonialData = [
@@ -95,24 +97,39 @@ export const testimonialData = [
 export const featureData = [
   {
     img: "/assets/LandingPage/lightBulbIcon.svg",
-    title: "Expertise & Innovation",
+    title: "Engineered For Excellence",
     description:
-      "Years of experience in material science and surface technology.",
+      "Every batch of tile adhesive is formulated with precision following isi and en guidelines to ensure superior perfomance and consistency.",
   },
   {
     img: "/assets/LandingPage/qualityIcon.svg",
-    title: "High-Quality Materials",
-    description: " Our products are engineered to meet global standards.",
+    title: "Bond That Lasts",
+    description:
+      "Our polymer-enhanced adhesives offer unmatched strength and durability – ensuring tiles stay firmly in place, even in extreme conditions.",
   },
   {
     img: "/assets/LandingPage/environmentIcon.svg",
-    title: "Sustainability Commitment",
-    description: "Eco-friendly solutions with minimal environmental impact.",
+    title: "Tailored For Indian Conditions",
+    description:
+      "Designed specifically for the diverse indian climate and substrates, ensuring perfomance on site every time.",
   },
   {
     img: "/assets/LandingPage/customerIcon.svg",
-    title: "Customer Support",
-    description: "Dedicated professionals guiding you at every step.",
+    title: "Innovative And Cost Effective",
+    description:
+      "Advanced formulations at competitive prices – giving you high-end quality without the premium cost.",
+  },
+  {
+    img: "/assets/LandingPage/customerIcon.svg",
+    title: "Sustainable Practices",
+    description:
+      "We focus on eco-friendly production methods and packaging choices that reduce environmental impact.",
+  },
+  {
+    img: "/assets/LandingPage/customerIcon.svg",
+    title: "Dedicated Support",
+    description:
+      "From formulation guidance to after-sales technical help, we ensure our clients are always supported.",
   },
 ];
 
@@ -120,10 +137,7 @@ export const firstSliderData = [
   firstSliderImg1,
   firstSliderImg2,
   firstSliderImg3,
-  firstSliderImg4
-
+  firstSliderImg4,
 ];
 
-export const secondSliderData = [
-  secondSliderImg1,
-];
+export const secondSliderData = [secondSliderImg1];

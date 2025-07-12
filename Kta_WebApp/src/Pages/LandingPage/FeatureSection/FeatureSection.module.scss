@@ -5,7 +5,7 @@ $mobile: 768px;
   padding: 40px 50px;
   flex-direction: row;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
   // gap: 70px;
   flex-wrap: wrap;
   margin: 80px 60px;
@@ -14,7 +14,7 @@ $mobile: 768px;
   margin-bottom: 0px !important;
   @media screen and (max-width: $mobile) {
     justify-content: center;
-  margin: 10px 60px;
+    margin: 10px 60px;
   }
 
   .LeftSection {
@@ -26,7 +26,6 @@ $mobile: 768px;
       margin-top: 0;
       margin-top: 100px;
       // border: 1px solid black;
-
     }
     .Text {
       margin-top: 16px;
@@ -76,7 +75,6 @@ $mobile: 768px;
           line-height: 30px;
           margin-bottom: 0;
           align-items: left;
-
         }
       }
     }
@@ -85,7 +83,7 @@ $mobile: 768px;
   .RightSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr); // 2 cards per row
-    gap: 24px;
+    gap: 10px 24px;
     justify-items: center;
 
     .FeatureCard {
@@ -109,7 +107,7 @@ $mobile: 768px;
         color: #3e3e3e;
         text-align: center;
         font-family: Poppins;
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 400;
       }
     }
