@@ -113,8 +113,7 @@ $mobile: 786px;
 .ProductList {
   display: flex;
   flex-wrap: wrap;
-  gap: 4rem 6rem;
-  justify-content: space-evenly;
+  gap: 4rem 8rem;
   align-items: flex-start;
   padding: 50px;
   @media (max-width: $mobile) {

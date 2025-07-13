@@ -18,7 +18,7 @@
   width: 390px !important;
   align-self: center;
 
-  @media (max-width:786px){
+  @media (max-width: 786px) {
     width: 50% !important;
   }
 }
@@ -56,7 +56,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #00000054;
+  background: rgb(255, 255, 255);
   color: white;
   border: none;
   font-size: 20px;
@@ -64,7 +64,8 @@
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
-  
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
   img {
     width: 40px;
     height: 40px;

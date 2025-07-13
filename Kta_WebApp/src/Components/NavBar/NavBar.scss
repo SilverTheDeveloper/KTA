@@ -74,6 +74,9 @@ input[type="search"]:not(:focus)::placeholder {
   &:hover {
     color: #E31E24;
   }
+  &:focus{
+    color: black;
+  }
 }
 
 .navLinkWhite {
@@ -87,6 +90,7 @@ input[type="search"]:not(:focus)::placeholder {
   justify-content: center;
   align-items: center;
   margin-right: 1rem;
+  text-decoration: none;
 
   @media (max-width: $mobile) {
     color: black;
@@ -95,6 +99,9 @@ input[type="search"]:not(:focus)::placeholder {
 
   &:hover {
     color: #E31E24;
+  }
+    &:focus{
+    color: white;
   }
 }
 

@@ -45,6 +45,7 @@ function NavBar() {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setExpanded(false);
         setShowSearchBox(false);
+        setShowFilteredProducts(false);
       }
     };
 
@@ -134,7 +135,7 @@ function NavBar() {
                 
               }}
             />
-            {searchQuery && (
+            {searchQuery && showFilteredProducts && (
               <span
                 className="customClearBtn"
                 onClick={() => {
