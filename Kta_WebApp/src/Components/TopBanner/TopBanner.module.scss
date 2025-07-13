@@ -1,17 +1,7 @@
 $mobile: 786px;
 
 #TopBanner {
-  // display: flex;
-  // width: 95%;
-  // height: 393.269px;
-  // padding: 10%;
-  // justify-content: space-between;
-  // align-items: center;
-  // flex-shrink: 0;
-  // border-radius: 16px;
-  // background: #191919;
-  // gap: 50px;
-  // overflow: hidden;
+
 
   display: flex;
   width: 95%;
@@ -23,7 +13,7 @@ $mobile: 786px;
   flex-shrink: 0;
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #ededed;
+  background: #ffffff;
   @media (max-width: $mobile) {
     display: flex;
     padding-top: 5%;
