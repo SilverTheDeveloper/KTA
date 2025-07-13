@@ -52,7 +52,7 @@ $mobile: 786px;
 .TypesOfProducts {
   text-align: left;
   width: 90%;
-  margin-top: 2rem;
+  margin-top: 5rem;
   @media (max-width: $mobile) {
     margin-bottom: 2rem;
   }
@@ -83,9 +83,6 @@ $mobile: 786px;
   flex-shrink: 0;
   position: sticky;
   top: 10px;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0px 7px 5px 1px grey;
   padding: 10px;
   z-index: 999;
   @media (max-width: $mobile) {

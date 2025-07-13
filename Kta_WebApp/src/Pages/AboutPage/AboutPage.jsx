@@ -61,9 +61,7 @@ function AboutPage() {
               Mission
             </div>
             <div className={styles.OurMissionDesc}>
-              To provide premium, sustainable, and innovative solutions in
-              ceramics, stone care, and surface protection that enhance
-              durability, aesthetics, and functionality.
+              At kta solutions, our mission is to deliver high-performance tile adhesive and construction solutions that meet global standards while being tailored for indian conditions. we strive to empower builders, architects, and applicators with reliable, innovative, and cost-effective products — built with precision, backed by support, and committed to sustainability
             </div>
           </div>
         </div>
@@ -77,9 +75,8 @@ function AboutPage() {
               Vision
             </div>
             <div className={styles.OurVisionDesc}>
-              To be a global leader in advanced material solutions, setting
-              industry benchmarks for quality, sustainability, and customer
-              satisfaction.
+              To be India’s most trusted and innovative brand in tile adhesives and construction materials — setting benchmarks in quality, sustainability, and service, while building enduring partnerships across the industry
+
             </div>
           </div>
         </div>

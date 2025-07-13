@@ -38,9 +38,11 @@ const FooterSection = () => {
           <img src={ktaIcon} alt="" />
         </div>
         <div className={styles.Copyright}>
-          © Copyright KTA Solutions. All Rights Reserved Mfd. and Marketed by
+          © 2025 KTA SOLUTIONS – A complete tile fixing solution. all rights reserved.
           <br />
-          SOBHRAJ DEVELOPMENTS PVT. LTD.
+          manufactured and marketed by
+          <br />
+          SOBHRAJ DEVELOPMENTS PRIVATE LIMITED
         </div>
       </div>
       <div className={styles.RightSection}>
