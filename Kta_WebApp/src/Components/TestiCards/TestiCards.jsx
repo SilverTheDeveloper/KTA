@@ -20,7 +20,7 @@ const TestiCards = ({ data }) => {
         </div>
         <div className={styles.Line}></div>
         <div className={styles.TestiInfo}>
-          <img src={'/assets/LandingPage/SecondSlider/1.jpg'} alt="Testimonial Profile Picture" />
+          <img src={'/assets/LandingPage/SecondSlider/testimonial.png'} alt="Testimonial Profile Picture" />
           <div className={styles.TestiName}>
             <p>{data.name}</p>
             <p>{data.designation}</p>
