@@ -18,4 +18,23 @@ router.post("/add", async (req, res) => {
   }
 });
 
+router.get('/getAll', async (req, res) => {
+  try {
+    const testimonials = await Testimonial.find();
+    res.status(200).json(testimonials);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch testimonials", error });
+  }
+});
+
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    const testimonials = await Testimonial.findById(req.params.id);
+    await testimonials.deleteOne();
+    return res.status(200).json("Testimonial has been deleted");
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 module.exports = router;
