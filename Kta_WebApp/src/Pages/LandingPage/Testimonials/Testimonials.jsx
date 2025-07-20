@@ -17,7 +17,7 @@ const Testimonials = () => {
     const getTestimonialData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/testimonial/getAll"
+          `${API}/api/testimonial/getAll`
         );
         setTestimonialData(response.data);
       } catch (error) {
