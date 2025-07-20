@@ -50,6 +50,8 @@ function Products() {
       try {
         const response = await axios.get(`${API}/api/product/getall`);
         setProducts(response.data);
+        console.log(response.data);
+        
       } catch (err) {
         console.log(err);
         setError(err.response?.data?.message || "Failed to fetch products.");

@@ -9,7 +9,6 @@ import FadeSlider from "@/Components/Slider/FadeSlider";
 import SecondFadeSlider from "@/Components/Slider/SecondFadeSlider";
 import styles from "./LandingPage.module.scss";
 import FooterSection from "./FooterSection/FooterSection";
-import ProductWindowNew from "../Products/ProductWindowNew";
 
 function LandingPage() {
   return (
@@ -23,7 +22,6 @@ function LandingPage() {
       <Testimonials />
       <SecondFadeSlider />
       <FooterSection />
-      {/* <ProductWindowNew/> */}
     </div>
   );
 }

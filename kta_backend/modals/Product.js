@@ -17,7 +17,7 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    usage: {
+    keyFeatures: {
       type: String,
     },
     shortDesc: {
@@ -29,6 +29,14 @@ const ProductSchema = new mongoose.Schema(
     img: {
       type: String,
       required: true,
+    },
+    usageGuide: {
+      surfacePreparation: { type: String },
+      mixing: { type: String },
+      application: { type: String },
+      grouting: { type: String },
+      coverage: { type: String },
+      curingAndSetting: { type: String },
     },
   },
   { timestamps: true }

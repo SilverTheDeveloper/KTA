@@ -1,1 +1,1 @@
-export const API = 'https://kta.onrender.com'
+export const API = 'http://srv852332.hstgr.cloud:8000'

@@ -31,6 +31,17 @@ $mobile: 786px;
       font-size: 1.5rem;
     }
   }
+  .subSectionHeading {
+    color: #222;
+    font-family: Manrope;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    @media (max-width: $mobile) {
+      font-size: 1.5rem;
+    }
+  }
   .Download {
     .DownloadCard {
       margin-top: 10%;
