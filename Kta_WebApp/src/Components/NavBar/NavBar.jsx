@@ -49,10 +49,7 @@ function NavBar() {
       }
     };
 
-    const handleScroll = () => setExpanded(false);
-
     document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("scroll", handleScroll);
 
     const fetchProducts = async () => {
       try {
@@ -73,7 +70,6 @@ function NavBar() {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -132,7 +128,6 @@ function NavBar() {
               style={{
                 backgroundPosition: showSearchBox ? "0px center" : "center",
                 width: showSearchBox ? "260px" : "45px",
-                
               }}
             />
             {searchQuery && showFilteredProducts && (
