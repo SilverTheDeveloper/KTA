@@ -32,7 +32,7 @@ const FooterSection = () => {
         </a>
 
         <a
-          href="https://wa.me/9182336 02899"
+          href="https://wa.me/918233602899"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "none" }}
