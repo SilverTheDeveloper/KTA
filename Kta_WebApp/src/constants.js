@@ -1,1 +1,1 @@
-export const API = 'https://srv852332.hstgr.cloud:8000'
+export const API = 'https://srv852332.hstgr.cloud'
