@@ -31,14 +31,22 @@ const FooterSection = () => {
           <div className={styles.instagramIcon}></div>
         </a>
 
-        <div className={styles.whatsappIcon}></div>
+        <a
+          href="https://wa.me/9182336 02899"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none" }}
+        >
+          <div className={styles.whatsappIcon}></div>
+        </a>
       </div>
       <div className={styles.LeftSection}>
         <div className={styles.Logo}>
           <img src={ktaIcon} alt="" />
         </div>
         <div className={styles.Copyright}>
-          © 2025 KTA SOLUTIONS – A complete tile fixing solution. all rights reserved.
+          © 2025 KTA SOLUTIONS – A complete tile fixing solution. all rights
+          reserved.
           <br />
           manufactured and marketed by
           <br />
