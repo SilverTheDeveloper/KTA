@@ -166,7 +166,7 @@ function ProductWindow() {
             </div>
           </d>
         </div>
-        {
+        {product?.usageGuide && (
           <div className={styles.UserGuide}>
             <hr />
             <div className={styles.SectionHeading} id="usage">
@@ -261,7 +261,7 @@ function ProductWindow() {
               </div>
             )}
           </div>
-        }
+        )}
       </div>
     </>
   );

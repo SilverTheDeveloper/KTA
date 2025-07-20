@@ -32,7 +32,8 @@ $mobile: 768px;
     display: flex;
     margin-top: 40px;
     gap: 50px;
-    height: 866px;
+    height: 100%;
+    margin-bottom: 30px;
     width: 85%;
     @media screen and (max-width: $mobile) {
       flex-direction: column;
@@ -150,7 +151,7 @@ $mobile: 768px;
         align-items: center;
         justify-content: center;
         gap: 16px;
-        height: 766px;
+        height: auto;
         padding: 32px;
         border-radius: 16px;
         border: 1px solid #e8e8e8;
@@ -162,8 +163,9 @@ $mobile: 768px;
         }
 
         .ProductImg {
-          width: 534px;
-          height: 300px;
+          margin-top: 50px;
+          width: 500px;
+          height: auto;
           border-radius: 12px;
           background: #fff;
           @media screen and (max-width: $mobile) {

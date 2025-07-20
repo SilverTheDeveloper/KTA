@@ -151,7 +151,7 @@ $mobile: 786px;
   }
 
   .ProductImg {
-    border-radius: 10px;
+    border-radius: 0.5rem;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.178);
     background-color: #0000000a;
@@ -170,6 +170,7 @@ $mobile: 786px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin-top: 10px;
   }
   .ProductSpec {
     color: #5d5d5d;
