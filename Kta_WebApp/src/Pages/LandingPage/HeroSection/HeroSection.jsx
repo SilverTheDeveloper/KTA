@@ -56,23 +56,6 @@ function HeroSection() {
 
             </div>
           </div>
-
-          <div className="heroBannerThird">
-            <div className="heroBannerThirdBlock">
-              <div className="heroBannerThirdHeading">
-                Innovative Solutions <br /> in Ceramics, Stone & <br /> Surface
-                Care
-              </div>
-              <div className="heroBannerThirdDetails">
-                High-quality materials and expert solutions for durability,
-                <br /> aesthetics, and protection. Trusted by professionals
-                worldwide.
-              </div>
-              <Link to="/app/products">
-                <div className="outline-button">Explore Our Products</div>
-              </Link>
-            </div>
-          </div>
         </Slider>
       </div>
 
