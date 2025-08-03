@@ -94,7 +94,7 @@ function NavBar() {
             {[
               { path: "/", label: "Home" },
               { path: "/app/about", label: "About" },
-              { path: "/app/products", label: "Product" },
+              { path: "/app/products", label: "Products" },
               { path: "/app/downloads", label: "Download" },
               { path: "/app/blogs", label: "Blog" },
               { path: "/app/calculator", label: "Calculators" },
