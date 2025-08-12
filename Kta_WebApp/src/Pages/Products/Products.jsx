@@ -7,6 +7,7 @@ import Accord from "@/Components/Accordion/Accord";
 import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
 import ProductCategory from "./ProductCategory";
 import { API } from "@/constants";
+import { getAllProductsApi } from "@/API/Api";
 
 function Products() {
   const productCategoryList = [
@@ -48,7 +49,7 @@ function Products() {
     window.scrollTo(0, 0);
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${API}/api/product/getall`);
+        const response = await axios.get(getAllProductsApi());
         setProducts(response.data);
         console.log(response.data);
         

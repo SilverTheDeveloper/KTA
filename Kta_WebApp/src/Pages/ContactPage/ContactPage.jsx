@@ -8,8 +8,17 @@ import Location from "/assets/ContactPage/Location.svg";
 import Mail from "/assets/ContactPage/Mail.svg";
 import { Oval } from "react-loader-spinner";
 import { API } from "@/constants";
+import axios from "axios";
+import Select from "react-select";
+import { Prev } from "react-bootstrap/esm/PageItem";
+import { getAllProductsApi, getEmailApi } from "@/API/Api";
 
 function ContactPage() {
+  const bussinesstypeoptions = [
+    { label: "B2B", value: "B2B" },
+    { label: "B2C", value: "B2C" },
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     BusinessType: "B2B",
@@ -21,6 +30,7 @@ function ContactPage() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [productOptions, setProductOptions] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,17 +42,16 @@ function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${API}/api/contact/sendEmail`, {
+      const response = await fetch(getEmailApi(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
       const result = await response.json();
+
       if (response.ok) {
         setShowSuccess(true);
         setFormData({
@@ -65,7 +74,27 @@ function ContactPage() {
   };
 
   useEffect(() => {
+    if (showSuccess) {
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+      }, 5000); // 5 seconds
+
+      return () => clearTimeout(timer); // cleanup
+    }
+  }, [showSuccess]);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
+    const getAllProducts = async () => {
+      const response = await axios.get(getAllProductsApi());
+      const products = response.data;
+      const options = products.map((product) => ({
+        label: product.name,
+        value: product._id,
+      }));
+      setProductOptions(options);
+    };
+    getAllProducts();
   }, []);
 
   return (
@@ -157,18 +186,13 @@ function ContactPage() {
                     onChange={handleChange}
                     name="name"
                     id={styles.ContactName}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   />
-                  <select
-                    name="BusinessType"
-                    id={styles.BusinessType}
-                    className={styles.ContactInputBox}
+                  <Select
                     value={formData.BusinessType}
+                    options={bussinesstypeoptions}
                     onChange={handleChange}
-                  >
-                    <option value="B2B">B2B</option>
-                    <option value="B2C">B2C</option>
-                  </select>
+                  />
                   <input
                     type="email"
                     placeholder="Email*"
@@ -176,7 +200,7 @@ function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     id={styles.ContactEmail}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   />
                   <input
                     type="tel"
@@ -185,21 +209,15 @@ function ContactPage() {
                     value={formData.mobileNo}
                     onChange={handleChange}
                     id={styles.Number}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   />
-                  <select
-                    name="Product"
-                    id={styles.Product}
+                  <Select
+                    options={productOptions}
                     value={formData.Product}
                     onChange={handleChange}
-                    className={styles.ContactInputBox}
-                  >
-                    <option value="" disabled selected hidden>
-                      Product*
-                    </option>
-                    <option value="product1">product1</option>
-                    <option value="product2">product2</option>
-                  </select>
+                    isSearchable
+                    placeholder="select a product"
+                  />
                   <input
                     type="text"
                     placeholder="Message*"
