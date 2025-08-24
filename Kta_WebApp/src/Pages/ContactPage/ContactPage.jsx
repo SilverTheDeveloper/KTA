@@ -21,10 +21,10 @@ function ContactPage() {
 
   const [formData, setFormData] = useState({
     name: "",
-    BusinessType: "B2B",
+    businessType: "B2B",
     email: "",
     mobileNo: "",
-    Product: "",
+    product: "",
     message: "",
   });
 
@@ -33,7 +33,8 @@ function ContactPage() {
   const [productOptions, setProductOptions] = useState([]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    let name = e.target ? e.target.name : e.name;
+    let value = e.target ? e.target.value : e.value;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -192,6 +193,7 @@ function ContactPage() {
                     value={formData.BusinessType}
                     options={bussinesstypeoptions}
                     onChange={handleChange}
+                    name="businessType"
                   />
                   <input
                     type="email"
@@ -217,6 +219,7 @@ function ContactPage() {
                     onChange={handleChange}
                     isSearchable
                     placeholder="select a product"
+                    name="product"
                   />
                   <input
                     type="text"
