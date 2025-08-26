@@ -107,8 +107,8 @@ const FooterSection = () => {
           <span>
             <IoLocationOutline size={"20px"} />
             <p>
-              Mangliawas - Nasirabad Road Mangliawas, Ajmer - 305203 Rajasthan,
-              India.
+              Nasirabad Road, near Kumawat Petrol Pump, Mangliyawas, Arjunpura
+              Jageer, Rajasthan 305023
             </p>
           </span>
         </div>

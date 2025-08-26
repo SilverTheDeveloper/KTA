@@ -81,21 +81,27 @@ const CareersPage = () => {
 
       <div id={styles.content}>
         <p>
-          To work at Vura, all you need is the power to juggle a cup of coffee
-          and challenging tasks. Our team tear through the chaos with a
-          smoothness that you would love to witness and experience. We are all
-          for the ‘all work and no play makes anyone dull.’
+          At KTA Solutions, all you need is the passion to innovate and the
+          determination to deliver excellence. Our team thrives on solving
+          challenges — whether it’s perfecting a tile adhesive formula or
+          creating sustainable solutions that redefine industry standards.
         </p>
         <p>
-          Vura encourages an open culture, innovation and propels ideation. And
-          that is probably why our teams do know each other's roles a wee bit
-          and back each other when needed. We love people with ideas and the
-          thirst to see that idea through. Our doors are always open to welcome
-          everyone.
+          We believe in the power of collaboration, where ideas flow freely,
+          expertise is shared, and every voice matters. Our open culture
+          encourages innovation, continuous learning, and mutual support —
+          because great results happen when we work together.
         </p>
         <p>
-          If you think you can match up to our challenge, fill the below form
-          and submit.
+          Here, no two days are the same. One day you might be testing
+          cutting-edge materials, and the next, you could be brainstorming the
+          next big leap in surface solutions. We welcome thinkers, doers, and
+          problem-solvers who are ready to shape the future of construction
+          technology in India.
+        </p>
+        <p>
+          If you believe you have the drive to match our vision and values, fill
+          out the form below and let’s start building the future — together.
         </p>
       </div>
 

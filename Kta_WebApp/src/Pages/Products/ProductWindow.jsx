@@ -141,8 +141,8 @@ function ProductWindow() {
           )}
           <div className={styles.Available}>
             <div>Available in</div>
-            <div className={styles.AvaiColor}></div>
-            <div className={styles.AvaiColor}></div>
+            <div className={styles.AvaiColor1}></div>
+            <div className={styles.AvaiColor2}></div>
           </div>
         </div>
         <div className={styles.Download}>

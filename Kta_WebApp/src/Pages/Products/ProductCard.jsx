@@ -14,7 +14,7 @@ function ProductCard({ data }) {
           <div className={styles.ProductName}>{data.name} </div>
           <div className={styles.ProductSpec}>{data.shortDesc}</div>
           <div className={styles.LinkToProduct}>
-            Explore Products <img src={rightIcon} alt="" />
+            Explore Product <img src={rightIcon} alt="" />
           </div>
         </div>
       </Link>

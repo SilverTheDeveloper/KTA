@@ -317,9 +317,19 @@ $mobile: 786px;
       flex-shrink: 0;
       align-items: center;
       padding-left: 1%;
-      .AvaiColor {
+      .AvaiColor1 {
         border: 1px solid rgba(0, 0, 0, 0.151);
-        background-color: #e31e24;
+        background-color: #808080;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        @media (max-width: $mobile) {
+          width: 15%;
+        }
+      }
+      .AvaiColor2 {
+        border: 1px solid rgba(0, 0, 0, 0.558);
+        background-color: white;
         border-radius: 50%;
         height: 50px;
         width: 50px;
