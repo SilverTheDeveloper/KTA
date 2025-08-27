@@ -80,43 +80,6 @@
     line-height: normal;
   }
 
-  /* // */
-
-  .heroBannerThird {
-    background-image: url(/assets/LandingPage/HeroSection/HeroTwo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 765px;
-    background-position-y: bottom;
-  }
-  .heroBannerThirdBlock {
-    /* height: 765px; */
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: left;
-    padding-top: 13%;
-    padding-left: 7%;
-  }
-
-  .heroBannerThirdHeading {
-    color: #fff;
-    font-family: Manrope;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 125.025%; /* 62.512px */
-    text-transform: capitalize;
-  }
-  .heroBannerThirdDetails {
-    color: #fff;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
   @media (max-width: 786px) {
     .heroBannerFirst {
       background-size: contain !important;
@@ -148,22 +111,6 @@
       font-size: 16px !important;
     }
     .heroBannerSecondDetails {
-      font-size: 10px !important;
-    }
-    /* //third */
-    .heroBannerThird {
-      background-size: contain !important;
-      height: 250px !important;
-    }
-    .heroBannerThirdBlock {
-      padding-top: 5% !important;
-      padding-left: 5% !important;
-      gap: 1rem !important;
-    }
-    .heroBannerThirdHeading {
-      font-size: 16px !important;
-    }
-    .heroBannerThirdDetails {
       font-size: 10px !important;
     }
   }

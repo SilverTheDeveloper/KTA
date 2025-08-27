@@ -126,7 +126,7 @@ const handleAddressClick = () => {
           <span onClick={handleAddressClick}>
             <IoLocationOutline size={"20px"} />
             <p>
-             KTA Solutions| Mangliawas - Nasirabad Road, Ajmer - 305203 Rajasthan,
+              Mangliawas - Nasirabad Road Mangliawas, Ajmer - 305203 Rajasthan,
               India.
             </p>
           </span>

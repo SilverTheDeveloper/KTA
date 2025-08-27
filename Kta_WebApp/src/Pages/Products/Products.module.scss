@@ -151,6 +151,8 @@ $mobile: 786px;
   }
 
   .ProductImg {
+    height: 100%;
+    width: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.178);
@@ -159,7 +161,7 @@ $mobile: 786px;
     img {
       width: 100%;
       height: 100%;
-
+      object-fit: contain;
       min-height: 220px;
     }
   }
@@ -179,7 +181,6 @@ $mobile: 786px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-transform: lowercase;
   }
   .LinkToProduct {
     color: #000;

@@ -11,6 +11,7 @@ import DocumentIcon from "/assets/DownloadsPage/document-icon.png";
 import DownloadIcon from "/assets/DownloadsPage/download-Icon.svg";
 import TopBanner from "@/Components/TopBanner/TopBanner";
 import bannerImg from "/assets/ProductsPage/ProductsHeading.svg";
+import { getProductById } from "@/API/Api";
 
 function ProductWindow() {
   const sections = [
@@ -46,7 +47,7 @@ function ProductWindow() {
     window.scrollTo(0, 0);
     const fetchProductDetail = async () => {
       try {
-        const response = await axios.get(`${API}/api/product/${id}`);
+        const response = await axios.get(getProductById(id));
         setProduct(response.data);
         console.log(response.data.keyFeatures);
       } catch (error) {
@@ -140,8 +141,8 @@ function ProductWindow() {
           )}
           <div className={styles.Available}>
             <div>Available in</div>
-            <div className={styles.AvaiColor}></div>
-            <div className={styles.AvaiColor}></div>
+            <div className={styles.AvaiColor1}></div>
+            <div className={styles.AvaiColor2}></div>
           </div>
         </div>
         <div className={styles.Download}>

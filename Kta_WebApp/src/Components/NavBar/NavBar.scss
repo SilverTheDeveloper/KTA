@@ -6,7 +6,7 @@ input[type="search"] {
   -moz-appearance: none;
   appearance: none;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 17px;
   background: #ededed;
   border: 0.88px solid #e8e8e8;
   border-radius: 999px;
@@ -175,8 +175,11 @@ input[type="search"]:not(:focus)::placeholder {
   .custom-toggler {
     border: none;
     padding: 0;
-    outline: none;
-    background: none;
+    outline: none !important;
+    background: none !important;
+
+    height: 25px;
+    width: 35px;
   }
 
   .custom-toggler .navbar-toggler-icon {
