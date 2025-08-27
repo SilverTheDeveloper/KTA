@@ -83,10 +83,15 @@ $mobile: 768px;
         gap: 10px;
         align-items: center;
         font-family: Poppins;
+        cursor: pointer;
         font-size: 12px;
         font-weight: 400;
         p {
           width: 185px;
+        }
+         &:hover {
+          color: grey;
+          text-decoration: underline;
         }
       }
     }

@@ -9,6 +9,19 @@ import Mail from "/assets/ContactPage/Mail.svg";
 import { Oval } from "react-loader-spinner";
 import { API } from "@/constants";
 
+
+
+const callNumber = (phoneNumber) => {
+  if (!phoneNumber) return;
+  window.location.href = `tel:${phoneNumber}`;
+}
+
+const handleMailClick = () => {
+  window.location.href = "mailto:info@ktasolutions.in";
+};
+
+
+
 function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -111,11 +124,11 @@ function ContactPage() {
               <div className={styles.contactLeftSectionHeading}>
                 Contact Info
               </div>
-              <div className={styles.contactLeftSectionSubBlockDelailsDiffType}>
+              <div onClick={handleMailClick} className={styles.contactLeftSectionSubBlockDelailsDiffType}>
                 <img src={Mail} alt="" />
                 info@ktasolutions.in
               </div>
-              <div className={styles.contactLeftSectionSubBlockDelailsDiffType}>
+              <div onClick={() => callNumber("+919414009900")} className={styles.contactLeftSectionSubBlockDelailsDiffType}>
                 <img src={Call} alt="" />
                 +91 94140-09900
               </div>
@@ -219,7 +232,7 @@ function ContactPage() {
         </div>
 
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7155.161756093124!2d74.50055073935661!3d26.275262828474457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3969622a7f530631%3A0x5c76bb336204b79c!2sMangliyawas%2C%20Rajasthan%20305203!5e0!3m2!1sen!2sin!4v1746789854658!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20237.49323050262!2d74.51274672116675!3d26.27732927506128!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39696126ada5e175%3A0x7b0691088fc0f6a4!2sKTA%20Solutions%20%7C%20Sobhraj%20Developments%20Private%20Limited!5e0!3m2!1sen!2sin!4v1756039044067!5m2!1sen!2sin"
           className={styles.map}
           allowFullScreen
           loading="lazy"
@@ -333,7 +346,7 @@ function ContactPage() {
           </div>
 
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7155.161756093124!2d74.50055073935661!3d26.275262828474457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3969622a7f530631%3A0x5c76bb336204b79c!2sMangliyawas%2C%20Rajasthan%20305203!5e0!3m2!1sen!2sin!4v1746789854658!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20237.49323050262!2d74.51274672116675!3d26.27732927506128!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39696126ada5e175%3A0x7b0691088fc0f6a4!2sKTA%20Solutions%20%7C%20Sobhraj%20Developments%20Private%20Limited!5e0!3m2!1sen!2sin!4v1756039044067!5m2!1sen!2sin"
             className={styles.map}
             allowFullScreen
             loading="lazy"
