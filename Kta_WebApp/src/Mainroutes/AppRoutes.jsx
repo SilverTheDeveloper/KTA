@@ -8,6 +8,7 @@ import BlogPage from "@/Pages/BlogPage/BlogPage";
 import LandingPage from "@/Pages/LandingPage/LandingPage";
 import AboutPage from "@/Pages/AboutPage/AboutPage";
 import ProductWindow from "@/Pages/Products/ProductWindow";
+import BlockJointMortarCalculator from "@/Pages/CalculatorPage/BlockJointMortarCalculator/BlockJointMortarCalculator";
 
 export const appRoutes = [
   {
@@ -45,5 +46,8 @@ export const appRoutes = [
   {
     path: "blogs",
     element: <BlogPage />,
-  },
+  },{
+    path: "cal",
+    element: <BlockJointMortarCalculator/>
+  }
 ];
