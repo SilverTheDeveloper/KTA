@@ -1,34 +1,213 @@
-.calcWindow{
+$mobile: 768px;
+
+.headingDiv {
     display: flex;
-    border: 1px solid black;
-    border-radius: 12px;
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
-.leftSection{
+
+.Heading {
+    color: #282F39;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    text-transform: capitalize;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 24px;
+        // width: auto;
+    }
+}
+
+.subHeading {
+    color: #282F39;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    letter-spacing: .36px;
+}
+
+.calcWindow {
+    display: flex;
+    
+
+    .fieldHeading {
+        color: #ffffff;
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 162%;
+        margin-bottom: 0;
+    }
+
+    .fieldSubHeading {
+        color: white;
+        font-family: Poppins;
+    }
+
+    .subButton {
+        margin-left: 5%;
+        border-radius: 91.52px;
+        background: #e31e24;
+        width: 158px;
+        padding: 11px;
+        color: white;
+        border: none;
+    }
+}
+
+.leftSection {
     width: 50%;
-    padding-left: 5%;
-    background-color: rgb(150, 130, 130);
-    .firstBlock{
+    padding-left: 7%;
+    background-color: #262065;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+    .firstBlock {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        border-left: 3px dashed black;
-        padding-left: 2%;
-        .InputDropdownBox{
+        border-left: 1px dashed #A6CE39;
+        padding-left: 5%;
+        padding-bottom: 5%;
+        padding-top: 1%;
+
+        .InputDropdownBox {
             display: flex;
+        }
+
+        &::before {
+            content: "1";
+            background-color: #A6CE39;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 0;
+            left: -4%;
+
+        }
+
+        &::after {
+            content: "2";
+            background-color: #A6CE39;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            position: absolute;
+            bottom: -50px;
+            left: -4%;
+
+        }
+
+    }
+
+    .secondBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 5%;
+        padding-bottom: 5%;
+        padding-top: 1%;
+
+        .secondBlockInnerDiv {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .InputDropdownBox {
+            display: flex;
+        }
+
+
+    }
+}
+
+.rightSection {
+    width: 50%;
+    padding: 2%;
+    .subHeading {
+        color: #282f39;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        width: 100%;
+    }
+    .beforeDesc{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+    }
+}
+
+.InputDropdownBox {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 10px 15px;
+    width: 250px;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: $mobile) {
+        width: 250px;
+    }
+
+    input {
+        flex: 1;
+        width: 100px;
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        outline: none;
+        color: #333;
+        letter-spacing: 2px;
+
+        @media screen and (max-width: $mobile) {
+            width: 140px;
         }
     }
 
-    .secondBlock{
-        display: flex;
-        flex-direction: column;
-        padding-left: 2%;
-        .secondBlockInnerDiv{
-            display: flex;
-            gap: 1rem;
-        }
-        .InputDropdownBox{
-            display: flex;
-        }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    select {
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        color: #333;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .Divider {
+        width: 1px;
+        height: 24px;
+        background-color: #bdbdbd;
     }
 }
