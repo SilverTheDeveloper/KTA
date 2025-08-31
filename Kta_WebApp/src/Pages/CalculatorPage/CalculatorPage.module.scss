@@ -9,262 +9,262 @@ $mobile: 768px;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
 
-    .LargeText {
-      margin-top: 70px;
-      margin-left: 8%;
-      align-self: flex-start;
+  .LargeText {
+    margin-top: 70px;
+    margin-left: 8%;
+    align-self: flex-start;
+    color: #222;
+    font-family: Manrope;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    @media screen and (max-width: $mobile) {
+      font-size: 24px;
+      // width: auto;
+    }
+    span {
+      background: var(
+        --brand,
+        linear-gradient(100deg, #e31e24 7.47%, #262065 92.53%)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .SplitContainer {
+    display: flex;
+    margin-top: 40px;
+    gap: 50px;
+    height: 100%;
+    margin-bottom: 30px;
+    width: 85%;
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      margin-bottom: 100px;
+      height: unset;
+    }
+
+    .SectionTitle {
+      color: #000;
+      font-family: Poppins;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 162%;
+    }
+    .LeftSection {
+      flex: 1;
+      .ProductGrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+
+        .ProductBox {
+          display: inline-flex;
+          padding: 40px 20px;
+          justify-content: center;
+          align-items: center;
+          gap: 8.638px;
+          border-radius: 10.366px;
+          border: 0.864px solid #e8e8e8;
+          background: #ededed;
+          cursor: pointer;
+        }
+        .ActiveProduct {
+          background: #e31e24;
+          color: white;
+        }
+      }
+      .InputContainer {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .InputDropdownBox {
+          display: flex;
+          align-items: center;
+          background-color: #f2f2f2;
+          border-radius: 8px;
+          padding: 10px 15px;
+          width: 300px;
+          gap: 10px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          @media screen and (max-width: $mobile) {
+            width: 250px;
+          }
+
+          input {
+            flex: 1;
+            width: 200px;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            outline: none;
+            color: #333;
+            letter-spacing: 2px;
+            @media screen and (max-width: $mobile) {
+              width: 140px;
+            }
+          }
+
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          select {
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+            cursor: pointer;
+          }
+
+          .Divider {
+            width: 1px;
+            height: 24px;
+            background-color: #bdbdbd;
+          }
+        }
+      }
+    }
+
+    .Btn {
+      border-radius: 91.52px;
+      background: #e31e24;
+      width: 158px;
+      padding: 11px;
+      color: white;
+      border: none;
+    }
+
+    .Transparent {
+      color: black;
+      background: none;
+      border: 1px solid black;
+    }
+
+    .RightSection {
+      flex: 1;
+      .Details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        height: auto;
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid #e8e8e8;
+        background: #ededed;
+        margin-top: 20px;
+
+        @media screen and (max-width: $mobile) {
+          height: 850px;
+        }
+
+        .ProductImg {
+          margin-top: 50px;
+          width: 500px;
+          height: auto;
+          border-radius: 12px;
+          background: #fff;
+          @media screen and (max-width: $mobile) {
+            width: unset;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .ProductWeight {
+          font-size: 24px;
+          font-weight: 600;
+          font-family: Poppins;
+          text-align: center;
+        }
+        .ProductName {
+          color: #373737;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+        }
+        .Disclamer {
+          font-size: 14px;
+          color: #e31e24;
+          font-weight: 400;
+          font-family: Poppins;
+        }
+        .Buttons {
+          display: flex;
+          gap: 24px;
+          margin-top: 10px;
+          @media screen and (max-width: $mobile) {
+            flex-wrap: wrap;
+          }
+        }
+      }
+      .ThicknessDetails {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .ThicknessDropdown {
+          width: fit-content;
+          border-radius: 8px;
+          border: 1.352px solid #e8e8e8;
+          padding: 5px;
+          background: #fff;
+        }
+        .Text1 {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .GeneralInfo {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 70px 0px;
+    @media screen and (max-width: $mobile) {
+      width: auto;
+      gap: 34px;
+    }
+
+    .BulletPoints {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      @media screen and (max-width: $mobile) {
+        font-size: 12px;
+        padding-left: 1rem;
+      }
+    }
+
+    .Heading {
       color: #222;
       font-family: Manrope;
       font-size: 56px;
       font-style: normal;
       font-weight: 600;
-      line-height: 125%;
+      line-height: 125.025%; /* 70.014px */
       @media screen and (max-width: $mobile) {
         font-size: 24px;
-        // width: auto;
-      }
-      span {
-        background: var(
-          --brand,
-          linear-gradient(100deg, #e31e24 7.47%, #262065 92.53%)
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-
-    .SplitContainer {
-      display: flex;
-      margin-top: 40px;
-      gap: 50px;
-      height: 100%;
-      margin-bottom: 30px;
-      width: 85%;
-      @media screen and (max-width: $mobile) {
-        flex-direction: column;
-        margin-bottom: 100px;
-        height: unset;
-      }
-
-      .SectionTitle {
-        color: #000;
-        font-family: Poppins;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 162%;
-      }
-      .LeftSection {
-        flex: 1;
-        .ProductGrid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          margin-top: 20px;
-
-          .ProductBox {
-            display: inline-flex;
-            padding: 40px 20px;
-            justify-content: center;
-            align-items: center;
-            gap: 8.638px;
-            border-radius: 10.366px;
-            border: 0.864px solid #e8e8e8;
-            background: #ededed;
-            cursor: pointer;
-          }
-          .ActiveProduct {
-            background: #e31e24;
-            color: white;
-          }
-        }
-        .InputContainer {
-          margin-top: 60px;
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-
-          .InputDropdownBox {
-            display: flex;
-            align-items: center;
-            background-color: #f2f2f2;
-            border-radius: 8px;
-            padding: 10px 15px;
-            width: 300px;
-            gap: 10px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            @media screen and (max-width: $mobile) {
-              width: 250px;
-            }
-
-            input {
-              flex: 1;
-              width: 200px;
-              border: none;
-              background: transparent;
-              font-size: 16px;
-              outline: none;
-              color: #333;
-              letter-spacing: 2px;
-              @media screen and (max-width: $mobile) {
-                width: 140px;
-              }
-            }
-
-            input[type="number"]::-webkit-inner-spin-button,
-            input[type="number"]::-webkit-outer-spin-button {
-              -webkit-appearance: none;
-              margin: 0;
-            }
-            select {
-              border: none;
-              background: transparent;
-              font-size: 16px;
-              color: #333;
-              outline: none;
-              cursor: pointer;
-            }
-
-            .Divider {
-              width: 1px;
-              height: 24px;
-              background-color: #bdbdbd;
-            }
-          }
-        }
-      }
-
-      .Btn {
-        border-radius: 91.52px;
-        background: #e31e24;
-        width: 158px;
-        padding: 11px;
-        color: white;
-        border: none;
-      }
-
-      .Transparent {
-        color: black;
-        background: none;
-        border: 1px solid black;
-      }
-
-      .RightSection {
-        flex: 1;
-        .Details {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 16px;
-          height: auto;
-          padding: 32px;
-          border-radius: 16px;
-          border: 1px solid #e8e8e8;
-          background: #ededed;
-          margin-top: 20px;
-
-          @media screen and (max-width: $mobile) {
-            height: 850px;
-          }
-
-          .ProductImg {
-            margin-top: 50px;
-            width: 500px;
-            height: auto;
-            border-radius: 12px;
-            background: #fff;
-            @media screen and (max-width: $mobile) {
-              width: unset;
-            }
-
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-          .ProductWeight {
-            font-size: 24px;
-            font-weight: 600;
-            font-family: Poppins;
-            text-align: center;
-          }
-          .ProductName {
-            color: #373737;
-            text-align: center;
-            font-family: Poppins;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 600;
-          }
-          .Disclamer {
-            font-size: 14px;
-            color: #e31e24;
-            font-weight: 400;
-            font-family: Poppins;
-          }
-          .Buttons {
-            display: flex;
-            gap: 24px;
-            margin-top: 10px;
-            @media screen and (max-width: $mobile) {
-              flex-wrap: wrap;
-            }
-          }
-        }
-        .ThicknessDetails {
-          margin-top: 20px;
-          font-size: 16px;
-          font-weight: 400;
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          .ThicknessDropdown {
-            width: fit-content;
-            border-radius: 8px;
-            border: 1.352px solid #e8e8e8;
-            padding: 5px;
-            background: #fff;
-          }
-          .Text1 {
-            margin-top: 20px;
-          }
-        }
-      }
-    }
-
-    .GeneralInfo {
-      width: 95%;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin: 70px 0px;
-      @media screen and (max-width: $mobile) {
-        width: auto;
-        gap: 34px;
-      }
-
-      .BulletPoints {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        @media screen and (max-width: $mobile) {
-          font-size: 12px;
-          padding-left: 1rem;
-        }
-      }
-
-      .Heading {
-        color: #222;
-        font-family: Manrope;
-        font-size: 56px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 125.025%; /* 70.014px */
-        @media screen and (max-width: $mobile) {
-          font-size: 24px;
-        }
       }
     }
   }

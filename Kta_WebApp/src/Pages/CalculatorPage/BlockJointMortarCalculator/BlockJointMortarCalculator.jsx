@@ -1,30 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./BlockJointMortarCalculator.module.scss";
 
-function BlockJointMortarCalculator() {
+function BlockJointMortarCalculator({
+  allProducts, activeCategory 
+}) {
+   const [blockLength , setBlockLength] = useState(0);
+   const [blockWidth , setBlockWidth] = useState(0);
+   const [blockHeight , setBlockHeight] = useState(0);
+   const [blockArea , setBlockArea] = useState(0);
+   const [mortarRequired, setMortarRequired] = useState(0);
+
+   const handleInputChange = (e) => {
+  switch (e.target.name) {
+    case "blockLength":
+      setBlockLength(e.target.value);
+      break;
+
+    case "blockHeight":
+      setBlockHeight(e.target.value);
+      break;
+
+    case "blockWidth":
+      setBlockWidth(e.target.value);
+      break;
+
+    case 'blockArea' :
+      setBlockArea(e.target.value);  
+
+    default:
+      break;
+  }
+};
+
   return (
     <div>
-
       <div className={styles.headingDiv}>
-        <div className={styles.Heading} >Joint Filler Coverage Calculator</div>
+        <div className={styles.Heading} >{activeCategory?.name}</div>
         <div className={styles.subHeading}>A tool to estimate the right quantity of tile joint filler for your requirements.</div>
       </div>
 
       <div className={styles.calcWindow}>
-
-
         <div className={styles.leftSection}>
           <div className={styles.firstBlock}>
             <p className={styles.fieldHeading}>Enter Area, Tile
               Width & Length</p>
-
             <div>
               <label className={styles.fieldSubHeading} for="total_Area">Total Area</label>
               <div className={styles.InputDropdownBox}>
                 <input
                   type="number"
                   id="total_Area"
+                  name='blockArea'
                   placeholder="0000"
+                  nam
+                  onChange={handleInputChange}
 
                 />
                 <div class={styles.Divider}></div>
@@ -41,7 +70,8 @@ function BlockJointMortarCalculator() {
               <div className={styles.InputDropdownBox}>
                 <input
                   type="number"
-                  id="tile_Width"
+                  id="block_Width"
+                  name = 'blockwidth'
                   placeholder="0000"
 
                 />
@@ -60,6 +90,7 @@ function BlockJointMortarCalculator() {
                 <input
                   type="number"
                   id="tile_Length"
+                  name = 'blockLength'
                   placeholder="0000"
 
                 />
@@ -71,9 +102,6 @@ function BlockJointMortarCalculator() {
                 </select>
               </div>
             </div>
-
-
-
           </div>
 
           <div className={styles.secondBlock}>
