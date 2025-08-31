@@ -8,7 +8,14 @@ $mobile: 768px;
   .CalculatorWrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+  .calcuInnerWrapper{
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    
   }
 
   .LargeText {

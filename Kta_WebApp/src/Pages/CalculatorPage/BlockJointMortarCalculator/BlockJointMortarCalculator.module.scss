@@ -79,7 +79,7 @@ $mobile: 768px;
         border-left: 1px dashed #A6CE39;
         padding-left: 5%;
         padding-bottom: 5%;
-        padding-top: 1%;
+        // padding-top: 1%;
 
         .InputDropdownBox {
             display: flex;
@@ -89,16 +89,16 @@ $mobile: 768px;
             content: "1";
             background-color: #A6CE39;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             font-size: 1.5rem;
             position: absolute;
-            top: 0;
-            left: -4%;
+            top: 30;
+            left: -3%;
 
         }
 
@@ -106,16 +106,16 @@ $mobile: 768px;
             content: "2";
             background-color: #A6CE39;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             font-size: 1.5rem;
             position: absolute;
-            bottom: -50px;
-            left: -4%;
+            bottom: -35px;
+            left: -3%;
 
         }
 
@@ -125,6 +125,7 @@ $mobile: 768px;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        margin-top: -1%;
         padding-left: 5%;
         padding-bottom: 5%;
         padding-top: 1%;

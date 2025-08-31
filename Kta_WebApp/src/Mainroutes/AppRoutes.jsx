@@ -9,6 +9,7 @@ import LandingPage from "@/Pages/LandingPage/LandingPage";
 import AboutPage from "@/Pages/AboutPage/AboutPage";
 import ProductWindow from "@/Pages/Products/ProductWindow";
 import BlockJointMortarCalculator from "@/Pages/CalculatorPage/BlockJointMortarCalculator/BlockJointMortarCalculator";
+import JointFillerCalculator from "@/Pages/CalculatorPage/JointFillerCalculator/JointFillerCalculator";
 
 export const appRoutes = [
   {
@@ -48,6 +49,6 @@ export const appRoutes = [
     element: <BlogPage />,
   },{
     path: "cal",
-    element: <BlockJointMortarCalculator/>
+    element: <JointFillerCalculator/>
   }
 ];

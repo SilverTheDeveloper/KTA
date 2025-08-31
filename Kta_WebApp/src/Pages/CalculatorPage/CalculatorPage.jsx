@@ -6,6 +6,7 @@ import axios from "axios";
 import { getAllProductsApi } from "@/API/Api";
 import AdhesiveCalculator from "./AdhesiveCalculator/AdhesiveCalculator";
 import BlockJointMortarCalculator from "./BlockJointMortarCalculator/BlockJointMortarCalculator";
+import JointFillerCalculator from "./JointFillerCalculator/JointFillerCalculator";
 // import JointFillerCalculator from "@/Components/Calculators/JointFillerCalculator";
 // import BlockJointMortarCalculator from "@/Components/Calculators/BlockJointMortarCalculator";
 
@@ -33,6 +34,9 @@ const CalculatorPage = () => {
   const categoryComponents = {
     "Adhesive Coverage Calculator": (props) => (
       <AdhesiveCalculator {...props} />
+    ),
+    "JointFillerCalculator": (props) => (
+      <JointFillerCalculator {...props} />
     ),
     // "Joint-Filler Coverage": (props) => <JointFillerCalculator {...props} />,
     "Block Joint Mortar Coverage": (props) => (
