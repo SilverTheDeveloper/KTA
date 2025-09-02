@@ -35,9 +35,7 @@ const CalculatorPage = () => {
     "Adhesive Coverage Calculator": (props) => (
       <AdhesiveCalculator {...props} />
     ),
-    "JointFillerCalculator": (props) => (
-      <JointFillerCalculator {...props} />
-    ),
+    "Joint-Filler Coverage": (props) => <JointFillerCalculator {...props} />,
     // "Joint-Filler Coverage": (props) => <JointFillerCalculator {...props} />,
     "Block Joint Mortar Coverage": (props) => (
       <BlockJointMortarCalculator {...props} />

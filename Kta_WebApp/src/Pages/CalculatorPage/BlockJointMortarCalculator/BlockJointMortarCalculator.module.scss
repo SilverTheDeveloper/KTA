@@ -1,214 +1,251 @@
 $mobile: 768px;
 
 .headingDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.Heading {
+  color: #282f39;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  text-transform: capitalize;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 24px;
+    // width: auto;
+  }
+}
+
+.subHeading {
+  color: #282f39;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 0.36px;
+}
+
+.calcWindow {
+  display: flex;
+
+  .fieldHeading {
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 162%;
+    margin-bottom: 0;
+  }
+
+  .fieldSubHeading {
+    color: white;
+    font-family: Poppins;
+  }
+
+  .subButton {
+    margin-left: 5%;
+    border-radius: 91.52px;
+    background: #e31e24;
+    width: 158px;
+    padding: 11px;
+    color: white;
+    border: none;
+  }
+}
+
+.leftSection {
+  width: 50%;
+  padding-left: 7%;
+  background-color: #262065;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+  .firstBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 1px dashed #a6ce39;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    // padding-top: 1%;
+
+    .InputDropdownBox {
+      display: flex;
+    }
+
+    &::before {
+      content: "1";
+      background-color: #a6ce39;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 30;
+      left: -3%;
+    }
+
+    &::after {
+      content: "2";
+      background-color: #a6ce39;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.5rem;
+      position: absolute;
+      bottom: -35px;
+      left: -3%;
+    }
+  }
+
+  .secondBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: -1%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    padding-top: 1%;
+
+    .secondBlockInnerDiv {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .InputDropdownBox {
+      display: flex;
+    }
+  }
+}
+
+.rightSection {
+  width: 50%;
+  padding: 2%;
+  .subHeading {
+    color: #282f39;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+  }
+  .beforeDesc {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    height: auto;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.Heading {
-    color: #282F39;
-    font-size: 3rem;
-    font-weight: 600;
-    text-align: center;
-    width: 100%;
-    text-transform: capitalize;
-
-    @media screen and (max-width: $mobile) {
-        font-size: 24px;
-        // width: auto;
-    }
-}
-
-.subHeading {
-    color: #282F39;
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
-    letter-spacing: .36px;
-}
-
-.calcWindow {
-    display: flex;
-    
-
-    .fieldHeading {
-        color: #ffffff;
-        font-family: Poppins;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 162%;
-        margin-bottom: 0;
-    }
-
-    .fieldSubHeading {
-        color: white;
-        font-family: Poppins;
-    }
-
-    .subButton {
-        margin-left: 5%;
-        border-radius: 91.52px;
-        background: #e31e24;
-        width: 158px;
-        padding: 11px;
-        color: white;
-        border: none;
-    }
-}
-
-.leftSection {
-    width: 50%;
-    padding-left: 7%;
-    background-color: #262065;
-    display: flex;
-    flex-direction: column;
-    padding-top: 3%;
-    padding-bottom: 3%;
-
-    .firstBlock {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        border-left: 1px dashed #A6CE39;
-        padding-left: 5%;
-        padding-bottom: 5%;
-        // padding-top: 1%;
-
-        .InputDropdownBox {
-            display: flex;
-        }
-
-        &::before {
-            content: "1";
-            background-color: #A6CE39;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 1.5rem;
-            position: absolute;
-            top: 30;
-            left: -3%;
-
-        }
-
-        &::after {
-            content: "2";
-            background-color: #A6CE39;
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 1.5rem;
-            position: absolute;
-            bottom: -35px;
-            left: -3%;
-
-        }
-
-    }
-
-    .secondBlock {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: -1%;
-        padding-left: 5%;
-        padding-bottom: 5%;
-        padding-top: 1%;
-
-        .secondBlockInnerDiv {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .InputDropdownBox {
-            display: flex;
-        }
-
-
-    }
-}
-
-.rightSection {
-    width: 50%;
-    padding: 2%;
-    .subHeading {
-        color: #282f39;
-        font-size: 1rem;
-        font-weight: 600;
-        text-align: center;
-        width: 100%;
-    }
-    .beforeDesc{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 500px;
-    }
+    height: 500px;
+  }
 }
 
 .InputDropdownBox {
-    display: flex;
-    align-items: center;
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 10px 15px;
+  width: 250px;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  @media screen and (max-width: $mobile) {
     width: 250px;
-    gap: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  input {
+    flex: 1;
+    width: 100px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+    letter-spacing: 2px;
 
     @media screen and (max-width: $mobile) {
-        width: 250px;
+      width: 140px;
     }
+  }
 
-    input {
-        flex: 1;
-        width: 100px;
-        border: none;
-        background: transparent;
-        font-size: 16px;
-        outline: none;
-        color: #333;
-        letter-spacing: 2px;
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
-        @media screen and (max-width: $mobile) {
-            width: 140px;
-        }
-    }
+  select {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+  }
 
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+  .Divider {
+    width: 1px;
+    height: 24px;
+    background-color: #bdbdbd;
+  }
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
 
-    select {
-        border: none;
-        background: transparent;
-        font-size: 16px;
-        color: #333;
-        outline: none;
-        cursor: pointer;
-    }
+.productContainer {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  margin-top: 20px;
+}
 
-    .Divider {
-        width: 1px;
-        height: 24px;
-        background-color: #bdbdbd;
-    }
+.productCard {
+  background: #fff;
+  flex: 1;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+}
+
+.productImg {
+  width: 100%;
+  height: auto;
+  margin: 0 auto 0.5rem auto;
+}
+
+.productName {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.productQty {
+  color: #444;
+  font-size: 0.95rem;
 }
