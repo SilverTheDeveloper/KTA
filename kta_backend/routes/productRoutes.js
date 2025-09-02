@@ -33,6 +33,18 @@ router.post("/add", async (req, res) => {
   }
 });
 
+
+//update a product
+router.put("/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+      await product.updateOne({ $set: req.body });
+      res.status(200).json("product has been updated");
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 router.post("/delete/:id", async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
