@@ -10,6 +10,8 @@ import AboutPage from "@/Pages/AboutPage/AboutPage";
 import ProductWindow from "@/Pages/Products/ProductWindow";
 import BlockJointMortarCalculator from "@/Pages/CalculatorPage/BlockJointMortarCalculator/BlockJointMortarCalculator";
 import JointFillerCalculator from "@/Pages/CalculatorPage/JointFillerCalculator/JointFillerCalculator";
+import Terms from "@/Components/FooterLinks/Terms";
+import Policy from "@/Components/FooterLinks/Policy";
 
 export const appRoutes = [
   {
@@ -50,5 +52,11 @@ export const appRoutes = [
   },{
     path: "cal",
     element: <JointFillerCalculator/>
+  },{
+    path: "terms&conditions",
+    element:<Terms/>
+  },{
+    path:"privacyPolicy",
+    element:<Policy/>
   }
 ];

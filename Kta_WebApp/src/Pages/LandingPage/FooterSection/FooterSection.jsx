@@ -80,13 +80,20 @@ const FooterSection = () => {
         <div className={styles.List}>
           <span className={styles.Title}>Useful links</span>
           <span>
-            <a>Terms & Conditions</a>
+            <Link to={"/app/terms&conditions"}  style={linkStyle}>
+                <a>Terms & Conditions</a>
+            </Link>
           </span>
           <span>
+            <Link to={"/app/privacyPolicy"}  style={linkStyle}>
             <a>Privacy Policy</a>
+            </Link>
           </span>
           <span>
+             <Link to={"/app/contact"} style={linkStyle}>
+              
             <a>Shipping & Returns</a>
+            </Link>
           </span>
           <span>
             <Link to={"/app/contact"} style={linkStyle}>
