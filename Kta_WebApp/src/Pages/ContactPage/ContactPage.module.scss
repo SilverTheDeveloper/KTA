@@ -105,6 +105,7 @@ $mobile: 768px;
     }
   }
   .contactLeftSectionSubBlockDelailsDiffType {
+    cursor :pointer;
     @media (max-width: $mobile) {
       color: #000;
       font-family: Poppins;
@@ -115,6 +116,7 @@ $mobile: 768px;
       display: flex;
       flex-direction: row;
       gap: 1rem;
+      cursor :pointer;
     }
   }
   .contactRightSection {

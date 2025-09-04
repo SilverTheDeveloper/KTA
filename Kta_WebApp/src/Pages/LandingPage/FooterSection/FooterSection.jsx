@@ -11,6 +11,21 @@ const FooterSection = () => {
     textDecoration: "none",
     color: "inherit",
   };
+
+const callNumber = (phoneNumber) => {
+  if (!phoneNumber) return;
+  window.location.href = `tel:${phoneNumber}`;
+}
+
+const handleMailClick = () => {
+  window.location.href = "mailto:info@ktasolutions.in";
+};
+
+const handleAddressClick = () => {
+  const address = "KTA Solutions | Sobhraj Developments Private Limited, Nasirabad Road, near Kumawat Petrol Pump, Mangliyawas, Arjunpura Jageer, Rajasthan 305023";
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  window.open(mapUrl, "_blank"); // Opens Google Maps in new tab
+};
   return (
     <div className={styles.FooterSection}>
       <div className={styles.RightTopSection}>
@@ -45,12 +60,16 @@ const FooterSection = () => {
           <img src={ktaIcon} alt="" />
         </div>
         <div className={styles.Copyright}>
-          © 2025 KTA SOLUTIONS – A complete tile fixing solution. all rights
-          reserved.
+          © 2025 KTA SOLUTIONS 
           <br />
-          manufactured and marketed by
+          A COMPLETE TILE FIXING SOLUTION.
+          <br />
+          ALL RIGHTS RESERVED.  
+          <br />
+          MANUFACTURED AND MARKETED BY 
           <br />
           SOBHRAJ DEVELOPMENTS PRIVATE LIMITED
+
         </div>
       </div>
       <div className={styles.RightSection}>
@@ -96,19 +115,19 @@ const FooterSection = () => {
         </div>
         <div className={styles.ContactUs}>
           <span className={styles.Title}>Contact Us</span>
-          <span>
+          <span onClick={handleMailClick}>
             <MdMailOutline size={"20px"} />
             info@ktasolutions.in
           </span>
-          <span>
+          <span onClick={() => callNumber("+919414009900")}>
             <BsTelephone size={"20px"} />
             +91 94140-09900
           </span>
-          <span>
+          <span onClick={handleAddressClick}>
             <IoLocationOutline size={"20px"} />
             <p>
-              Nasirabad Road, near Kumawat Petrol Pump, Mangliyawas, Arjunpura
-              Jageer, Rajasthan 305023
+              Mangliawas - Nasirabad Road Mangliawas, Ajmer - 305203 Rajasthan,
+              India.
             </p>
           </span>
         </div>
