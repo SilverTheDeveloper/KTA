@@ -13,7 +13,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
+  div{
+    cursor: pointer;
+  }
   @media (max-width: 786px) {
     display: flex;
     height: 50px;
