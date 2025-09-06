@@ -156,7 +156,6 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
                 >
                   <option value="Sq.ft">Sq.ft</option>
                   <option value="Sq.m">Sq.m</option>
-                  <option value="Acres">Acres</option>
                 </select>
               </div>
               {errors.blockArea && (
