@@ -12,7 +12,7 @@ router.get("/getall", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
-  const { name, type, category, keyFeatures, shortDesc, longDesc, img, usageGuide } = req.body;
+  const { name, type, category, keyFeatures, shortDesc, longDesc, recommendedApplications, packagingStorage, img, usageGuide } = req.body;
 
   const newProduct = new Product({
     name,
@@ -21,6 +21,8 @@ router.post("/add", async (req, res) => {
     keyFeatures,
     shortDesc,
     longDesc,
+    recommendedApplications,
+    packagingStorage,
     img,
     usageGuide
   });
@@ -28,6 +30,18 @@ router.post("/add", async (req, res) => {
   try {
     const saveProduct = await newProduct.save();
     res.status(200).json(saveProduct);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+
+//update a product
+router.put("/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+      await product.updateOne({ $set: req.body });
+      res.status(200).json("product has been updated");
   } catch (error) {
     res.status(500).json(error);
   }

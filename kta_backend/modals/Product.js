@@ -26,6 +26,12 @@ const ProductSchema = new mongoose.Schema(
     longDesc: {
       type: String,
     },
+    recommendedApplications: {
+      type: String,
+    },
+    packagingStorage: {
+      type: String,
+    },
     img: {
       type: String,
       required: true,
@@ -37,6 +43,11 @@ const ProductSchema = new mongoose.Schema(
       grouting: { type: String },
       coverage: { type: String },
       curingAndSetting: { type: String },
+      potLife: { type: String },
+      recommendedTileTypes: { type: String },
+      storageShelfLife: { type: String },
+      compatibility: { type: String },
+      precautions: { type: String },
     },
   },
   { timestamps: true }

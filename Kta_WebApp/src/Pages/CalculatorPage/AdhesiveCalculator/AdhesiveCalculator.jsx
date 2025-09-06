@@ -51,6 +51,7 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
 
   return (
     <>
+    <div className={styles.calcuInnerWrapper}>
       <div className={styles.LargeText}>{activeCategory?.name}</div>
       <div className={styles.SplitContainer}>
         <div className={styles.LeftSection}>
@@ -88,7 +89,7 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
                 onChange={(e) => setArea(e.target.value)}
                 value={area}
               />
-              <div class={styles.Divider}></div>
+              <div className={styles.Divider}></div>
               <select onChange={handleSIUnit}>
                 <option value={"Sq.ft"}>Sq.ft</option>
                 <option value={"Sq.m"}>Sq.m</option>
@@ -157,6 +158,7 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
