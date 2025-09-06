@@ -61,7 +61,7 @@ function AboutPage() {
               Mission
             </div>
             <div className={styles.OurMissionDesc}>
-              At kta solutions, our mission is to deliver high-performance tile adhesive and construction solutions that meet global standards while being tailored for indian conditions. we strive to empower builders, architects, and applicators with reliable, innovative, and cost-effective products — built with precision, backed by support, and committed to sustainability
+              At KTA solutions, our mission is to deliver high-performance tile adhesive and construction solutions that meet global standards while being tailored for indian conditions. we strive to empower builders, architects, and applicators with reliable, innovative, and cost-effective products — built with precision, backed by support, and committed to sustainability
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ function AboutPage() {
               Vision
             </div>
             <div className={styles.OurVisionDesc}>
-              To be India’s most trusted and innovative brand in tile adhesives and construction materials — setting benchmarks in quality, sustainability, and service, while building enduring partnerships across the industry
+              To be India’s most trusted and innovative brand in tile adhesives and construction materials — setting benchmarks in quality, sustainability, and service, while building enduring partnerships across the industry. We aspire to empower builders, architects, and homeowners with reliable solutions that stand the test of time.
 
             </div>
           </div>
@@ -126,6 +126,7 @@ function AboutPage() {
               <div className={styles.Heading}>Integrity</div>
               <div className={styles.Desc}>
                 Honest, transparent, and ethical in every action.
+                We build trust through fairness and accountability.
               </div>
             </div>
             <div class={styles.gridItem}>
@@ -133,6 +134,7 @@ function AboutPage() {
               <div className={styles.Heading}>Innovation</div>
               <div className={styles.Desc}>
                 Constantly creating smarter, stronger surface solutions.
+                We embrace new ideas to drive progress and sustainability.
               </div>
             </div>
             <div class={styles.gridItem}>
@@ -140,13 +142,15 @@ function AboutPage() {
               <div className={styles.Heading}>Reliability</div>
               <div className={styles.Desc}>
                 Trusted performance, every product, every time.
+                Count on us for consistent quality and service.
               </div>
             </div>
             <div class={styles.gridItem}>
               <img src={ExcellenceIcon} alt="" />
               <div className={styles.Heading}>Excellence</div>
               <div className={styles.Desc}>
-                Trusted performance, every product, every time.
+                Committed to the highest standards in all we do.
+                We strive to improve and exceed expectations.
               </div>
             </div>
           </div>
