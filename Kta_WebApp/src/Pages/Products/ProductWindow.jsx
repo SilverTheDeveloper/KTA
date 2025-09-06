@@ -139,6 +139,24 @@ function ProductWindow() {
               </ul>
             </div>
           )}
+          <br />
+          {product?.recommendedApplications && (
+            <div>
+              <div className={styles.SectionHeading} >
+                Recommended Applications
+              </div>
+              <ul>
+                {product.recommendedApplications
+                  ?.split(".")
+                  .slice(0, -1)
+                  .map((item) => (
+                    <li>{item}</li>
+                  ))}
+              </ul>
+            </div>
+          )}
+
+
           <div className={styles.Available}>
             <div>Available in</div>
             <div className={styles.AvaiColor1}></div>
@@ -261,6 +279,107 @@ function ProductWindow() {
                 </ul>
               </div>
             )}
+
+
+            {product?.usageGuide?.potLife && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                    POT LIFE
+                </div>
+                <ul>
+                  {product.usageGuide.potLife
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item) => (
+                      <li>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+            {product?.usageGuide?.recommendedTileTypes && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                   RECOMMENDED TILE TYPES
+                </div>
+                <ul>
+                  {product.usageGuide.recommendedTileTypes
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item) => (
+                      <li>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+            {product?.usageGuide?.storageShelfLife && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                   STORAGE AND SHELF LIFE
+                </div>
+                <ul>
+                  {product.usageGuide.storageShelfLife
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item) => (
+                      <li>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+
+            {product?.usageGuide?.storageShelfLife && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                   STORAGE AND SHELF LIFE
+                </div>
+                <ul>
+                  {product.usageGuide.storageShelfLife
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item) => (
+                      <li>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+            {product?.usageGuide?.compatibility && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  COMPATIBILITY
+                </div>
+                <ul>
+                  {product.usageGuide.compatibility
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item) => (
+                      <li>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+            {product?.usageGuide?.precautions && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  PRECAUTIONS
+                </div>
+                <ul>
+                  {product.usageGuide.precautions
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item) => (
+                      <li>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+            
+
+
+
           </div>
         )}
       </div>

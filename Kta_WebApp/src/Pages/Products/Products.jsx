@@ -17,12 +17,22 @@ function Products() {
         " Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
     },
     {
-      categoryName: "Tile Grout",
+      categoryName: "Stone Adhesive",
+      categoryDesc:
+        "Strong, durable adhesive for natural and engineered stone with superior grip and lasting support.",
+    },
+    {
+      categoryName: "Repair Solution",
+      categoryDesc:
+        "Reliable, fast-acting solutions for fixing cracks, chips, and surface damage with lasting strength.",
+    },
+    {
+      categoryName: "Tile Joint Filler",
       categoryDesc:
         "Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
     },
     {
-      categoryName: "Tile Tool",
+      categoryName: "Application Tools",
       categoryDesc:
         " Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
     },
