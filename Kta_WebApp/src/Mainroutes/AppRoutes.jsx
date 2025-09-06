@@ -49,14 +49,13 @@ export const appRoutes = [
   {
     path: "blogs",
     element: <BlogPage />,
-  },{
-    path: "cal",
-    element: <JointFillerCalculator/>
-  },{
+  },
+  {
     path: "terms&conditions",
-    element:<Terms/>
-  },{
-    path:"privacyPolicy",
-    element:<Policy/>
-  }
+    element: <Terms />,
+  },
+  {
+    path: "privacyPolicy",
+    element: <Policy />,
+  },
 ];
