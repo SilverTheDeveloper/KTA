@@ -10,6 +10,7 @@ export const ProductList = [
     title: "Tile Adhesives",
     description:
       "Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
+      
   },
   {
     img1: "/assets/LandingPage/ProductsLisPics/Stone1.png",
