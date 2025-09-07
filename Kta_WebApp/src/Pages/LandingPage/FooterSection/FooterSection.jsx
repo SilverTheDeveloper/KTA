@@ -100,18 +100,18 @@ const handleAddressClick = () => {
           <span className={styles.Title}>Useful links</span>
           <span>
             <Link to={"/app/terms&conditions"}  style={linkStyle}>
-                <a>Terms & Conditions</a>
+              Terms & Conditions
             </Link>
           </span>
           <span>
             <Link to={"/app/privacyPolicy"}  style={linkStyle}>
-            <a>Privacy Policy</a>
+            Privacy Policy
             </Link>
           </span>
           <span>
              <Link to={"/app/contact"} style={linkStyle}>
               
-            <a>Shipping & Returns</a>
+            Shipping & Returns
             </Link>
           </span>
           <span>
