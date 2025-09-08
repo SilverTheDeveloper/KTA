@@ -100,9 +100,8 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
 
     let volumeInLitre = volume * L_TO_MCUBE;
 
-    const mortarRequired = // volumeInLitre * (mortarProduct?.density || 0)
-    (volumeInLitre * 2).toFixed(2);
-
+    const mortarRequired = ( volumeInLitre * (mortarProduct?.density || 0)).toFixed(2);
+   
     setMortarProduct((prev) => ({ ...prev, mortarRequired }));
   };
 
@@ -110,7 +109,7 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
     if (!allProducts || allProducts.length === 0) return;
 
     const product = allProducts.find(
-      (product) => product?.name === "KTA Polymer Grout"
+      (product) => product?.name === "KTA 8000"
     );
     if (product) {
       setMortarProduct(product);
@@ -293,8 +292,6 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
 
           <button className={styles.subButton}>Submit</button>
         </form>
-
-        {/* Result Section */}
         <div className={styles.rightSection}>
           <div className={styles.subHeading}>Required Block Joint Filler</div>
           <div className={styles.productContainer}>

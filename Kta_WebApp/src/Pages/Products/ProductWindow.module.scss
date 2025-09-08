@@ -40,6 +40,7 @@ $mobile: 786px;
     font-style: normal;
     font-weight: 600;
     line-height: 125%;
+    margin-bottom: 1rem;
     @media (max-width: $mobile) {
       font-size: 1.5rem;
     }
