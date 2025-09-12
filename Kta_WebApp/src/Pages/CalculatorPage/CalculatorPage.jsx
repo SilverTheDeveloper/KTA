@@ -14,7 +14,7 @@ const CalculatorPage = () => {
   const categoryList = [
     {
       name: "Adhesive Coverage Calculator",
-      productCategory: "Tile Adhesive",
+      productCategory: "Adhesive",
     },
     {
       name: "Joint-Filler Coverage",
