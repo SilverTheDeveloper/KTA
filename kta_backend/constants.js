@@ -1,0 +1,1 @@
+export const  RECEIVERS_EMAIL="info@ktasolutions.in"
