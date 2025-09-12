@@ -287,7 +287,6 @@ $mobile: 768px;
     cursor: pointer;
 
     @media screen and (max-width: $mobile) {
-      display: none;
     }
     .activeButton {
       display: flex;

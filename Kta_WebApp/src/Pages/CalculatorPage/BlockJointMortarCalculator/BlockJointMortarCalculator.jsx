@@ -100,8 +100,8 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
 
     let volumeInLitre = volume * L_TO_MCUBE;
 
-    const mortarRequired = ( volumeInLitre * (mortarProduct?.density || 0)).toFixed(2);
-   
+    const mortarRequired = (volumeInLitre * (mortarProduct?.density || 0)).toFixed(2);
+
     setMortarProduct((prev) => ({ ...prev, mortarRequired }));
   };
 
@@ -318,10 +318,19 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
               )}
             </AnimatePresence>
           </div>
-          <div className={styles.beforeDesc}>
-            Fill in the requirement on the left <br /> to display the quantity
-            required
-          </div>
+          {(mortarProduct?.mortarRequired == 0 ||
+            mortarProduct?.mortarRequired == null) && (
+              <div>
+                <div className={styles.beforeDescDesk}>
+                  Fill in the requirement on the left <br /> to display the quantity
+                  required
+                </div>
+                <div className={styles.beforeDescMob}>
+                  Fill in the requirement on the top <br /> to display the quantity
+                  required
+                </div>
+              </div>
+            )}
         </div>
       </div>
     </div>

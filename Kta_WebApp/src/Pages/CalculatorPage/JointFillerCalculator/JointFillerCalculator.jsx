@@ -366,11 +366,17 @@ function JointFillerCalculator({ allProducts, activeCategory }) {
           </div>
           {(groutTile?.groutTileRequired == 0 ||
             groutTile?.groutTileRequired == null) && (
-            <div className={styles.beforeDesc}>
-              Fill in the requirement on the left <br /> to display the quantity
-              required
-            </div>
-          )}
+              <div>
+                <div className={styles.beforeDescDesk}>
+                  Fill in the requirement on the left <br /> to display the quantity
+                  required
+                </div>
+                <div className={styles.beforeDescMob}>
+                  Fill in the requirement on the top <br /> to display the quantity
+                  required
+                </div>
+              </div>
+            )}
         </div>
       </div>
     </div>
