@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../BlockJointMortarCalculator/BlockJointMortarCalculator.module.scss";
 import { L_TO_MCUBE, MM_TO_M, SQFT_TO_METERSQ_CONST } from "@/constants";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function JointFillerCalculator({ allProducts, activeCategory }) {
   const [errors, setErrors] = useState({});
@@ -320,7 +321,9 @@ function JointFillerCalculator({ allProducts, activeCategory }) {
         <div className={styles.rightSection}>
           <div className={styles.subHeading}>Required Tile Joint Filler</div>
           <div className={styles.productContainer}>
+
             <AnimatePresence>
+
               {groutTile?.groutTileRequired > 0 && (
                 <motion.div
                   key="grout"
@@ -343,27 +346,47 @@ function JointFillerCalculator({ allProducts, activeCategory }) {
               )}
 
               {epoxyTile?.epoxyTileRequired > 0 && (
-                <motion.div
-                  key="epoxy"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 30 }}
-                  transition={{ duration: 0.5 }}
-                  className={styles.productCard}
-                >
-                  <img
-                    src={epoxyTile?.img || "/placeholder-epoxy.png"}
-                    alt={epoxyTile?.name}
-                    className={styles.productImg}
-                  />
-                  <p className={styles.productName}>{epoxyTile?.name}</p>
-                  <p className={styles.productQty}>
-                    {epoxyTile?.epoxyTileRequired} kg
-                  </p>
-                </motion.div>
+                <>
+                  <motion.div
+                    key="epoxy"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 30 }}
+                    transition={{ duration: 0.5 }}
+                    className={styles.productCard}
+                  >
+                    <img
+                      src={epoxyTile?.img || "/placeholder-epoxy.png"}
+                      alt={epoxyTile?.name}
+                      className={styles.productImg}
+                    />
+                    <p className={styles.productName}>{epoxyTile?.name}</p>
+                    <p className={styles.productQty}>
+                      {epoxyTile?.epoxyTileRequired} kg
+                    </p>
+                  </motion.div>
+
+
+
+                </>
               )}
+
+
+
             </AnimatePresence>
-          </div>
+</div>
+            {(groutTile?.groutTileRequired > 0) && (
+              <div className={styles.BlockDisp}>
+              <br />
+              <div>*Above quantity is basis calculations under simulated conditions.
+                Can vary as per surface type and site conditions.</div>
+              <br />
+              <Link to={"/app/contact"}>
+                <button className={styles.subButton}>Contact US</button>
+              </Link>
+            </div>)}
+
+          
           {(groutTile?.groutTileRequired == 0 ||
             groutTile?.groutTileRequired == null) && (
               <div>

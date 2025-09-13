@@ -17,13 +17,12 @@ const CalculatorPage = () => {
       productCategory: "Tile Adhesive",
     },
     {
-      name: "Joint-Filler Coverage",
-      productCategory: "Tile Adhesive",
-    },
-    {
       name: "Block Joint Mortar Coverage",
       productCategory: "Block Joint Mortar Coverage",
-    },
+    },   {
+      name: "Joint-Filler Coverage",
+      productCategory: "Tile Adhesive",
+    }
   ];
 
   const [allProducts, setAllProducts] = useState([]);

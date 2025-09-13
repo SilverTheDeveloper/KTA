@@ -285,7 +285,7 @@ $mobile: 768px;
     flex-shrink: 0;
     padding-top: 1rem;
     cursor: pointer;
-
+    justify-content: center;
     @media screen and (max-width: $mobile) {
     }
     .activeButton {

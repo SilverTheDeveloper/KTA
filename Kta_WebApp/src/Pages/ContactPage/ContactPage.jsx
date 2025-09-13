@@ -206,6 +206,7 @@ function ContactPage() {
                     value={formData.BusinessType}
                     options={bussinesstypeoptions}
                     onChange={handleChange}
+                    className={styles.ContactInputs}
                     name="businessType"
                   />
                   <input
@@ -231,6 +232,7 @@ function ContactPage() {
                     value={formData.Product}
                     onChange={handleChange}
                     isSearchable
+                    className={styles.ContactInputs}
                     placeholder="select a product"
                     name="product"
                   />
@@ -242,6 +244,7 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.ContactMessage}
                     className={styles.ContactInputBoxLarge}
+                    // className={styles.ContactInputs}
                   />
                   <button type="submit" className={styles.sendButton}>
                     Send Message
@@ -306,12 +309,12 @@ function ContactPage() {
                     onChange={handleChange}
                     name="name"
                     id={styles.ContactName}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   />
                   <select
                     name="BusinessType"
                     id={styles.BusinessType}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                     value={formData.BusinessType}
                     onChange={handleChange}
                   >
@@ -325,7 +328,7 @@ function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     id={styles.ContactEmail}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   />
                   <input
                     type="tel"
@@ -334,14 +337,14 @@ function ContactPage() {
                     value={formData.mobileNo}
                     onChange={handleChange}
                     id={styles.Number}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   />
                   <select
                     name="Product"
                     id={styles.Product}
                     value={formData.Product}
                     onChange={handleChange}
-                    className={styles.ContactInputBox}
+                    className={styles.ContactInputs}
                   >
                     <option value="" disabled selected hidden>
                       Product*
