@@ -20,10 +20,6 @@ function ProductWindow() {
     { label: "Documents and Downloads", id: "documents" },
     { label: "Usage Guide", id: "usage" },
   ];
-
-  const stringTest =
-    "Ensure the substrate is clean, dry, and free from dust, grease, or loose particles. New concrete should be cured for at least 28 days. Cementitious screeds or plaster should be fully set before application. For highly absorbent surfaces, pre-wet or apply a suitable primer if required";
-
   const navigate = useNavigate();
   const { id } = useParams(); // Get the dynamic ID from URL
   const [loading, setLoading] = useState(true);
@@ -133,22 +129,39 @@ function ProductWindow() {
                 {product.keyFeatures
                   ?.split(".")
                   .slice(0, -1)
-                  .map((item) => (
-                    <li>{item}</li>
+                  .map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
               </ul>
             </div>
           )}
-          <div className={styles.Available}>
-            <div>Available in</div>
-            <div className={styles.AvaiColor1}></div>
-            <div className={styles.AvaiColor2}></div>
-          </div>
+          <br />
+          {product?.recommendedApplications && (
+            <div>
+              <div className={styles.SectionHeading} >
+                Recommended Applications
+              </div>
+              <ul>
+                {product.recommendedApplications
+                  ?.split(".")
+                  .slice(0, -1)
+                  .map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+              </ul>
+            </div>
+          )}
+          {product?.category?.includes("Adhesive") && (
+            <div className={styles.Available}>
+              <div>Available in</div>
+              <div className={styles.AvaiColor1}></div>
+              <div className={styles.AvaiColor2}></div>
+            </div>
+          )}
         </div>
         <div className={styles.Download}>
           <hr />
-
-          <d iv className={styles.SectionHeading} id="documents">
+          <div className={styles.SectionHeading} id="documents">
             Documents and Downloads
             <div className={styles.DownloadCard}>
               <img src={DocumentIcon} alt="" />
@@ -165,7 +178,7 @@ function ProductWindow() {
                 Download
               </div>
             </div>
-          </d>
+          </div>
         </div>
         {product?.usageGuide && (
           <div className={styles.UserGuide}>
@@ -183,8 +196,8 @@ function ProductWindow() {
                   {product.usageGuide.surfacePreparation
                     ?.split(".")
                     .slice(0, -1)
-                    .map((item) => (
-                      <li>{item}</li>
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
                 </ul>
               </div>
@@ -197,8 +210,8 @@ function ProductWindow() {
                   {product.usageGuide.mixing
                     ?.split(".")
                     .slice(0, -1)
-                    .map((item) => (
-                      <li>{item}</li>
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
                 </ul>
               </div>
@@ -211,8 +224,8 @@ function ProductWindow() {
                   {product.usageGuide.application
                     .split(".")
                     .slice(0, -1)
-                    .map((item) => (
-                      <li>{item}</li>
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
                 </ul>
               </div>
@@ -225,8 +238,8 @@ function ProductWindow() {
                   {product.usageGuide.grouting
                     .split(".")
                     .slice(0, -1)
-                    .map((item) => (
-                      <li>{item}</li>
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
                 </ul>
               </div>
@@ -239,8 +252,8 @@ function ProductWindow() {
                   {product.usageGuide.coverage
                     ?.split(".")
                     .slice(0, -1)
-                    .map((item) => (
-                      <li>{item}</li>
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
                 </ul>
               </div>
@@ -255,12 +268,99 @@ function ProductWindow() {
                   {product.usageGuide.curingAndSetting
                     ?.split(".")
                     .slice(0, -1)
-                    .map((item) => (
-                      <li>{item}</li>
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
                     ))}
                 </ul>
               </div>
             )}
+
+
+            {product?.usageGuide?.potLife && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  POT LIFE
+                </div>
+                <ul>
+                  {product.usageGuide.potLife
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+            {product?.usageGuide?.recommendedTileTypes && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  RECOMMENDED TILE TYPES
+                </div>
+                <ul>
+                  {product.usageGuide.recommendedTileTypes
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+            {product?.usageGuide?.storageShelfLife && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  STORAGE AND SHELF LIFE
+                </div>
+                <ul>
+                  {product.usageGuide.storageShelfLife
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+
+
+            {product?.usageGuide?.compatibility && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  COMPATIBILITY
+                </div>
+                <ul>
+                  {product.usageGuide.compatibility
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+            {product?.usageGuide?.precautions && (
+              <div>
+                <div className={styles.subSectionHeading}>
+                  PRECAUTIONS
+                </div>
+                <ul>
+                  {product.usageGuide.precautions
+                    ?.split(".")
+                    .slice(0, -1)
+                    .map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                </ul>
+              </div>
+            )}
+
+
+
+
+
           </div>
         )}
       </div>

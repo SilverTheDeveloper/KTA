@@ -30,7 +30,10 @@ const ShowCaseSection = () => {
         <div className="slider-container">
           <Slider {...settings}>
             {ProductList.map((productItem, index) => (
-              <ProductCard data={productItem} />
+              <Link to={`/app/products?section=${productItem?.sectionId}`} className={styles.nolinkstyle}>
+                <ProductCard  data={productItem} />
+              </Link>
+
             ))}
           </Slider>
         </div>

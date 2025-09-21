@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./BlockJointMortarCalculator.module.scss";
 import { L_TO_MCUBE, MM_TO_M, SQFT_TO_METERSQ_CONST } from "@/constants";
 import { AnimatePresence, motion } from "framer-motion";
+import GradientButton from "@/Components/GradientButton/GradientButton";
+import { Link } from "react-router-dom";
 
 function BlockJointMortarCalculator({ allProducts, activeCategory }) {
   const [mortarProduct, setMortarProduct] = useState({});
   const [errors, setErrors] = useState({});
-
+  const sectionRef = useRef(null);
   const [formData, setFormData] = useState({
     blockArea: "",
     blockAreaUnit: "Sq.ft",
@@ -100,17 +102,21 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
 
     let volumeInLitre = volume * L_TO_MCUBE;
 
-    const mortarRequired = // volumeInLitre * (mortarProduct?.density || 0)
-    (volumeInLitre * 2).toFixed(2);
+    const mortarRequired = (volumeInLitre * (mortarProduct?.density || 0)).toFixed(2);
 
     setMortarProduct((prev) => ({ ...prev, mortarRequired }));
+
+
+
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+
   };
 
   useEffect(() => {
     if (!allProducts || allProducts.length === 0) return;
 
     const product = allProducts.find(
-      (product) => product?.name === "KTA Polymer Grout"
+      (product) => product?.name === "KTA 8000"
     );
     if (product) {
       setMortarProduct(product);
@@ -292,38 +298,58 @@ function BlockJointMortarCalculator({ allProducts, activeCategory }) {
 
           <button className={styles.subButton}>Submit</button>
         </form>
-
-        {/* Result Section */}
-        <div className={styles.rightSection}>
+        <div className={styles.rightSection} ref={sectionRef}>
           <div className={styles.subHeading}>Required Block Joint Filler</div>
           <div className={styles.productContainer}>
             <AnimatePresence>
               {mortarProduct?.mortarRequired > 0 && (
-                <motion.div
-                  key="mortar"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 30 }}
-                  transition={{ duration: 0.5 }}
-                  className={styles.productCard}
-                >
-                  <img
-                    src={mortarProduct?.img || "/placeholder-mortar.png"}
-                    alt={mortarProduct?.name}
-                    className={styles.productImg}
-                  />
-                  <p className={styles.productName}>{mortarProduct?.name}</p>
-                  <p className={styles.productQty}>
-                    {mortarProduct?.mortarRequired} kg
-                  </p>
-                </motion.div>
+                <div >
+                  <motion.div
+                    key="mortar"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 30 }}
+                    transition={{ duration: 0.5 }}
+                    className={styles.productCard}
+                  >
+                    <img
+                      src={mortarProduct?.img || "/placeholder-mortar.png"}
+                      alt={mortarProduct?.name}
+                      className={styles.productImg}
+                    />
+                    <p className={styles.productName}>{mortarProduct?.name}</p>
+                    <p className={styles.productQty}>
+                      {mortarProduct?.mortarRequired} kg
+                    </p>
+
+
+
+                  </motion.div>
+
+                  <br />
+                  <div>*Above quantity is basis calculations under simulated conditions.
+                    Can vary as per surface type and site conditions.</div>
+                    <br />
+                   <Link to={"/app/contact"}>
+                      <button className={styles.subButton}>Contact US</button>
+                  </Link>
+                </div>
               )}
             </AnimatePresence>
           </div>
-          <div className={styles.beforeDesc}>
-            Fill in the requirement on the left <br /> to display the quantity
-            required
-          </div>
+          {(mortarProduct?.mortarRequired == 0 ||
+            mortarProduct?.mortarRequired == null) && (
+              <div>
+                <div className={styles.beforeDescDesk}>
+                  Fill in the requirement on the left <br /> to display the quantity
+                  required
+                </div>
+                <div className={styles.beforeDescMob}>
+                  Fill in the requirement on the top <br /> to display the quantity
+                  required
+                </div>
+              </div>
+            )}
         </div>
       </div>
     </div>

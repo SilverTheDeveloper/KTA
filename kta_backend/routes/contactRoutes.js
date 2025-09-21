@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const nodemailer = require('nodemailer');
+const { RECEIVERS_EMAIL } = require("../constants");
 
 router.post("/sendEmail", async (req, res) => {
   const { name, email, mobileNo, Product, message } = req.body;
@@ -9,7 +10,7 @@ router.post("/sendEmail", async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: 'gmail', // e.g., 'gmail'
       auth: {
-        user: 'rajatmishra9411@gmail.com',
+        user: RECEIVERS_EMAIL,
         pass: 'pejgpcfangyfjdtm', // Use App Password if 2FA enabled
       },
     });
@@ -17,8 +18,11 @@ router.post("/sendEmail", async (req, res) => {
     // Email options
     let mailOptions = {
       from: email,
-      to: 'rajatmishra9411@gmail.com',
+      to: RECEIVERS_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
+      Email:`${email}`,
+      MobileNo:`${mobileNo}`,
+      product: `${Product}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 

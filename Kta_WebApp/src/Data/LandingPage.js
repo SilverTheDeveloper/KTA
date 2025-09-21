@@ -3,6 +3,7 @@ import firstSliderImg1 from "/assets/LandingPage/FirstSlider/1.png";
 import firstSliderImg2 from "/assets/LandingPage/FirstSlider/2.png";
 import firstSliderImg3 from "/assets/LandingPage/FirstSlider/3.png";
 import firstSliderImg4 from "/assets/LandingPage/FirstSlider/4.png";
+import { BsSignIntersectionSide } from "react-icons/bs";
 export const ProductList = [
   {
     img1: "/assets/LandingPage/ProductsLisPics/Tile1.png",
@@ -10,13 +11,15 @@ export const ProductList = [
     title: "Tile Adhesives",
     description:
       "Secure, fast-bonding adhesives for walls and floors. Easy to use and compatible with multiple surfaces.",
-  },
+    sectionId:1,
+    },
   {
     img1: "/assets/LandingPage/ProductsLisPics/Stone1.png",
     img2: "/assets/LandingPage/ProductsLisPics/Stone2.png",
     title: "Stone Adhesives",
     description:
       "High-strength adhesives for natural and engineered stone. Suitable for vertical and horizontal applications.",
+      sectionId:2,
   },
   {
     img1: "/assets/LandingPage/ProductsLisPics/StoneCare1.png",
@@ -24,6 +27,7 @@ export const ProductList = [
     title: "Stone Care",
     description:
       "Sealers, enhancers, and cleaners to protect and enhance stone surfaces—indoors and outdoors.",
+
   },
   {
     img1: "/assets/LandingPage/ProductsLisPics/Repair1.png",
@@ -31,6 +35,7 @@ export const ProductList = [
     title: "Repair Solutions",
     description:
       "Specialized products to restore tiles and stone. Long-lasting results for both interior and exterior areas.",
+      sectionId:3,
   },
   ,
   {
@@ -39,6 +44,7 @@ export const ProductList = [
     title: "Tile Joint Fillers",
     description:
       "Smooth, durable fillers for tile joints. Improve aesthetics and durability across all spaces.",
+      sectionId:4,
   },
   {
     img1: "/assets/LandingPage/ProductsLisPics/Application1.png",
@@ -46,6 +52,7 @@ export const ProductList = [
     title: "Application Tools",
     description:
       "Professional tools—trowels, spacers, floats, and wedges—for precise, hassle-free installation.",
+      sectionId:5,
   },
 ];
 

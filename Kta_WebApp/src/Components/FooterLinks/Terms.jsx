@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Terms.module.scss'
 function Terms() {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, []);
+
+
   return (
     <div>
       <div className={styles.termsPage}> 

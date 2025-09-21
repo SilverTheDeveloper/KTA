@@ -167,10 +167,10 @@ $mobile: 768px;
     align-items: center;
   }
   .OurMissionSmallBlock {
-    width: 70%;
+    width: 90%;
 
     @media (min-width: 1400px) {
-      width: 70%;
+      width: 90%;
     }
   }
   .OurMissionHeading {
@@ -194,12 +194,14 @@ $mobile: 768px;
   }
 
   .OurMissionDesc {
-    color: #000;
+
+    color: #000000;
     font-family: Poppins;
-    font-size: 15.4px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+      text-align: justify;
 
     @media (min-width: 1400px) {
       font-size: 1.5rem;
@@ -234,10 +236,10 @@ $mobile: 768px;
     align-items: center;
   }
   .OurVisionSmallBlock {
-    width: 70%;
+    width: 90%;
 
     @media (min-width: 1400px) {
-      width: 70%;
+      width: 90%;
     }
   }
   .OurVisionHeading {
@@ -265,13 +267,15 @@ $mobile: 768px;
   }
 
   .OurVisionDesc {
-    color: #000;
+    
+
+    color: #000000;
     font-family: Poppins;
-    font-size: 15.4px;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
+      text-align: justify;
     @media (min-width: 1400px) {
       font-size: 1.5rem;
     }
@@ -332,7 +336,7 @@ $mobile: 768px;
       font-size: 50px;
       font-style: normal;
       font-weight: 800;
-      line-height: 43.784px;
+    
       background: linear-gradient(104deg, #e31e24 30.28%, #262065 56.6%);
       background-clip: text;
       -webkit-background-clip: text;
@@ -341,7 +345,7 @@ $mobile: 768px;
       font-size: 50px;
       font-style: normal;
       font-weight: 800;
-      line-height: 43.784px;
+    
 
       @media (min-width: 1400px) {
         font-size: 4rem;
@@ -403,8 +407,8 @@ $mobile: 768px;
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 columns */
     grid-template-rows: auto auto; /* 2 rows */
-    gap: 10px;
-    max-width: 400px;
+    gap: 1rem;
+    max-width: 500px;
     margin: 0 auto;
     @media (min-width: 1400px) {
       max-width: 500px;
@@ -416,7 +420,7 @@ $mobile: 768px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 5.945px;
+      gap: 1rem;
       flex-shrink: 0;
 
       img {

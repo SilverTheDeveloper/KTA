@@ -61,10 +61,8 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
             <div className={styles.Products}>
               <div className={styles.ProductGrid}>
                 {allProducts
-                  .filter(
-                    (product) =>
-                      product?.category === activeCategory?.productCategory
-                  )
+                  .filter((product) =>
+                    product?.category?.includes(activeCategory?.productCategory))
                   .map((item, index) => (
                     <div
                       onClick={() => setCurrentProduct(item)}
