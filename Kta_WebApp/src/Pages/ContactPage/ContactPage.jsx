@@ -349,8 +349,7 @@ function ContactPage() {
                     <option value="" disabled selected hidden>
                       Product*
                     </option>
-                    <option value="product1">product1</option>
-                    <option value="product2">product2</option>
+               
                   </select>
                   <input
                     type="text"
