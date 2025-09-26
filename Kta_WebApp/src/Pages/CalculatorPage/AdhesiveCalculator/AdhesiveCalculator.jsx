@@ -40,11 +40,13 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
         areaVal *
         SQFT_TO_METERSQ_CONST *
         thicknessValue *
-        currentProduct?.density;
+        (currentProduct?.density || 0);
     } else if (siUnit == "Sq.m") {
-      weightRequired = areaVal * thicknessValue * currentProduct?.density;
+      weightRequired =
+        areaVal * thicknessValue * (currentProduct?.density || 0);
     } else {
-      weightRequired = areaVal * thicknessValue * currentProduct?.density;
+      weightRequired =
+        areaVal * thicknessValue * (currentProduct?.density || 0);
     }
     setWeight(weightRequired.toFixed(2)); // Keep 2 decimal places
   };
@@ -60,8 +62,7 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
               <div className={styles.ProductGrid}>
                 {allProducts
                   .filter((product) =>
-                    product?.category?.includes(activeCategory?.productCategory)
-                  )
+                    product?.category?.includes(activeCategory?.productCategory))
                   .map((item, index) => (
                     <div
                       onClick={() => setCurrentProduct(item)}
@@ -92,7 +93,6 @@ const AdhesiveCalculator = ({ allProducts, activeCategory }) => {
                 <select onChange={handleSIUnit}>
                   <option value={"Sq.ft"}>Sq.ft</option>
                   <option value={"Sq.m"}>Sq.m</option>
-                  <option value={"Acres"}>Acres</option>
                 </select>
               </div>
               {invalidArea && <p style={{ color: "red" }}>{invalidArea}</p>}
