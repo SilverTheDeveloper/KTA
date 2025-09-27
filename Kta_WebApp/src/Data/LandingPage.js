@@ -106,7 +106,7 @@ export const featureData = [
     img: "/assets/LandingPage/lightBulbIcon.svg",
     title: "Engineered For Excellence",
     description:
-      "Every batch of tile adhesive is formulated with precision following isi and en guidelines to ensure superior perfomance and consistency.",
+      "Every batch of tile adhesive is formulated with precision following ISI and EN guidelines to ensure superior perfomance and consistency.",
   },
   {
     img: "/assets/LandingPage/qualityIcon.svg",

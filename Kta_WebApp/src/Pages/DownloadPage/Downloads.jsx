@@ -1,18 +1,30 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
-import React from "react";
+import React, { useState } from "react";
 import DownloadsHeading from "/assets/DownloadsPage/DownloadsHeading.png";
 import DocumentIcon from "/assets/DownloadsPage/document-icon.png";
 import DownloadIcon from "/assets/DownloadsPage/download-Icon.svg";
 import styles from "./Downloads.module.scss";
+import { pdfs } from "@/Data/DownloadPdfs";
+
 function Downloads() {
-  const handleDownload = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All"); // Default = show all
+
+  const handleDownload = (filePath, fileName) => {
     const link = document.createElement("a");
-    link.href = "/KTASolutions.pdf"; // path relative to 'public' folder
-    link.download = "KTASolutions.pdf"; // this sets the download filename
+    link.href = filePath;
+    link.download = fileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
+
+  // Filter PDFs
+  const filteredPdfs =
+    selectedCategory === "All"
+      ? pdfs
+      : pdfs.filter(
+          (pdf) => pdf.subtitle.toLowerCase() === selectedCategory.toLowerCase()
+        );
 
   return (
     <div id={styles.downloadsPageContainer}>
@@ -21,102 +33,69 @@ function Downloads() {
         details={"Essential Resources – Download Product Guides & Manuals."}
       />
 
+      {/* Desktop Category Buttons */}
       <div className={styles.DownloadOption}>
-        <div className={styles.outlineButton}>Technical Data Sheets</div>
-        <div className={styles.outlineButton}>Material Safety Data Sheets</div>
-        <div className={styles.outlineButton}>Method Statements</div>
-        <div className={styles.outlineButton}>Certifications</div>
-        <div className={styles.outlineButton}>Brochure & Catalogue</div>
+        {[
+          "All",
+          "Technical Data Sheets",
+          "Material Safety Data Sheets",
+          "Method Statements",
+          "Certifications",
+          "Brochure & Catalogue",
+        ].map((category) => (
+          <div
+            key={category}
+            className={`${styles.outlineButton} ${
+              selectedCategory === category ? styles.active : ""
+            }`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </div>
+        ))}
       </div>
 
+      {/* Mobile Category Dropdown */}
       <div className={styles.DownloadOptionMob}>
         <select
           className={styles.outlineButton}
           name="downloadFiles"
           id={styles.DownloadFiles}
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
         >
-          <option className={styles.optionText} value="Brochure&Catalogue">
-            Brochure & Catalogue
-          </option>
-          <option className={styles.optionText} value="TechnicalDataSheets">
-            Technical Data Sheets
-          </option>
-          <option
-            className={styles.optionText}
-            value="MaterialSafetyDataSheets"
-          >
+          <option value="All">All</option>
+          <option value="Technical Data Sheets">Technical Data Sheets</option>
+          <option value="Material Safety Data Sheets">
             Material Safety Data Sheets
           </option>
-          <option className={styles.optionText} value="MethodStatements">
-            Method Statements
-          </option>
-          <option className={styles.optionText} value="Certifications">
-            Certifications
-          </option>
+          <option value="Method Statements">Method Statements</option>
+          <option value="Certifications">Certifications</option>
+          <option value="Brochure & Catalogue">Brochure & Catalogue</option>
         </select>
       </div>
 
+      {/* Show PDFs or Fallback */}
       <div className={styles.DownloadCards}>
-        <div className={styles.DownloadCard}>
-          <img src={DocumentIcon} alt="" />
-          <div className={styles.DownloadCardHeading}>KTA</div>
-          <div className={styles.DownloadCardSubHeading}>
-            Corporate Brochure
-          </div>
+        {filteredPdfs.length > 0 ? (
+          filteredPdfs.map((pdf) => (
+            <div key={pdf.id} className={styles.DownloadCard}>
+              <img src={DocumentIcon} alt="" />
+              <div className={styles.DownloadCardHeading}>{pdf.title}</div>
+              <div className={styles.DownloadCardSubHeading}>{pdf.subtitle}</div>
 
-          <div onClick={handleDownload}  className={styles.DownloadCardFooter}>
-            <img src={DownloadIcon} alt="" />
-            Download
-          </div>
-        </div>
-        {/* <div className={styles.DownloadCard}>
-          <img src={DocumentIcon} alt="" />
-          <div className={styles.DownloadCardHeading}>KTA</div>
-          <div className={styles.DownloadCardSubHeading}>
-            Corporate Brochure
-          </div>
-
-          <div className={styles.DownloadCardFooter}>
-            <img src={DownloadIcon} alt="" />
-            Download
-          </div>
-        </div>
-        <div className={styles.DownloadCard}>
-          <img src={DocumentIcon} alt="" />
-          <div className={styles.DownloadCardHeading}>KTA</div>
-          <div className={styles.DownloadCardSubHeading}>
-            Corporate Brochure
-          </div>
-
-          <div className={styles.DownloadCardFooter}>
-            <img src={DownloadIcon} alt="" />
-            Download
-          </div>
-        </div>
-        <div className={styles.DownloadCard}>
-          <img src={DocumentIcon} alt="" />
-          <div className={styles.DownloadCardHeading}>KTA</div>
-          <div className={styles.DownloadCardSubHeading}>
-            Corporate Brochure
-          </div>
-
-          <div className={styles.DownloadCardFooter}>
-            <img src={DownloadIcon} alt="" />
-            Download
-          </div>
-        </div>
-        <div className={styles.DownloadCard}>
-          <img src={DocumentIcon} alt="" />
-          <div className={styles.DownloadCardHeading}>KTA</div>
-          <div className={styles.DownloadCardSubHeading}>
-            Corporate Brochure
-          </div>
-
-          <div className={styles.DownloadCardFooter}>
-            <img src={DownloadIcon} alt="" />
-            Download
-          </div>
-        </div> */}
+              <div
+                onClick={() => handleDownload(pdf.filePath, pdf.fileName)}
+                className={styles.DownloadCardFooter}
+              >
+                <img src={DownloadIcon} alt="" />
+                Download
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className={styles.NoDataText}>To be added soon</p>
+        )}
       </div>
     </div>
   );

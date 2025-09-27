@@ -47,7 +47,7 @@ const handleAddressClick = () => {
         </a>
 
         <a
-          href="https://wa.me/918233602899"
+          href="https://wa.me/919414009900"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "none" }}

@@ -10,8 +10,9 @@ $mobile: 768px;
   flex-wrap: wrap;
   margin: 80px 60px;
   position: relative;
-  padding-bottom: 0px !important; 
+  padding-bottom: 0px !important;
   margin-bottom: 0px !important;
+
   @media screen and (max-width: $mobile) {
     justify-content: center;
     margin: 10px 60px;
@@ -21,23 +22,28 @@ $mobile: 768px;
     display: flex;
     align-items: start;
     flex-direction: column;
+
     @media screen and (max-width: $mobile) {
       font-size: 10px;
       margin-top: 0;
       margin-top: 100px;
       // border: 1px solid black;
     }
+
     .Text {
       margin-top: 16px;
       margin-bottom: 35px;
+
       @media screen and (max-width: $mobile) {
         font-size: 10px;
         margin-top: 0;
       }
     }
+
     .Headings {
       display: flex;
       flex-direction: column;
+
       @media screen and (max-width: $mobile) {
         align-items: left;
       }
@@ -47,10 +53,8 @@ $mobile: 768px;
         font-size: 16px;
         font-weight: 800;
         text-transform: uppercase;
-        background: var(
-          --brand,
-          linear-gradient(100deg, #e31e24 7.47%, #262065 92.53%)
-        );
+        background: var(--brand,
+            linear-gradient(100deg, #e31e24 7.47%, #262065 92.53%));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -62,6 +66,7 @@ $mobile: 768px;
           align-items: left;
         }
       }
+
       .SubHeading {
         width: 370px;
         color: #000;
@@ -69,7 +74,9 @@ $mobile: 768px;
         font-size: 54px;
         font-style: normal;
         font-weight: 800;
-        line-height: 64px; /* 118.519% */
+        line-height: 64px;
+
+        /* 118.519% */
         @media screen and (max-width: $mobile) {
           font-size: 24px;
           line-height: 30px;
@@ -83,35 +90,108 @@ $mobile: 768px;
   .RightSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr); // 2 cards per row
-    gap: 10px 24px;
+    gap: 24px 24px;
     justify-items: center;
-      @media (max-width:$mobile) {
-        gap: 30px 24px;
-      }
+
+    @media (max-width:$mobile) {
+      gap: 30px 24px;
+    }
+
     .FeatureCard {
       display: flex;
-      width: 350px;
-      height: 154px;
+      width: 340px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 5px;
+
+
+      /* Large desktops (≥1200px) */
+      @media screen and (min-width: 1200px) {
+        font-size: 1.5rem;
+        width: 350px;
+      }
+
+      /* Extra large desktops (≥1400px) */
+      @media screen and (min-width: 1400px) {
+        font-size: 1.75rem;
+          width: 450px;
+         
+
+      }
+
+      /* Ultra wide monitors (≥1600px) */
+      @media screen and (min-width: 1600px) {
+        font-size: 2rem;
+
+      }
+
+      /* 4K screens (≥1920px) */
+      @media screen and (min-width: 1920px) {
+        font-size: 2.25rem;
+      }
+
       @media screen and (max-width: $mobile) {
         width: 170px;
       }
+
+
+
+
 
       .Title {
         font-family: Poppins;
         font-size: 16px;
         font-weight: 600;
         text-align: center;
+
+        /* Large desktops (≥1200px) */
+        @media screen and (min-width: 1200px) {
+          font-size: 1.5rem;
+        }
+
+        /* Extra large desktops (≥1400px) */
+        @media screen and (min-width: 1400px) {
+          font-size: 1.75rem;
+        }
+
+        /* Ultra wide monitors (≥1600px) */
+        @media screen and (min-width: 1600px) {
+          font-size: 2rem;
+        }
+
+        /* 4K screens (≥1920px) */
+        @media screen and (min-width: 1920px) {
+          font-size: 2.25rem;
+        }
       }
+
       .Description {
         color: #3e3e3e;
         text-align: center;
         font-family: Poppins;
         font-size: 10px;
-        font-weight: bold;
+        font-weight: 600;
+
+        /* Large desktops (≥1200px) */
+        @media screen and (min-width: 1200px) {
+          font-size: 1rem;
+        }
+
+        /* Extra large desktops (≥1400px) */
+        @media screen and (min-width: 1400px) {
+          font-size: 1.125rem;
+        }
+
+        /* Ultra wide monitors (≥1600px) */
+        @media screen and (min-width: 1600px) {
+          font-size: 1.25rem;
+        }
+
+        /* 4K screens (≥1920px) */
+        @media screen and (min-width: 1920px) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -125,6 +205,7 @@ $mobile: 768px;
     top: 61px;
     border-radius: 27px;
     background: linear-gradient(103deg, #e31e24 39.64%, #262065 83.65%);
+
     @media screen and (max-width: $mobile) {
       width: 104.697px;
       height: 104.824px;
@@ -135,8 +216,10 @@ $mobile: 768px;
     }
   }
 }
+
 .ButtonOnDesktop {
   display: block;
+
   @media screen and (max-width: $mobile) {
     display: none;
   }
@@ -144,6 +227,7 @@ $mobile: 768px;
 
 .ButtonOnMobile {
   display: none;
+
   @media screen and (max-width: $mobile) {
     margin-top: 50px;
     display: block;
