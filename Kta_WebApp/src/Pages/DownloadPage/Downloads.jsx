@@ -7,8 +7,7 @@ import styles from "./Downloads.module.scss";
 import { pdfs } from "@/Data/DownloadPdfs";
 
 function Downloads() {
-  const [selectedCategory, setSelectedCategory] = useState("All"); // Default = show all
-
+  const [selectedCategory, setSelectedCategory] = useState("All"); 
   const handleDownload = (filePath, fileName) => {
     const link = document.createElement("a");
     link.href = filePath;
@@ -17,23 +16,18 @@ function Downloads() {
     link.click();
     document.body.removeChild(link);
   };
-
-  // Filter PDFs
   const filteredPdfs =
     selectedCategory === "All"
       ? pdfs
       : pdfs.filter(
-          (pdf) => pdf.subtitle.toLowerCase() === selectedCategory.toLowerCase()
-        );
-
+        (pdf) => pdf.subtitle.toLowerCase() === selectedCategory.toLowerCase()
+      );
   return (
     <div id={styles.downloadsPageContainer}>
       <TopBanner
         head={DownloadsHeading}
         details={"Essential Resources – Download Product Guides & Manuals."}
       />
-
-      {/* Desktop Category Buttons */}
       <div className={styles.DownloadOption}>
         {[
           "All",
@@ -45,17 +39,14 @@ function Downloads() {
         ].map((category) => (
           <div
             key={category}
-            className={`${styles.outlineButton} ${
-              selectedCategory === category ? styles.active : ""
-            }`}
+            className={`${styles.outlineButton} ${selectedCategory === category ? styles.active : ""
+              }`}
             onClick={() => setSelectedCategory(category)}
           >
             {category}
           </div>
         ))}
       </div>
-
-      {/* Mobile Category Dropdown */}
       <div className={styles.DownloadOptionMob}>
         <select
           className={styles.outlineButton}
@@ -74,8 +65,6 @@ function Downloads() {
           <option value="Brochure & Catalogue">Brochure & Catalogue</option>
         </select>
       </div>
-
-      {/* Show PDFs or Fallback */}
       <div className={styles.DownloadCards}>
         {filteredPdfs.length > 0 ? (
           filteredPdfs.map((pdf) => (

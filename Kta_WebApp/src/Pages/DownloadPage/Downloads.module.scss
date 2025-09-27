@@ -63,7 +63,7 @@ $mobile: 768px;
   width: 100%;
   padding: 10px;
   padding-bottom: 100px;
-
+    flex-wrap: wrap;
   @media (max-width: $mobile) {
     display: flex;
     flex-direction: row;
