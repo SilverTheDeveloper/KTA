@@ -11,7 +11,7 @@ router.post("/sendEmail", async (req, res) => {
       service: 'gmail', // e.g., 'gmail'
       auth: {
         user: RECEIVERS_EMAIL,
-        pass: 'pejgpcfangyfjdtm', // Use App Password if 2FA enabled
+        pass: 'jpcgtbzxymulnmnl', // Use App Password if 2FA enabled
       },
     });
 
@@ -19,7 +19,7 @@ router.post("/sendEmail", async (req, res) => {
     let mailOptions = {
       from: email,
       to: RECEIVERS_EMAIL,
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `${name} contacted you via your website`,
       Email:`${email}`,
       MobileNo:`${mobileNo}`,
       product: `${Product}`,

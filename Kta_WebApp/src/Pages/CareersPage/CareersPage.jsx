@@ -135,12 +135,14 @@ const CareersPage = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                required
               />
               <input
                 className={styles.inputTag}
                 placeholder="City"
                 type="text"
                 onChange={handleChange}
+                required
               />
             </div>
             <div className={styles.inputDiv}>
@@ -151,6 +153,7 @@ const CareersPage = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
               <input
                 className={styles.inputTag}
@@ -159,6 +162,7 @@ const CareersPage = () => {
                 name="post"
                 value={formData.post}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className={styles.inputDiv}>
@@ -191,6 +195,7 @@ const CareersPage = () => {
                 placeholder="Message..."
                 value={formData.message}
                 onChange={handleChange}
+                required
               ></textarea>
             </div>
             <div className={styles.inputDiv}>
