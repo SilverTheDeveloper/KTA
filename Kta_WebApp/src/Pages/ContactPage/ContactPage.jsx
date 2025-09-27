@@ -13,18 +13,14 @@ import Select from "react-select";
 import { Prev } from "react-bootstrap/esm/PageItem";
 import { getAllProductsApi, getEmailApi } from "@/API/Api";
 
-
-
 const callNumber = (phoneNumber) => {
   if (!phoneNumber) return;
   window.location.href = `tel:${phoneNumber}`;
-}
+};
 
 const handleMailClick = () => {
   window.location.href = "mailto:info@ktasolutions.in";
 };
-
-
 
 function ContactPage() {
   const bussinesstypeoptions = [
@@ -37,7 +33,7 @@ function ContactPage() {
     businessType: "B2B",
     email: "",
     mobileNo: "",
-    product: "",
+    product: "KTA 1000",
     message: "",
   });
 
@@ -48,6 +44,8 @@ function ContactPage() {
   const handleChange = (e) => {
     let name = e.target ? e.target.name : e.name;
     let value = e.target ? e.target.value : e.value;
+    console.log(name, value);
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -70,10 +68,10 @@ function ContactPage() {
         setShowSuccess(true);
         setFormData({
           name: "",
-          BusinessType: "B2B",
+          businessType: "B2B",
           email: "",
           mobileNo: "",
-          Product: "",
+          product: "KTA 1000",
           message: "",
         });
       } else {
@@ -104,7 +102,7 @@ function ContactPage() {
       const products = response.data;
       const options = products.map((product) => ({
         label: product.name,
-        value: product._id,
+        value: product.name,
       }));
       setProductOptions(options);
     };
@@ -154,11 +152,17 @@ function ContactPage() {
               <div className={styles.contactLeftSectionHeading}>
                 Contact Info
               </div>
-              <div onClick={handleMailClick} className={styles.contactLeftSectionSubBlockDelailsDiffType}>
+              <div
+                onClick={handleMailClick}
+                className={styles.contactLeftSectionSubBlockDelailsDiffType}
+              >
                 <img src={Mail} alt="" />
                 info@ktasolutions.in
               </div>
-              <div onClick={() => callNumber("+919414009900")} className={styles.contactLeftSectionSubBlockDelailsDiffType}>
+              <div
+                onClick={() => callNumber("+919414009900")}
+                className={styles.contactLeftSectionSubBlockDelailsDiffType}
+              >
                 <img src={Call} alt="" />
                 +91 94140-09900
               </div>
@@ -202,13 +206,16 @@ function ContactPage() {
                     id={styles.ContactName}
                     className={styles.ContactInputs}
                   />
-                  <Select
-                    value={formData.BusinessType}
-                    options={bussinesstypeoptions}
-                    onChange={handleChange}
-                    className={styles.ContactInputs}
+                  <select
                     name="businessType"
-                  />
+                    id={styles.businessType}
+                    className={styles.ContactInputs}
+                    value={formData.businessType}
+                    onChange={handleChange}
+                  >
+                    <option value="B2B">B2B</option>
+                    <option value="B2C">B2C</option>
+                  </select>
                   <input
                     type="email"
                     placeholder="Email*"
@@ -227,15 +234,19 @@ function ContactPage() {
                     id={styles.Number}
                     className={styles.ContactInputs}
                   />
-                  <Select
-                    options={productOptions}
+                  <select
+                    name="product"
+                    id={formData.product}
+                    className={styles.ContactInputs}
                     value={formData.product}
                     onChange={handleChange}
-                    isSearchable
-                    className={styles.ContactInputs}
-                    placeholder="select a product"
-                    name="product"
-                  />
+                  >
+                    {productOptions.map((product, index) => (
+                      <option key={index} value={product.value}>
+                        {product.label}
+                      </option>
+                    ))}
+                  </select>
                   <input
                     type="text"
                     placeholder="Message*"
@@ -312,10 +323,10 @@ function ContactPage() {
                     className={styles.ContactInputs}
                   />
                   <select
-                    name="BusinessType"
-                    id={styles.BusinessType}
+                    name="businessType"
+                    id={styles.businessType}
                     className={styles.ContactInputs}
-                    value={formData.BusinessType}
+                    value={formData.businessType}
                     onChange={handleChange}
                   >
                     <option value="B2B">B2B</option>
@@ -340,17 +351,17 @@ function ContactPage() {
                     className={styles.ContactInputs}
                   />
                   <select
-                    name="Product"
-                    id={styles.Product}
+                    name="product"
+                    id={formData.product}
+                    className={styles.ContactInputs}
                     value={formData.product}
                     onChange={handleChange}
-                    className={styles.ContactInputs}
                   >
-                    <option value="" disabled selected hidden>
-                      Product*
-                    </option>
-                    <option value="product1">product1</option>
-                    <option value="product2">product2</option>
+                    {productOptions.map((product, index) => (
+                      <option key={index} value={product.value}>
+                        {product.label}
+                      </option>
+                    ))}
                   </select>
                   <input
                     type="text"
