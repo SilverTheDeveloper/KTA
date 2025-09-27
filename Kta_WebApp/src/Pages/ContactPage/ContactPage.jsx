@@ -229,7 +229,7 @@ function ContactPage() {
                   />
                   <Select
                     options={productOptions}
-                    value={formData.Product}
+                    value={formData.product}
                     onChange={handleChange}
                     isSearchable
                     className={styles.ContactInputs}
@@ -342,7 +342,7 @@ function ContactPage() {
                   <select
                     name="Product"
                     id={styles.Product}
-                    value={formData.Product}
+                    value={formData.product}
                     onChange={handleChange}
                     className={styles.ContactInputs}
                   >
