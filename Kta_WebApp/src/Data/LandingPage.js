@@ -27,7 +27,7 @@ export const ProductList = [
     title: "Stone Care",
     description:
       "Sealers, enhancers, and cleaners to protect and enhance stone surfaces—indoors and outdoors.",
-    
+    sectionId: 2,
   },
   {
     img1: "/assets/LandingPage/ProductsLisPics/Repair1.png",

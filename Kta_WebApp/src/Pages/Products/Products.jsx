@@ -53,8 +53,10 @@ function Products() {
   const scrollToCategory = (sectionId) => {
     const section = categoryRefs.current[sectionId];
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      const category = productCategoryList.find((c) => c.sectionId === sectionId);
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      const category = productCategoryList.find(
+        (c) => c.sectionId === sectionId
+      );
       if (category) setCurrentCategory(category.categoryName);
     } else {
       console.warn("No section found for", sectionId);
@@ -102,7 +104,9 @@ function Products() {
           <div
             key={category.sectionId}
             className={`${styles.latentButton} ${
-              currentCategory === category.categoryName ? styles.activeButton : ""
+              currentCategory === category.categoryName
+                ? styles.activeButton
+                : ""
             }`}
             onClick={() => scrollToCategory(category.sectionId)}
           >
