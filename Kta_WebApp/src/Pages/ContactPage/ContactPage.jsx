@@ -33,7 +33,7 @@ function ContactPage() {
     businessType: "B2B",
     email: "",
     mobileNo: "",
-    product: "KTA 1000",
+    product: "",
     message: "",
   });
 
@@ -71,7 +71,7 @@ function ContactPage() {
           businessType: "B2B",
           email: "",
           mobileNo: "",
-          product: "KTA 1000",
+          product: "",
           message: "",
         });
       } else {
@@ -205,6 +205,7 @@ function ContactPage() {
                     name="name"
                     id={styles.ContactName}
                     className={styles.ContactInputs}
+                    required
                   />
                   <select
                     name="businessType"
@@ -212,6 +213,7 @@ function ContactPage() {
                     className={styles.ContactInputs}
                     value={formData.businessType}
                     onChange={handleChange}
+                    required
                   >
                     <option value="B2B">B2B</option>
                     <option value="B2C">B2C</option>
@@ -224,6 +226,7 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.ContactEmail}
                     className={styles.ContactInputs}
+                    required
                   />
                   <input
                     type="tel"
@@ -233,6 +236,7 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.Number}
                     className={styles.ContactInputs}
+                    required
                   />
                   <select
                     name="product"
@@ -240,7 +244,11 @@ function ContactPage() {
                     className={styles.ContactInputs}
                     value={formData.product}
                     onChange={handleChange}
+                    required
                   >
+                    <option value="" disabled>
+                      Select a Product
+                    </option>
                     {productOptions.map((product, index) => (
                       <option key={index} value={product.value}>
                         {product.label}
@@ -255,7 +263,8 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.ContactMessage}
                     className={styles.ContactInputBoxLarge}
-                    // className={styles.ContactInputs}
+                    required
+                  // className={styles.ContactInputs}
                   />
                   <button type="submit" className={styles.sendButton}>
                     Send Message
@@ -321,6 +330,7 @@ function ContactPage() {
                     name="name"
                     id={styles.ContactName}
                     className={styles.ContactInputs}
+                    required
                   />
                   <select
                     name="businessType"
@@ -328,6 +338,7 @@ function ContactPage() {
                     className={styles.ContactInputs}
                     value={formData.businessType}
                     onChange={handleChange}
+                    required
                   >
                     <option value="B2B">B2B</option>
                     <option value="B2C">B2C</option>
@@ -340,6 +351,7 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.ContactEmail}
                     className={styles.ContactInputs}
+                    required
                   />
                   <input
                     type="tel"
@@ -349,6 +361,7 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.Number}
                     className={styles.ContactInputs}
+                    required
                   />
                   <select
                     name="product"
@@ -356,7 +369,11 @@ function ContactPage() {
                     className={styles.ContactInputs}
                     value={formData.product}
                     onChange={handleChange}
+                    required
                   >
+                    <option value="" disabled>
+                      Select a Product
+                    </option>
                     {productOptions.map((product, index) => (
                       <option key={index} value={product.value}>
                         {product.label}
@@ -371,6 +388,7 @@ function ContactPage() {
                     onChange={handleChange}
                     id={styles.ContactMessage}
                     className={styles.ContactInputBoxLarge}
+                    required
                   />
                   <button type="submit" className={styles.sendButton}>
                     Send Message
