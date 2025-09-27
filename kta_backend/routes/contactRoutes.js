@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const { RECEIVERS_EMAIL } = require("../constants");
 
 router.post("/sendEmail", async (req, res) => {
-  const { name, email, mobileNo, Product, message } = req.body;
+  const { name, email, mobileNo, Product, message, BusinessType } = req.body;
 
   try {
     // Create a transporter using your email service
@@ -23,7 +23,7 @@ router.post("/sendEmail", async (req, res) => {
       Email:`${email}`,
       MobileNo:`${mobileNo}`,
       product: `${Product}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nMobile No: ${mobileNo}\nBusiness Type: ${BusinessType}\nProduct: ${Product}\nMessage: ${message}`,
     };
 
     // Send email
