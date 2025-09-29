@@ -121,13 +121,13 @@ export const featureData = [
       "Designed specifically for the diverse indian climate and substrates, ensuring perfomance on site every time.",
   },
   {
-    img: "/assets/LandingPage/customerIcon.svg",
+    img: "/assets/LandingPage/innovativeIcon.svg",
     title: "Innovative And Cost Effective",
     description:
       "Advanced formulations at competitive prices – giving you high-end quality without the premium cost.",
   },
   {
-    img: "/assets/LandingPage/customerIcon.svg",
+    img: "/assets/LandingPage/sustainableIcon.svg",
     title: "Sustainable Practices",
     description:
       "We focus on eco-friendly production methods and packaging choices that reduce environmental impact.",

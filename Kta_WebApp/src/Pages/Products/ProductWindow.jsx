@@ -32,8 +32,8 @@ function ProductWindow() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/KTASolutions.pdf"; // path relative to 'public' folder
-    link.download = "KTASolutions.pdf"; // this sets the download filename
+    link.href = (product.pdfURL)?(product.pdfURL):"/pdfs/KTASolutions.pdf"  ; // path relative to 'public' folder
+    link.download = (product.pdfName)?(product.pdfName):"/pdfs/KTASolutions.pdf"; // this sets the download filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -165,11 +165,10 @@ function ProductWindow() {
             Documents and Downloads
             <div className={styles.DownloadCard}>
               <img src={DocumentIcon} alt="" />
-              <div className={styles.DownloadCardHeading}>KTA</div>
+              <div className={styles.DownloadCardHeading}>{(product.pdfName)?(product.pdfName):"KTA"}</div>
               <div className={styles.DownloadCardSubHeading}>
                 Corporate Brochure
               </div>
-
               <div
                 onClick={handleDownload}
                 className={styles.DownloadCardFooter}
