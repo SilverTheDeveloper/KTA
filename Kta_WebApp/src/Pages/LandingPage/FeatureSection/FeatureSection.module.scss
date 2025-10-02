@@ -87,117 +87,6 @@ $mobile: 768px;
     }
   }
 
-  // .RightSection {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, 1fr); // 2 cards per row
-  //   gap: 24px 24px;
-  //   justify-items: center;
-
-  //   @media (max-width:$mobile) {
-  //     gap: 30px 24px;
-  //   }
-
-  //   .FeatureCard {
-  //     display: flex;
-  //     width: 340px;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     align-items: center;
-  //     gap: 5px;
-
-
-  //     /* Large desktops (≥1200px) */
-  //     @media screen and (min-width: 1200px) {
-  //       font-size: 1.5rem;
-  //       width: 350px;
-  //     }
-
-  //     /* Extra large desktops (≥1400px) */
-  //     @media screen and (min-width: 1400px) {
-  //       font-size: 1.75rem;
-  //         width: 450px;
-         
-
-  //     }
-
-  //     /* Ultra wide monitors (≥1600px) */
-  //     @media screen and (min-width: 1600px) {
-  //       font-size: 2rem;
-
-  //     }
-
-  //     /* 4K screens (≥1920px) */
-  //     @media screen and (min-width: 1920px) {
-  //       font-size: 2.25rem;
-  //     }
-
-  //     @media screen and (max-width: $mobile) {
-  //       width: 170px;
-  //     }
-
-
-
-
-
-  //     .Title {
-  //       font-family: Poppins;
-  //       font-size: 16px;
-  //       font-weight: 600;
-  //       text-align: center;
-
-  //       /* Large desktops (≥1200px) */
-  //       @media screen and (min-width: 1200px) {
-  //         font-size: 1.5rem;
-  //       }
-
-  //       /* Extra large desktops (≥1400px) */
-  //       @media screen and (min-width: 1400px) {
-  //         font-size: 1.75rem;
-  //       }
-
-  //       /* Ultra wide monitors (≥1600px) */
-  //       @media screen and (min-width: 1600px) {
-  //         font-size: 2rem;
-  //       }
-
-  //       /* 4K screens (≥1920px) */
-  //       @media screen and (min-width: 1920px) {
-  //         font-size: 2.25rem;
-  //       }
-  //     }
-
-  //     .Description {
-  //       color: #3e3e3e;
-  //       text-align: center;
-  //       font-family: Poppins;
-  //       font-size: 10px;
-  //       font-weight: 600;
-
-  //       /* Large desktops (≥1200px) */
-  //       @media screen and (min-width: 1200px) {
-  //         font-size: 1rem;
-  //         border: 2px solid black;
-  //       }
-
-  //       /* Extra large desktops (≥1400px) */
-  //       @media screen and (min-width: 1400px) {
-  //         font-size: 1.125rem;
-  //         border: 2px solid white;
-
-  //       }
-
-  //       /* Ultra wide monitors (≥1600px) */
-  //       @media screen and (min-width: 1600px) {
-  //         font-size: 1.25rem;
-  //       }
-
-  //       /* 4K screens (≥1920px) */
-  //       @media screen and (min-width: 1920px) {
-  //         font-size: 1.5rem;
-  //       }
-  //     }
-  //   }
-  // }
 
 
   .RightSection {
@@ -214,7 +103,7 @@ $mobile: 768px;
     display: flex;
     width: 340px; // Fixed width for desktops
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 5px;
 
