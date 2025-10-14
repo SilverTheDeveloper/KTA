@@ -12,8 +12,8 @@ const FeatureSection = () => {
         <div className={styles.Headings}>
           <p className={styles.Heading}>Why Choose Us</p>
           <p className={styles.SubHeading}>Why KTA Solutions?</p>
+          <p className={styles.Text}>Here's why :) </p>
         </div>
-        <p className={styles.Text}>Here's why :) </p>
         <Link
           to={"/app/about"}
           style={{ textDecoration: "none", color: "inherit" }}
