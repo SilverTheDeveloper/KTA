@@ -1,5 +1,5 @@
 import TopBanner from "@/Components/TopBanner/TopBanner";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CareersPage.module.scss";
 import bannerImg from "/assets/CareersPage/CareersHeading.png";
 import { API } from "@/constants";
@@ -26,6 +26,9 @@ const CareersPage = () => {
       [name]: value,
     }));
   };
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
